@@ -139,6 +139,7 @@
     <Compile Include="Controllers\WapiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DependencyInjection\NinjectDependencyResolver.cs" />
+    <Compile Include="Entities\ExchangeRate.cs" />
     <Compile Include="Entities\MatchScore.cs" />
     <Compile Include="Entities\ParticipantList.cs" />
     <Compile Include="Entities\QException.cs" />
@@ -231,6 +232,7 @@
     <Content Include="img\up-arrow.png" />
     <Content Include="img\_bg_img1.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="js\bootstrap-tooltip.js" />
     <Content Include="js\_grid.js" />
     <Content Include="js\_LINQtoJquery.js" />
     <Content Include="Templates\_submitScores.tmpl.htm" />
@@ -238,6 +240,7 @@
     <Content Include="Views\Shared\matches_es.cshtml" />
     <Content Include="Views\Shared\admin.cshtml" />
     <None Include="Views\Shared\matches_en.cshtml" />
+    <Content Include="Views\Shared\payment.cshtml" />
     <None Include="Views\Shared\registration.cshtml" />
     <None Include="Views\Shared\rules.cshtml" />
     <None Include="Views\Shared\chat.cshtml" />
