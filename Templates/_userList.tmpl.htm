@@ -1,0 +1,22 @@
+﻿<script id="userListTemplate" type="text/html">
+    <div class="bs-docs-example">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Name/Nombre</th>
+                <th>Points/Puntos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{each users}}
+            <tr>
+                <td>${Email}</td>
+                <td>${Name}</td>
+                <td>${TotalPoints}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+        </div>
+</script>

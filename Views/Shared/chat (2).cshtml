@@ -1,0 +1,66 @@
+﻿@model quiniela.Models.ChatModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@Model.PageTitle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <!--content wrapper-->
+    <div id="wrapper">
+        <section>
+            <div class="dynamicContent">
+                <!--content-->
+                <div class="row">
+                    <div class="span6">
+                        <h2>@Model.ChatTitle</h2>
+                        <h5 id="chatSubtitle">@Model.ChatSubTitle</h5>
+                        <div class="wrap">
+                            <div id="myChat"></div>
+                            <script>
+                                prepareChat();
+                            </script>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div id="chatEntry">
+                            <h2>@Model.SendMessage</h2>
+                            <input type='text' id='messageInput' class="hide" placeholder='@Model.FieldMessage'>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <h2>@Model.LinksTitle</h2>
+                        <ul class="_list1">
+                            <li><a href="@Model.Link1Url">@Model.Link1Text</a></li>
+                            <li class="_marginNull _paddingNull _borderNull"><a href="@Model.Link2Url">@Model.Link2Text</a></li>
+                        </ul>
+                    </div>
+                    <script id="popLeft" type="text/html">
+                        <div>
+                            <div class="popover left">
+                                <div class="arrow"></div>
+                                <h3 class="popover-title"><span>${name}</span> - ${datetime}</h3>
+                                <div class="popover-content">
+                                    <p>${msg}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                    <script id="popRight" type="text/html">
+                        <div class="popover right">
+                            <div class="arrow"></div>
+                            <h3 class="popover-title"><span>${name}</span> - ${datetime}</h3>
+                            <div class="popover-content">
+                                <p>${msg}</p>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

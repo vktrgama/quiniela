@@ -1,0 +1,221 @@
+﻿@model quiniela.Models.HomeModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Quiniela 2014</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="La quiniela web site is fun">
+    <meta name="keywords" content="none">
+    <meta name="author" content="vktr g">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/grid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen">
+
+    <script type="text/javascript" src="/js/include_script.js"></script>
+
+    <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+
+    <!--[if lt IE 8]><div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div><![endif]-->
+    <!--[if lt IE 9]>
+
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <link href="/css/ie.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+    <script>
+        // Global Vars
+        var _userId = '@Model.UserId';
+        var _userName = '@Model.UserName';
+        var _userState = '@Model.UserState';
+        var _domainPath = '@Model.DomainPath';
+    </script>
+</head>
+<body>
+    <!--web site spinner-->
+    <div id="webSiteLoader"><span></span></div>
+    <!--button back top-->
+    <div class="fixed-navigation">
+        <div id="back-top" class="btn btn-inverse hide">
+            <i class="icon-arrow-up icon-white"></i><span>@Model.MoveUp</span>
+        </div>
+        <div id="back-to-bottom" class="btn btn-inverse hide">
+            <i class="icon-arrow-down icon-white"></i><span>@Model.MoveDown</span>
+        </div>
+    </div>
+    <!--page spinner-->
+    <div id="pageLoader"><span></span></div>
+    <!--content wrapper-->
+
+    <div id="wrapper">
+        <div id="bgStretch"><img src="/img/bg_img1.jpg" alt=""></div>
+        <h2 id="payPalMessage">Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com/us to view details of this transaction.</h2>
+
+        <div class="extraBg1"></div>
+        <!--header-->
+        <header>
+            <div class="container">
+                <div class="wrap">
+                    <!--logo and company name-->
+                    <a href="@Model.DomainPath/Home/Index" style="text-decoration:none;">
+                        <h2 class="textStyle7">@Model.Title</h2>
+                        <div class="textStyle8">@Model.SiteSubtitle</div>
+                    </a>
+                    <div id="logoutLink" class="extra_block1 hide">
+                        <a href="#"><div class="_link2"><span class="icon-off"></span>  @Model.LogOut</div></a>
+                    </div>
+                    <div class="extra_block1">
+                        <div>
+                            <span class="icon-envelope"></span>
+                            E-mail: <span class="_link2">laquiniela@vgama.com</span>
+                        </div>
+                    </div>
+                </div>
+                <!--menu-->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="sf-menu">
+                            <li class="margin1"><a href="@Model.DomainPath/Home/Index"><img class="extra_icon1" src="/img/extra_item1.png" alt=""></a></li>
+                            <li><a href="@Model.DomainPath/Home/Participants"><div class="base_text">@Model.MnuParticipants</div></a></li>
+                            <li><a href="@Model.DomainPath/Home/Matches"><div class="base_text">@Model.MnuMatches</div></a></li>
+                            <li><a href="@Model.DomainPath/Home/Chat"><div class="base_text">@Model.MnuChat</div></a></li>
+                            <li><a href="@Model.DomainPath/Home/Rules"><div class="base_text">@Model.MnuRules</div></a></li>
+                            <li><a href="@Model.DomainPath/Home/Registration"><div class="base_text">@Model.MnuReg</div></a></li>
+                            @{
+                                if (Model.UserState == "admin")
+                                {
+                                    <li><a href="@Model.DomainPath/Home/admin"><div class="base_text">Admin</div></a></li>
+                                };
+                            }
+                        </ul>
+                        <div class="extra_block2"><a href="#" onclick="setLang('es-MX')" class="_linkLang _spanish">Espanol</a><a href="#" onclick="setLang('en-US')" class="_linkLang _english">English</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--content-->
+        <div class="containerHolder">
+            <div class="contentBg"></div>
+            <section>
+                <div class="container">
+                    <h3 class="margin4" id="welcomeUser">@Model.WelcomeUser</h3>
+                    <div class="dynamicContent">
+                        <div class="row">
+                            <div class="span9">
+                                <div class="wrap padding1 margin8">
+                                    <h2 class="textStyle7 _marginNull">@Model.ContentParagraph1</h2>
+                                    <h2 class="textStyle8">@Model.ContentParagraph2</h2><br />
+                                    <a class="btn btn-primary btn-large" href="@Model.DomainPath/Home/Rules">@Model.LearnMore</a>
+                                </div>
+                            </div>
+                            <div class="span3">
+                                <div class="loginForm">
+                                    <h2> @Model.SignIn</h2>
+                                    <div class="wrap">
+                                        <form id="form0">
+                                            <input type="hidden" name="formType" value="login" />
+                                            <div class="success alert alert-success hide"><span>@Model.UserLoggedIn</span></div>
+                                            <div class="fail alert alert-error hide"><span>@Model.UserLoginFail</span></div>
+                                            <fieldset>
+                                                <label class="email">
+                                                    <input type="email" value="User Id (Email)">
+                                                    <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
+                                                </label>
+                                                <label class="pin">
+                                                    <input type="text" class="pin" maxlength="4" value="@Model.FieldPin" onkeyup="maxLengthCheck(this);" onkeydown="maxLengthCheck(this);" maxlength="4">
+                                                    <span class="error" style="display: none;">@Model.FieldValPin</span> <span class="empty" style="display: none;">@Model.FieldRequired</span>
+                                                </label>
+                                                <br class="clear">
+                                                <div class="btns">
+                                                    <button class="btn more_btn1" data-type="submit">@Model.LogIn</button>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>                             
+                                <h2>@Model.TopWinTitle</h2>
+                                <div class="wrap">
+                                    <h3 class="margin4">@Model.TopWinner</h3>
+                                    <p>@Model.TopWinDesc</p>
+                                </div>
+                                <h2>@Model.WinningPrize</h2>
+                                <div class="wrap">
+                                    <h3 class="margin4">@Model.TopWinnerPrice</h3>
+                                    <p>@Model.TopWinPrizeDesc</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- submit scores modal-->
+        <div id="submitModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>@Model.ScoresModal.Title</h3>
+            </div>
+            <div class="modal-body wrap">
+                <h4>@Model.ScoresModal.SubTitle</h4>
+                <ul>
+                    <li>
+                        @Model.ScoresModal.Bullet1 <a href="@Model.DomainPath/Home/Rules">@Model.MnuRules</a>.
+                    </li>
+                    <li>@Model.ScoresModal.Bullet2</li>
+                    <li>@Model.ScoresModal.Bullet3</li>
+                    <li>@Model.ScoresModal.Bullet4</li>
+                    <li>@Model.ScoresModal.Bullet5</li>
+                </ul>
+            </div>
+            <div class="alert alert-block fade in">
+                <h4>@Model.ScoresModal.Warning</h4>
+                @Model.ScoresModal.WarningText
+            </div>
+            <div class="modal-footer">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypalForm" class="hide">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="custom" value="@Model.UserId">
+                    <input type="hidden" name="hosted_button_id" value="@Model.PayPalFormCode">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <input type="image" src="@Model.PayPalButton" border="0" onclick="saveMatchScores(true, formMatchScores);" title="@Model.ScoresModal.PayPalToolTip">
+            </div>
+        </div>
+        <!--footer-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span5">
+                        <div class="privacy_text margin2"><span class="textStyle1">copyright</span><br>Victor G &copy; 2014 | <a class="_link1" href="@Model.DomainPath/Home/privacy">@Model.PrivatePolicyTitle</a><br><!-- {%FOOTER_LINK} --></div>
+                    </div>
+                    <div class="span4">
+
+                    </div>
+                    <div class="span3">
+                        <div class="extra_block3 margin2">Somewhere in <br>San Francisco, Bay Area</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        if (_userId != "") {
+            $(".loginForm").hide()
+            $("#logoutLink").show()
+            $("#welcomeUser").show();
+        } else {
+            $("#logoutLink").hide()
+        }
+        $("#logoutLink a div").bind("click", function () {
+            _userId = '';
+            _userState = '';
+            window.location.replace(_domainPath + "/");
+        });
+    </script>
+</body>
+</html>

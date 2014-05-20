@@ -1,0 +1,122 @@
+﻿@model quiniela.Models.RulesModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@Model.PageTitle</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/preview.css" type="text/css">
+
+    <script type="text/javascript" src="/js/include_script.js"></script>
+
+    <!--[if lt IE 9]>
+
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <link href="/css/ie.css" rel="stylesheet" type="text/css">
+        <![endif]-->
+</head>
+<body>
+    <!--content wrapper-->
+    <div id="wrapper">
+        <section>
+            <div class="dynamicContent">
+                <!--content-->
+                <div class="row">
+                    <div>
+                        <div class="span12">
+                            <h2>@Model.RulesTitle</h2>
+                        </div>
+                        <div class="span3">
+                            <img class="img1 img-polaroid" src="/img/rules.jpg" alt="">
+                        </div>
+                        <div class="span9">
+                            <div class="wrap margin3">
+                                <h3 class="margin7">@Model.RegTitle</h3>
+                                <div class="whiteText">
+                                    <ul>
+                                        <li>
+                                            @Html.Raw(Model.Rules1)
+                                        </li>
+                                        <li>@Html.Raw(Model.Rules2)</li>
+                                    </ul>
+                                </div>
+                                <p></p>
+                                <h3 class="margin7">@Model.MyScoresTitle</h3>
+                                <div class="whiteText">
+                                    <ul>
+
+                                        <li>@Html.Raw(Model.Rules3)</li>
+                                        <li>@Html.Raw(Model.Rules4)</li>
+                                        <li>
+                                            @Model.Rules5
+                                            <ul>
+                                                <li>@Html.Raw(Model.Rules6)</li>
+                                                <li>@Html.Raw(Model.Rules7)</li>
+                                            </ul>
+                                        </li>
+                                        <li>@Model.Rules8</li>
+                                        <li>@Html.Raw(Model.Rules9)</li>
+                                        <li>@Model.Rules10</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="span3">
+                            <img class="img1 img-polaroid frameBorder" src="/img/rules2.jpg" alt="">
+                        </div>
+                        <div class="span9">
+                            <div class="wrap margin3">
+                                <div class="wrap margin3">
+                                    <h3 class="margin7">@Model.CalcTitle</h3>
+                                    <div class="whiteText">
+                                        <ul>
+                                            <li>@Model.Rules11</li>
+                                            <li>
+                                                @Model.Rules12
+                                                <ul>
+                                                    <li>@Model.Rules13</li>
+                                                    <li>@Model.Rules14</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="wrap margin3">
+                                    <h3 class="margin7">@Model.WinnerTitle</h3>
+                                    <div class="whiteText">
+                                        <ul>
+                                            <li>@Model.Rules15</li>
+                                            <li>@Model.Rules16</li>
+                                            <li>@Model.Rules22</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h3 class="margin7">@Model.DonationTitle</h3>
+                                <div class="whiteText">
+                                    <ul>
+                                        <li>@Model.Rules17</li>
+                                        <li>@Model.Rules18</li>
+                                        <li>@Html.Raw(Model.Rules19)</li>
+                                        <li>@Model.Rules20</li>
+                                        <li>@Model.Rules21</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

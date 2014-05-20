@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MatchSubmitted" xml:space="preserve">
+    <value>Your scores have been submitted successfully.</value>
+    <comment>Tus pronósticos han sido enviador correctamente.</comment>
+  </data>
+  <data name="MnuRules" xml:space="preserve">
+    <value>Rules</value>
+    <comment>Reglas</comment>
+  </data>
+  <data name="RegFormFail" xml:space="preserve">
+    <value>Registration fail, user already exists.</value>
+    <comment>El registro falló, el usuario ya existe.</comment>
+  </data>
+  <data name="RegFormMessage" xml:space="preserve">
+    <value>&lt;h1&gt;Welcome to 2014 FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!</value>
+    <comment>&lt;h1&gt;Bienvenido a la Quiniela 2014&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Ahora podras ingresar tus pronósticos en nuestro sitio, usar tu dirección de correo electrónico y NIP para ingresar al sitio, y ve a la opcion de [Mis pronósticos] .&lt;br/&gt;&lt;br/&gt;Nuestro sitio es:&lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Suerte!</comment>
+  </data>
+  <data name="RegFormSubjet" xml:space="preserve">
+    <value>Welcome to 2014 FIFA Pool</value>
+    <comment>Bienvenido a la Quiniela 2014</comment>
+  </data>
+  <data name="RegFormSuccess" xml:space="preserve">
+    <value>Your registration has been processed, you will get and email shortly</value>
+    <comment>Tu registro ha sido procesado, recibiras noticias nuestras pronto por email.</comment>
+  </data>
+  <data name="SendInviteMessage" xml:space="preserve">
+    <value>You have been invited to join a FIFA World Cup 2014 Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup 2014 Pool, go to &lt;b&gt;&lt;a href='{1}' &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!</value>
+    <comment>&lt;h1&gt;Aquí encontrarás el código para regsitrarte en la Quiniela 2014&lt;/ h1&gt; &lt;br&gt; Utilice el código de inviatación&lt;b&gt; {0} &lt;/ b&gt; Para registrarse y particpar en la Quiniela de la Copa Mundial FIFA 2014, ve a &lt;b&gt; &lt;a href='{1}'&gt; http://laquiniela.info &lt;/ a&gt; &lt;/ b&gt; y selecciona la opción de [Registro] &lt;b&gt; &lt;/ b&gt; &lt;br/&gt; tambien tóma un tiempo para revisar las [Reglas] de la quiniela. &lt;br/&gt; Buena suerte!</comment>
+  </data>
+  <data name="SendInviteSubject" xml:space="preserve">
+    <value>{0}, sent you an invitation to join a FIFA World Cup 2014 Pool</value>
+    <comment>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA 2014</comment>
+  </data>
+  <data name="SiteSubtitle" xml:space="preserve">
+    <value>FIFAWorld Cup Brazil</value>
+    <comment>Copa Mundial FIFA Brasil </comment>
+  </data>
+  <data name="SSModalBullet1" xml:space="preserve">
+    <value>A donation of {0} needs to be made, for you to participation in this Quiniela, if you are not sure, please read more details from our </value>
+    <comment>Una donación de {0} necesita ser hecha, para que la participar en esta Quiniela, si usted no está seguro, por favor, lea más detalles de nuestra pagina de </comment>
+  </data>
+  <data name="SSModalBullet2" xml:space="preserve">
+    <value>Please make sure email address for payment is the same as your registration, so we can verify the donation.</value>
+    <comment>Por favor asegurese que la dirección de correo electrónico de su donación es la misma que uso en su registro, para poder verificar su donació.</comment>
+  </data>
+  <data name="SSModalBullet3" xml:space="preserve">
+    <value>We would save your scores and process your donation via a secure connection via Paypal</value>
+    <comment>Alacenaremos sus pronósticos y procesaremos su donación a través de una conexión segura a través de Paypal</comment>
+  </data>
+  <data name="SSModalBullet4" xml:space="preserve">
+    <value>Once donation is cleared, you'll be redirected back to this site.</value>
+    <comment>Una vez que se la donación sea aprovada, sera redirigido a este sitio.</comment>
+  </data>
+  <data name="SSModalBullet5" xml:space="preserve">
+    <value>Then you'll be formally added as a participant.</value>
+    <comment>Solo entonces seras formalmente agregado como participante.</comment>
+  </data>
+  <data name="SSModalPayPalToolTip" xml:space="preserve">
+    <value>PayPal - The safer, easier way to pay online!</value>
+    <comment>PayPal - La forma rápida y segura de pagar en Internet</comment>
+  </data>
+  <data name="SSModalSubTitle" xml:space="preserve">
+    <value>Please make note of the following:</value>
+    <comment>Por favor, tome nota de lo siguiente:</comment>
+  </data>
+  <data name="SSModalTitle" xml:space="preserve">
+    <value>Submit your final scores</value>
+    <comment>Enviar sus resultados finales</comment>
+  </data>
+  <data name="SSModalWarning" xml:space="preserve">
+    <value>Warning!</value>
+    <comment>Advertencia!</comment>
+  </data>
+  <data name="SSModalWarningTxt" xml:space="preserve">
+    <value>Once the scores are submited, you will not be able to change them anymore.</value>
+    <comment>Una vez que los pronósticos sean enviados, usted no será capaz de cambiarlos nunca más.</comment>
+  </data>
+  <data name="TopWinner" xml:space="preserve">
+    <value>[Winner Name Here]</value>
+    <comment>[Nombre del Ganador Aqui]</comment>
+  </data>
+  <data name="BetAmount" xml:space="preserve">
+    <value>$20.00 USD</value>
+    <comment>$260.00 MXN</comment>
+  </data>
+  <data name="MnuChat" xml:space="preserve">
+    <value>Messages</value>
+    <comment>Mensajes</comment>
+  </data>
+  <data name="MnuMatches" xml:space="preserve">
+    <value>My Scores</value>
+    <comment>Mis pronósticos</comment>
+  </data>
+  <data name="MnuParticipants" xml:space="preserve">
+    <value>Participants</value>
+    <comment>Participantes</comment>
+  </data>
+  <data name="MnuReg" xml:space="preserve">
+    <value>Registration</value>
+    <comment>Registro</comment>
+  </data>
+  <data name="ContentParagraph1" xml:space="preserve">
+    <value>Welcome to the 2014 FIFA Pool Site</value>
+    <comment>Bienvenido al sitio Quiniela 2014</comment>
+  </data>
+  <data name="ContentParagraph2" xml:space="preserve">
+    <value>Have fun and possibly win some money</value>
+    <comment>Diviertete y posiblemente gana dinero.</comment>
+  </data>
+  <data name="FieldPin" xml:space="preserve">
+    <value>PIN</value>
+    <comment>NIP</comment>
+  </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>*This field is required.</value>
+    <comment>*Este campo es requrido</comment>
+  </data>
+  <data name="FieldValEmail" xml:space="preserve">
+    <value>*This is not a valid email address.</value>
+    <comment>*Esta no es una dirección email válida</comment>
+  </data>
+  <data name="FieldValPin" xml:space="preserve">
+    <value>*Not a valid PIN.</value>
+    <comment>*NIP inválido</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+    <comment>Saber mas</comment>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log In</value>
+    <comment>Entrar</comment>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log Out</value>
+    <comment>Salir</comment>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign-In</value>
+    <comment>Entrar al sitio</comment>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>2014 Pool</value>
+    <comment>Quiniela 2014</comment>
+  </data>
+  <data name="TopWinDesc" xml:space="preserve">
+    <value>This is the person with a higher number of points</value>
+    <comment>Esta es la persona con el mayor número de puntos</comment>
+  </data>
+  <data name="TopWinPrizeDesc" xml:space="preserve">
+    <value>This amount represents the total accumulated from all participants (commisions already applied).</value>
+    <comment>Esta cantidad representa el total acumulado de todos los participantes (comisiones ya aplicadas).</comment>
+  </data>
+  <data name="TopWinTitle" xml:space="preserve">
+    <value>Current Winner</value>
+    <comment>Ganador Al momento </comment>
+  </data>
+  <data name="UserListTitle" xml:space="preserve">
+    <value>Participants, sorted by points</value>
+    <comment>Los participantes ordenados por Puntos</comment>
+  </data>
+  <data name="UserLoggedIn" xml:space="preserve">
+    <value>User Logged in!</value>
+    <comment>El usuario ha ingresado!</comment>
+  </data>
+  <data name="UserLoginFail" xml:space="preserve">
+    <value>User Log-in Fail!</value>
+    <comment>El ingreso fallo!</comment>
+  </data>
+  <data name="InviteFriendText" xml:space="preserve">
+    <value>You want to invite a friend, go ahead!</value>
+    <comment>Si quieres invitar a un amigo, adelante!</comment>
+  </data>
+  <data name="ParticipantDesc" xml:space="preserve">
+    <value>This is a list of participants who already submitted their scores.</value>
+    <comment>Esta es la lista de participantes que ya han enviado sus pronósticos.</comment>
+  </data>
+  <data name="ParticipantNode" xml:space="preserve">
+    <value>Only people that have submitted their scores and donated will show. List is order by number of points accumulated in descending order.</value>
+    <comment>Solo personas que hayan enviado sus pronósticos y hecho la donación aparecerán en la lista. La lista esta ordernada por número de puntos.</comment>
+  </data>
+  <data name="Participants" xml:space="preserve">
+    <value>Participants</value>
+    <comment>Participantes</comment>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+    <comment>Enviar Mensaje</comment>
+  </data>
+  <data name="ChatTitle" xml:space="preserve">
+    <value>Message board</value>
+    <comment>Intercambio de Mensajes</comment>
+  </data>
+  <data name="LinksTitle" xml:space="preserve">
+    <value>Links</value>
+    <comment>Ligas</comment>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Bottom</value>
+    <comment>Abajo</comment>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Top</value>
+    <comment>Arriba</comment>
+  </data>
+  <data name="RulesTitle" xml:space="preserve">
+    <value>Rules</value>
+    <comment>Reglas</comment>
+  </data>
+  <data name="CalcTitle" xml:space="preserve">
+    <value>Calculate Points</value>
+    <comment>Calcular Puntos</comment>
+  </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Donations</value>
+    <comment>Donaciones</comment>
+  </data>
+  <data name="Rules1" xml:space="preserve">
+    <value>Every participant should &lt;a class='{0}' href='{1}'&gt;register&lt;/a&gt; using an invitation code, that will be send to him.</value>
+    <comment>Cada participante deberá &lt;a class='{0}' href='{1}'&gt;registrarse&lt;/a&gt; usando un código de inviación, que sera enviado a el previamente.</comment>
+  </data>
+  <data name="Rules10" xml:space="preserve">
+    <value>IMPORTANT! Only individuals who submit their scores before June 11th will participate in the pool.</value>
+    <comment>¡IMPORTANTE! Sólo las personas que presenten sus pronósticos antes del 11 de Junio participarán en la quiniela.</comment>
+  </data>
+  <data name="Rules11" xml:space="preserve">
+    <value>The official score for each match will be the one at the end of the match, including extra time, and/or series of penalties.</value>
+    <comment>La marcador oficial para cada partido será el marcador final, incluyendo tiempos extra, y / o serie de 'penalties'.</comment>
+  </data>
+  <data name="Rules12" xml:space="preserve">
+    <value>The maximum number of points per match is 3:</value>
+    <comment>El número máximo de puntos por partido es 3:</comment>
+  </data>
+  <data name="Rules13" xml:space="preserve">
+    <value>2 points if you guess the match score, and</value>
+    <comment>2 puntos si el resultado es el mismo que el tuyo, y</comment>
+  </data>
+  <data name="Rules14" xml:space="preserve">
+    <value>1 point if one of the following happen: if you guess the winner or if you guess a draw.</value>
+    <comment>1 puntos si pronosticas el ganador o 1 punto si pronosticas un empate</comment>
+  </data>
+  <data name="Rules15" xml:space="preserve">
+    <value>The winner of the pool, will be the person with the higher number of points accumulated at the end of the tournament.</value>
+    <comment>El ganador de la quiniela, será la persona con el mayor número de puntos acumulados al final del torneo.</comment>
+  </data>
+  <data name="Rules16" xml:space="preserve">
+    <value>If more than one, prize will be equally divided between winners.</value>
+    <comment>If more than one, prize will be equally divided between winners.</comment>
+  </data>
+  <data name="Rules17" xml:space="preserve">
+    <value>A donation is require to participate in the pool</value>
+    <comment>Una donación se requiere para participar en la quiniela</comment>
+  </data>
+  <data name="Rules18" xml:space="preserve">
+    <value>Donations are taken via PayPal for the fix amount of {0}</value>
+    <comment>Las donaciones se toman a través de PayPal por un monto fijo de {0}</comment>
+  </data>
+  <data name="Rules19" xml:space="preserve">
+    <value>PayPal will charge a &lt;a class='{0}' href='https://www.paypal.com/us/webapps/mpp/merchant-fees' target='_top'&gt;commission&lt;/a&gt; of 2.9% + $0.30 per transaction, that will be deducted from the donation</value>
+    <comment>PayPal cobrará una &lt;a class='{0}' href='https://www.paypal.com/us/webapps/mpp/merchant-fees' target='_top'&gt; comisión &lt;/ a&gt; de 2,9% + $ 0.30 por transacción, que se deducirá de la donación</comment>
+  </data>
+  <data name="Rules2" xml:space="preserve">
+    <value>After registration you can go to &lt;a class='{0}' href='{1}'&gt;{2}&lt;/a&gt; and enter your estimated scores per match.</value>
+    <comment>Después del registro usted podrá ir a &lt;a class='{0}' href='{1}'&gt; {2} &lt;/ a&gt; e introducir sus pronósticos por partido.</comment>
+  </data>
+  <data name="Rules20" xml:space="preserve">
+    <value>A 15% commission of the total pool will be charged by the [laquiniela.info] Site for services provided, at the end of the tournament.</value>
+    <comment>Una comisión del 15% sobre el total de la quiniela sera hecha por el sitio Quiniela2014 por los servicios prestados, al final del torneo.</comment>
+  </data>
+  <data name="Rules21" xml:space="preserve">
+    <value>Rest of the donation will be accumulated and given to the person with the higher number of points accumulated at the end of the tournament.</value>
+    <comment>El resto de la donación se acumulará y se dará a la persona con el mayor número de puntos acumulados al final del torneo.</comment>
+  </data>
+  <data name="Rules22" xml:space="preserve">
+    <value>Prize will be transfered to winner via PayPal, Mailed Check or Cash if winner is easy to contact.</value>
+    <comment>Premio será transferido al ganador a través de PayPal, cheque o en efectivo, si el ganador es es fácil de contactar.</comment>
+  </data>
+  <data name="Rules3" xml:space="preserve">
+    <value>You can store your scores at any time using the 'Save ...' button located in the bottom left corner of the &lt;a class='{0}' href='{1}'&gt;{2}&lt;/a&gt; page.</value>
+    <comment>Usted puede almacenar sus puntuaciones en cualquier momento a través del botó "Guardar ..." situado en la esquina inferior izquierda de la &lt;a class='{0}' href='{1}'&gt; {2} &lt;/ a&gt; página.</comment>
+  </data>
+  <data name="Rules4" xml:space="preserve">
+    <value>When you are ready, you can submit your scores to enter the pool, use the  'Submit ...' button at the end of the &lt;a class='{0}' href='{1}'&gt;{2}&lt;/a&gt; page.</value>
+    <comment>Cuando esté listo, puede enviar sus pronósticos para entrar en la quiniela, utilice el botón "Enviar ..." al final de la &lt;a class='{0}' href='{1}'&gt; {2} &lt;/ a&gt; página.</comment>
+  </data>
+  <data name="Rules5" xml:space="preserve">
+    <value>Scores are submitted to the pool in two occasions:</value>
+    <comment>Los pronósticos seran enviados en dos ocasiones:</comment>
+  </data>
+  <data name="Rules6" xml:space="preserve">
+    <value>First round, Group eliminations  - &lt;i&gt;Right now and until June 11th&lt;/i&gt;</value>
+    <comment>Primera ronda, eliminaciones de Grupo - &lt;i&gt; a partir de ahora y hasta el 11 de junio &lt;/ i&gt;</comment>
+  </data>
+  <data name="Rules7" xml:space="preserve">
+    <value>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 26th)&lt;/i&gt;</value>
+    <comment>Segunda ronda, eliminaciones finales - &lt;i&gt; cuando los partidos estén determinados (después de 26 de junio) &lt;/ i&gt;</comment>
+  </data>
+  <data name="Rules8" xml:space="preserve">
+    <value>Once the scores are submitted you will NOT be able to change them anymore.</value>
+    <comment>Una vez enviados los pronósticos, usted NO podrá cambiarlos nunca más.</comment>
+  </data>
+  <data name="Rules9" xml:space="preserve">
+    <value>A donation is required to submit your scores, see &lt;a class='{0}' href='#'&gt;Donantions&lt;/a&gt; below for more details.</value>
+    <comment>Se requiere una donación para poder enviar sus pronósticos, consulte &lt;a class='{0}' href='#'&gt;Donaciones&lt;/ a&gt; mas adelante para obtener más detalles.</comment>
+  </data>
+  <data name="WinnerTitle" xml:space="preserve">
+    <value>Winner</value>
+    <comment>Ganador</comment>
+  </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Clear</value>
+    <comment>Iniciar</comment>
+  </data>
+  <data name="BtnReg" xml:space="preserve">
+    <value>Register</value>
+    <comment>Registrar</comment>
+  </data>
+  <data name="FeedbackFailMsg" xml:space="preserve">
+    <value>Contact form not submitted!</value>
+    <comment>Forma de contacto, no ha sido enviada!</comment>
+  </data>
+  <data name="FeedbackSuccessMsg" xml:space="preserve">
+    <value>Contact form submitted!</value>
+    <comment>Forma de contacto enviada!</comment>
+  </data>
+  <data name="FieldEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Email</comment>
+  </data>
+  <data name="FieldInvitation" xml:space="preserve">
+    <value>Invitation Code</value>
+    <comment>Código de Invitación</comment>
+  </data>
+  <data name="FieldName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Nombre</comment>
+  </data>
+  <data name="FieldPinConfirmation" xml:space="preserve">
+    <value>Confirmation PIN</value>
+    <comment>Confirma NIP</comment>
+  </data>
+  <data name="FieldValInviteCode" xml:space="preserve">
+    <value>*This is not a valid code.</value>
+    <comment>*Este no es un código válido</comment>
+  </data>
+  <data name="FieldValMessage" xml:space="preserve">
+    <value>*The message is too short.</value>
+    <comment>*El mensaje es muy corto</comment>
+  </data>
+  <data name="FieldValName" xml:space="preserve">
+    <value>*This is not a valid name.</value>
+    <comment>*Este no es un nombre válido</comment>
+  </data>
+  <data name="FieldValPin2" xml:space="preserve">
+    <value>*The PIN code is not a number or do not match.</value>
+    <comment>*El numero NIP no es válido o no concuerdan</comment>
+  </data>
+  <data name="FormErrMsg" xml:space="preserve">
+    <value>Ohh Snap!, Error happen, please try again later</value>
+    <comment>Oh Rayos! Hubo un error, por favor intenta de nuevo</comment>
+  </data>
+  <data name="InvitationDesc" xml:space="preserve">
+    <value>This is a 'by invitation' only site, you need an invitation code to register.</value>
+    <comment>Este un sitio únicamente por invitación, necesitas un código de invitación para entrar</comment>
+  </data>
+  <data name="InvitationSuccessMsg" xml:space="preserve">
+    <value>Invitation has been send!</value>
+    <comment>La invitación ha sido enviada!</comment>
+  </data>
+  <data name="NewUserTitle" xml:space="preserve">
+    <value>Register</value>
+    <comment>Nuevo Participante</comment>
+  </data>
+  <data name="PleaseVerify" xml:space="preserve">
+    <value>Please verify.</value>
+    <comment>Favor de verificar.</comment>
+  </data>
+  <data name="PrivacyMsg" xml:space="preserve">
+    <value>Our privacy commitments are fundamental to the way we do business. These apply to everyone who has a relationship with us and Web site visitors.</value>
+    <comment>Nuestro compromiso respecto a privacidad es fundamental en este negocio. Esto aplica para toda persona que matiene una relación con nosotros y nuestro sitio.</comment>
+  </data>
+  <data name="PrivacyMsg1" xml:space="preserve">
+    <value>We will protect your privacy and keep your personal information safe. </value>
+    <comment>Nosotros protegeremos tu privacidad y mantendremos tu información personal en forma segura.</comment>
+  </data>
+  <data name="PrivacyMsg2" xml:space="preserve">
+    <value>We will not sell your personal information to anyone, for any purpose. Period.</value>
+    <comment>Nosotros no venderemos tu información personal a nadie, por ningún motivo, punto.</comment>
+  </data>
+  <data name="PrivacyMsg3" xml:space="preserve">
+    <value>We will fully disclose our privacy policy in plain language, and make our policy easily accessible to you.</value>
+    <comment>Revelaremos plenamente nuestra política de privacidad en un lenguaje sencillo, y haremos que nuestra política sea fácil y accessible para ti.</comment>
+  </data>
+  <data name="PrivacyMsg4" xml:space="preserve">
+    <value>We will notify you of revisions to our privacy policy, in advance. No surprises.</value>
+    <comment>Le notificaremos de revisiones a nuestra política de privacidad, por adelantado. Sin sorpresas.</comment>
+  </data>
+  <data name="PrivacyMsg5" xml:space="preserve">
+    <value>We want to hear from you. You can send us questions or feedback on our privacy policy.</value>
+    <comment>Queremos saber de ti. Puedes enviar tus preguntas o comentarios sobre nuestra política de privacidad.</comment>
+  </data>
+  <data name="PrivatePolicyTitle" xml:space="preserve">
+    <value>Privacy policy</value>
+    <comment>Política de privacidad</comment>
+  </data>
+  <data name="RegFailMsg" xml:space="preserve">
+    <value>Ohh Snap!, Error happen, please review your inviation code</value>
+    <comment>Ohh Rayos!, Hubo un error, por favor revisa tu código de invitación</comment>
+  </data>
+  <data name="RegSuccessMsg" xml:space="preserve">
+    <value>Registration form submitted!</value>
+    <comment>Forma de registro enviada!</comment>
+  </data>
+  <data name="RegSuccessMsg1" xml:space="preserve">
+    <value>We will be in touch soon.</value>
+    <comment>Estaremos en contacto pronto.</comment>
+  </data>
+  <data name="SendFeedbackMsg" xml:space="preserve">
+    <value>Send Feedback</value>
+    <comment>Enviar comentarios</comment>
+  </data>
+  <data name="Link1Text" xml:space="preserve">
+    <value>2014 FIFA World Cup</value>
+    <comment>Copa Mundial de la FIFA 2014</comment>
+  </data>
+  <data name="Link1Url" xml:space="preserve">
+    <value>http://www.fifa.com/index.html</value>
+    <comment>http://es.fifa.com/index.html</comment>
+  </data>
+  <data name="PayPalButton" xml:space="preserve">
+    <value>https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif</value>
+    <comment>https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif</comment>
+  </data>
+  <data name="PayPalFormCode" xml:space="preserve">
+    <value>FM3NTSGGXKBWJ</value>
+    <comment>B7N6FD97Y4L42</comment>
+  </data>
+  <data name="WelcomeUser" xml:space="preserve">
+    <value>Welcome! {0}</value>
+    <comment>Bienvenido {0}</comment>
+  </data>
+  <data name="WinnerPrize" xml:space="preserve">
+    <value>Winner Prize</value>
+    <comment>Premio del ganador</comment>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="FieldMessage" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Link2Text" xml:space="preserve">
+    <value>FIFA World Cup | EA SPORTS</value>
+    <comment>Copa Mundial de la FIFA 2014</comment>
+  </data>
+  <data name="Link2Url" xml:space="preserve">
+    <value>http://www.easports.com/2014-fifa-world-cup</value>
+  </data>
+  <data name="RegInvalidCodeMsg" xml:space="preserve">
+    <value>Invitation code or Email address are not valid, please verify.</value>
+    <comment>El código de invitación o dirección de email no es válido</comment>
+  </data>
+  <data name="ChatSubTitle" xml:space="preserve">
+    <value>(Last 20 Messages)</value>
+  </data>
+  <data name="CurrenctExchange" xml:space="preserve">
+    <value />
+  </data>
+</root>

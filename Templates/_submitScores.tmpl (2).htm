@@ -1,0 +1,42 @@
+﻿<script id="submitScores" type="text/html">
+    <div id="submitModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>{{title}}</h3>
+        </div>
+        <div class="modal-body wrap">
+            <h4>Please make note of the following:</h4>
+            <ul>
+                <li>
+                    A donation of $5.00 needs to be made, for you to participation in this Quiniela, if you are not sure,
+                    please read more details in our <a href="@Modal.Domain/Home/Rules">Rules</a> section.
+                </li>
+                <li>Please make sure to use the same email address in your payment so we can verify it, against your records.</li>
+                <li>We would save your scores and process your payment via a secure connection via Paypal</li>
+                <li>Once payment is cleared, you'll be redirected back to this site.</li>
+                <li>Then you'll be formally added as a participant.</li>
+            </ul>
+        </div>
+        <div class="alert alert-block fade in">
+            <h4>Warning!</h4>
+            Once the scores are submited you will not be able to change them anymore.
+        </div>
+        <div class="modal-footer">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="hide">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="97MKG7JLA775C">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypalForm" class="hide">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="VMYHGBGS4YWC6">
+
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif" border="0" onclick="saveMatchScores(true, formMatchScores);" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+            <!--
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" onclick="saveMatchScores(true, formMatchScores);" alt="PayPal - The safer, easier way to pay online!">
+                -->
+        </div>
+    </div>
+</script>
