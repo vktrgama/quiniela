@@ -1187,3 +1187,24 @@ footer {
 {
     display:none;
 }
+
+#chatEn h5 {
+    display: inline-block;
+    font-size: 12px;
+    width: 90px;
+    height: 18px;
+    color: #322f31;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 1;
+}
+#chatEntry h5 a {
+    background: url(https://www.firebase.com//resources/images/website/sprites/website-sprite.png) -200px 0 no-repeat;
+    display: block;
+    width: 90px;
+    height: 18px;
+    text-indent: -3000px;
+    overflow: hidden;
+    text-decoration: none;
+}
