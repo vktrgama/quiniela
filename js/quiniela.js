@@ -221,7 +221,7 @@ prepareChat = function()
     });
 
     window.onresize = function () {
-        var myh = $(window).height() - 600;
+        var myh = $(window).height() - 500;
         $("#myChat").height(myh);
     };
 }
