@@ -211,9 +211,9 @@ prepareChat = function()
             var data = { name: message.name, msg: message.text, datetime: message.date }
             if (findSamePost(data) == 0) {
                 if (data.name != _userName) {
-                    $('#popLeft').tmpl(data).appendTo($('#myChat'))
+                    $('#popLeft').tmpl(data).appendTo($('#myChat'));
                 } else {
-                    $('#popRight').tmpl(data).appendTo($('#myChat'))
+                    $('#popRight').tmpl(data).appendTo($('#myChat'));
                 }
                 $('#myChat')[0].scrollTop = $('#myChat')[0].scrollHeight;
             }
@@ -221,8 +221,11 @@ prepareChat = function()
     });
 
     window.onresize = function () {
-        var myh = $(window).height() - 500;
-        $("#myChat").height(myh);
+        if ($(window).height() > 600)
+        {
+            var myh = $(window).height() - 500;
+            $("#myChat").height(myh);
+        }
     };
 }
 
@@ -261,4 +264,24 @@ supports_html5_storage = function() {
     } catch (e) {
         return false;
     }
+}
+
+showUserScores = function (email) {
+    $.ajax({
+        url: _domainPath + "/Home/Matches",
+        success: function (data, textStatus, xhr) {
+            var dataPage = $(data),
+                titlePage = dataPage.filter("title").text(),
+                pageHead = dataPage.filter("link");
+            getContent = dataPage.find(".dynamicContent").html();
+
+            var w = window.open();
+            $(w.document.head).append(pageHead);
+            $(w.document.body).html(getContent);
+
+        },
+        error: function (err, xhr) {
+        }
+    });
+
 }
