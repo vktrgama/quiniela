@@ -500,21 +500,27 @@ namespace quiniela.Services
         /// <summary>
         /// Gets the currenct rate.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Current exchange rate dollar/peso </returns>
         public double GetCurrenctRate()
         {
-            WebRequest request = WebRequest.Create("http://rate-exchange.appspot.com/currency?from=USD&to=MXN");
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-
-            var json = new JavaScriptSerializer();
-            var result = json.Deserialize<ExchangeRate>(responseFromServer);
-
-            if (result != null && result.rate > 0)
+            try
             {
-                return result.rate;
+                WebRequest request = WebRequest.Create("http://rate-exchange.appspot.com/currency?from=USD&to=MXN");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+
+                var json = new JavaScriptSerializer();
+                var result = json.Deserialize<ExchangeRate>(responseFromServer);
+
+                if (result != null && result.rate > 0)
+                {
+                    return result.rate;
+                }
+            }
+            catch
+            {
             }
 
             return _dollarExchangeRateToPesos;
