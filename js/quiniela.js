@@ -233,3 +233,32 @@ findSamePost = function (data) {
     }
     return found.length;
 }
+
+persistSession = function(keepCreddentials) {
+    if (supports_html5_storage() && _userId != '') {
+        window.localStorage.setItem("qs", _userId + ',' + _userName);
+    }
+    if (keepCreddentials == false) {
+        window.localStorage.removeItem("qs");
+    }
+}
+
+readPersistedSession = function() {
+    if (supports_html5_storage()) {
+        var session = window.localStorage["qs"];
+        if (session != null) {
+            _userId = session.split(',')[0];
+            _userName = session.split(',')[1];
+            return true;
+        }
+    }
+    return false;
+}
+
+supports_html5_storage = function() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
