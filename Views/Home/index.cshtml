@@ -19,6 +19,16 @@
     <script type="text/javascript" src="/js/include_script.js"></script>
 
     <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+    <script>
+        // Global Vars
+        var _userId = '@Model.UserId';
+        var _userName = '@Model.UserName';
+        var _userState = '@Model.UserState';
+        var _domainPath = '@Model.DomainPath';
+        var _welcome = '@Model.WelcomeUser';
+        // first load, chk for existing session
+        readPersistedSession();
+    </script>
 
     <!--[if lt IE 8]><div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div><![endif]-->
     <!--[if lt IE 9]>
@@ -26,13 +36,6 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <link href="/css/ie.css" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script>
-        // Global Vars
-        var _userId = '@Model.UserId';
-        var _userName = '@Model.UserName';
-        var _userState = '@Model.UserState';
-        var _domainPath = '@Model.DomainPath';
-    </script>
 </head>
 <body>
     <!--web site spinner-->
@@ -101,7 +104,7 @@
             <div class="contentBg"></div>
             <section>
                 <div class="container">
-                    <h3 class="margin4" id="welcomeUser">@Model.WelcomeUser</h3>
+                    <h3 class="margin4" id="welcomeUser"></h3>
                     <div class="dynamicContent">
                         <div class="row">
                             <div class="span9">
@@ -206,18 +209,23 @@
     <script type="text/javascript">
         $("[rel='tooltip']").tooltip();
         jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        // user logged in
         if (_userId != "") {
-            $(".loginForm").hide()
-            $("#logoutLink").show()
+            persistSession(true);
+            $(".loginForm").hide();
+            $("#logoutLink").show();
+            $("#welcomeUser").html(_welcome + " " + _userName);
             $("#welcomeUser").show();
+            $("#logoutLink a div").bind("click", function () {
+                _userId = '';
+                _userState = '';
+                window.location.replace(_domainPath + "/");
+                persistSession(false);
+            });
         } else {
-            $("#logoutLink").hide()
+            $("#logoutLink").hide();
         }
-        $("#logoutLink a div").bind("click", function () {
-            _userId = '';
-            _userState = '';
-            window.location.replace(_domainPath + "/");
-        });
+
     </script>
 </body>
 </html>

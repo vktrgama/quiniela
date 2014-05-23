@@ -44,7 +44,7 @@ namespace quiniela.Helpers
                 UserId = user.Email,
                 UserState = user.State,
                 UserName = user.State,
-                WelcomeUser = string.Format( Localizer.Get("WelcomeUser"), user.Name),
+                WelcomeUser = string.Format( Localizer.Get("WelcomeUser"), string.Empty),
                 DomainPath = ConfigurationManager.AppSettings["DomainPath"],
                 SiteSubtitle = Localizer.Get("SiteSubtitle"),
                 MnuRules = Localizer.Get("MnuRules"),
