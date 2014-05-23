@@ -523,7 +523,7 @@ namespace quiniela.Services
             {
             }
 
-            return _dollarExchangeRateToPesos;
+            return _dollarExchangeRateToPesos * 100;
         }
 
         #region Database Connection
