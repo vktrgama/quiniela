@@ -241,7 +241,7 @@ findSamePost = function (data) {
 
 persistSession = function(keepCreddentials) {
     if (supports_html5_storage() && _userId != '') {
-        window.localStorage.setItem("qs", _userId + ',' + _userName);
+        window.localStorage.setItem("qs", _userId + ',' + _userName + ',' + _userState);
     }
     if (keepCreddentials == false) {
         window.localStorage.removeItem("qs");
@@ -254,6 +254,7 @@ readPersistedSession = function() {
         if (session != null) {
             _userId = session.split(',')[0];
             _userName = session.split(',')[1];
+            _userState = session.split(',')[2];
             return true;
         }
     }
