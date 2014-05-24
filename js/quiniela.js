@@ -58,20 +58,21 @@ setLang = function (lang) {
     });
 }
 
-prepareScoreForm = function () {
+prepareScoreForm = function (userId, userState) {
     $('#back-to-bottom').stop(true).css({ "display": "block" }).animate({ "opacity": 1 }, 400);
-
-    switch (_userState) {
+    var user = (userId != "") ? userId : _userId
+    var state = (userState != "") ? userState : _userState
+    switch (state) {
         case "Active":
             addMatchInputBoxed();
-            populateUserScores();
+            populateUserScores(user);
             break;
         case "Playing":
         case "Submitted":
             $(".alert").hide();
             $(".btn").hide();
             addMatchInputBoxed();
-            populateUserScores();
+            populateUserScores(user);
             $(".score input").attr('disabled', 'disabled');
             break;
 
@@ -128,10 +129,11 @@ saveMatchScores = function (bSubmitted, form) {
     });
 }
 
-populateUserScores = function () {
+populateUserScores = function (userId) {
+    var user = (userId != "") ? userId : _userId;
     $.ajax({
         url: _domainPath + "/wapi/LoadUserScores",
-        data: { userId: _userId },
+        data: { userId: user },
         success: function (data) {
             if (data) {
                 // populate scores
@@ -267,21 +269,6 @@ supports_html5_storage = function() {
 }
 
 showUserScores = function (email) {
-    $.ajax({
-        url: _domainPath + "/Home/Matches",
-        success: function (data, textStatus, xhr) {
-            var dataPage = $(data),
-                titlePage = dataPage.filter("title").text(),
-                pageHead = dataPage.filter("link");
-            getContent = dataPage.find(".dynamicContent").html();
-
-            var w = window.open();
-            $(w.document.head).append(pageHead);
-            $(w.document.body).html(getContent);
-
-        },
-        error: function (err, xhr) {
-        }
-    });
-
+    var w = window.open(_domainPath + "/Home/Matches/dummy?userid=" + encodeURIComponent(email),
+        "_blank", "location=0, status=0, width=1128, height=780, scrollbars=1");
 }
