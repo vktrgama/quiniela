@@ -43,7 +43,7 @@ namespace quiniela.Helpers
             {
                 UserId = user.Email,
                 UserState = user.State,
-                UserName = user.State,
+                UserName = user.Name,
                 WelcomeUser = string.Format( Localizer.Get("WelcomeUser"), string.Empty),
                 DomainPath = ConfigurationManager.AppSettings["DomainPath"],
                 SiteSubtitle = Localizer.Get("SiteSubtitle"),
@@ -111,10 +111,15 @@ namespace quiniela.Helpers
         /// <summary>
         /// Gets the matches model.
         /// </summary>
+        /// <param name="user">The user.</param>
         /// <returns></returns>
-        public static MatchesModel GetMatchesModel()
+        public static MatchesModel GetMatchesModel(Paticipant user)
         {
             return new MatchesModel {
+                UserId = user.Email,
+                UserName = user.Name,
+                UserState = user.State,
+                DomainPath = ConfigurationManager.AppSettings["DomainPath"],
                 PageTitle = Localizer.Get("MnuMatches"),
             };
         }

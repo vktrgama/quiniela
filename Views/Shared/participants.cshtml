@@ -29,13 +29,14 @@
             <div class="dynamicContent">
                 <!--content-->
                 <div class="row">
-                    <div class="span9">
+                    <div class="span6">
                         <h2>@Model.UserListTitle</h2>
                         <div class="wrap">
                             <div class="wrap" id="particpants">
                             </div>
                         </div>
                     </div>
+                    <div class="span3"></div>
                     <div class="span3">
                         <h2>@Model.Participants</h2>
                         <div class="wrap">
@@ -54,7 +55,7 @@
                                             <fieldset>
                                                 <label class="email">
                                                     <input type="email" value="@Model.FieldEmail">
-                                                    <span class="error w1" style="display: none;">@Model.FieldValEmail</span> 
+                                                    <span class="error w1" style="display: none;">@Model.FieldValEmail</span>
                                                     <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
                                                 </label>
                                                 <br class="clear">

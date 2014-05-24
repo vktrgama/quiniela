@@ -239,6 +239,7 @@
     <Content Include="Templates\_userListEdit.tmpl.htm" />
     <Content Include="Views\Shared\matches_es.cshtml" />
     <Content Include="Views\Shared\admin.cshtml" />
+    <Content Include="Views\Shared\matches.cshtml" />
     <None Include="Views\Shared\matches_en.cshtml" />
     <Content Include="Views\Shared\payment.cshtml" />
     <None Include="Views\Shared\registration.cshtml" />

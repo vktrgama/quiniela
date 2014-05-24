@@ -56,10 +56,17 @@ namespace quiniela.Controllers
         /// <summary>
         /// Matcheses this instance.
         /// </summary>
+        /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        public ActionResult Matches()
+        public ActionResult Matches(string userid)
         {
-            return View("matches_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel());
+            Paticipant user = new Paticipant();
+            if (!string.IsNullOrEmpty(userid))
+            {
+                userid = HttpUtility.UrlDecode(userid);
+                user = _quinielaService.GetUser(userid);
+            }
+            return View("matches_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel(user));
         }
 
         /// <summary>
