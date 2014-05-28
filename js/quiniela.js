@@ -273,3 +273,26 @@ showUserScores = function (email) {
     var w = window.open(_domainPath + "/Home/Matches/dummy?userid=" + encodeURIComponent(email),
         "_blank", "location=0, status=0, width=1128, height=780, scrollbars=1");
 }
+
+initSession = function () {
+    // user logged in
+    if (_userId != "") {
+        persistSession(true);
+        $(".loginForm").hide();
+        $("#logoutLink").show();
+        $("#welcomeUser").html(_welcome + " " + _userName);
+        $("#welcomeUser").show();
+        $("#logoutLink a div").bind("click", function () {
+            _userId = '';
+            _userState = '';
+            window.location.replace(_domainPath + "/");
+            persistSession(false);
+        });
+
+        if (_userState == "Admin") {
+            $(".sf-menu").find("li:contains('Admin')").find("a").show()
+        }
+    } else {
+        $("#logoutLink").hide();
+    }
+}

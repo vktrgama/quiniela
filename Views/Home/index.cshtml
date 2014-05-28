@@ -87,12 +87,7 @@
                             <li><a href="@Model.DomainPath/Home/Chat"><div class="base_text">@Model.MnuChat</div></a></li>
                             <li><a href="@Model.DomainPath/Home/Rules"><div class="base_text">@Model.MnuRules</div></a></li>
                             <li><a href="@Model.DomainPath/Home/Registration"><div class="base_text">@Model.MnuReg</div></a></li>
-                            @{
-                                if (Model.UserState == "Admin")
-                                {
-                                    <li><a href="@Model.DomainPath/Home/admin"><div class="base_text">Admin</div></a></li>
-                                };
-                            }
+                            <li><a href="@Model.DomainPath/Home/admin" style="display:none;"><div class="base_text">Admin</div></a></li>
                         </ul>
                         <div class="extra_block2"><a href="#" onclick="setLang('es-MX')" class="_linkLang _spanish">Espanol</a><a href="#" onclick="setLang('en-US')" class="_linkLang _english">English</a></div>
                     </div>
@@ -210,23 +205,7 @@
     <script type="text/javascript">
         $("[rel='tooltip']").tooltip();
         jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
-        // user logged in
-        if (_userId != "") {
-            persistSession(true);
-            $(".loginForm").hide();
-            $("#logoutLink").show();
-            $("#welcomeUser").html(_welcome + " " + _userName);
-            $("#welcomeUser").show();
-            $("#logoutLink a div").bind("click", function () {
-                _userId = '';
-                _userState = '';
-                window.location.replace(_domainPath + "/");
-                persistSession(false);
-            });
-        } else {
-            $("#logoutLink").hide();
-        }
-
+        initSession();
     </script>
 </body>
 </html>
