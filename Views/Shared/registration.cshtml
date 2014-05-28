@@ -29,6 +29,33 @@
             <div class="dynamicContent">
                 <!--content-->
                 <div class="row">
+                    <div class="span9">
+                        <h2>
+                            @Model.InvitationDesc
+                        </h2>
+                        <div id="InviteFriends">
+                            <h3>@Model.InviteFriend</h3><br />
+                            <div class="span3">
+                                <div class="wrap">
+                                    <form id="formInvite">
+                                        <input type="hidden" name="formType" value="InviteFriends" />
+                                        <div class="success alert alert-success hide"><span>@Model.InvitationSuccessMsg</span></div>
+                                        <div class="fail alert alert-error hide"><span>@Model.FormErrMsg</span></div>
+                                        <fieldset>
+                                            <label class="email">
+                                                <input type="email" value="@Model.FieldEmail">
+                                                <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
+                                            </label>
+                                            <br class="clear">
+                                            <div class="btns">
+                                                <a href="#" class="btn more_btn1" data-type="submit">@Model.BtnSendMsg</a>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="span3">
                         <h2>@Model.NewUserTitle</h2>
                         <div class="wrap">
@@ -66,64 +93,8 @@
                             </form>
                         </div>
                     </div>
-                    <div class="span6">
-                        <h2>
-                            @Model.InvitationDesc
-                        </h2>
-                        <div id="InviteFriends">
-                            <h3>@Model.InviteFriend</h3><br />
-                            <div class="span3" style="float: right;">
-                                <div class="wrap">
-                                    <form id="formInvite">
-                                        <input type="hidden" name="formType" value="InviteFriends" />
-                                        <div class="success alert alert-success hide"><span>@Model.InvitationSuccessMsg</span></div>
-                                        <div class="fail alert alert-error hide"><span>@Model.FormErrMsg</span></div>
-                                        <fieldset>
-                                            <label class="email">
-                                                <input type="email" value="@Model.FieldEmail">
-                                                <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
-                                            </label>
-                                            <br class="clear">
-                                            <div class="btns">
-                                                <a href="#" class="btn more_btn1" data-type="submit">@Model.BtnSendMsg</a>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span3">
-                        <h2>@Model.FeedbackTitle</h2>
-                        <div class="wrap">
-                            <form id="formFeedback">
-                                <input type="hidden" name="formType" value="Feedback" />
-                                <div class="success alert alert-success" style="display: none;"><span>@Model.FeedbackSuccessMsg<strong><br>@Model.FeedbackSuccessMsg1.</strong></span></div>
-                                <div class="fail alert alert-error" style="display: none;"><span>@Model.FeedbackFailMsg<strong><br>@Model.FeedbackSuccessMsg1</strong></span></div>
-                                <fieldset>
-                                    <label class="name">
-                                        <input type="text" value="@Model.FieldName">
-                                        <span class="error w1" style="display: none;">@Model.FieldValName</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
-                                    </label>
-                                    <label class="email">
-                                        <input type="email" value="@Model.FieldEmail">
-                                        <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
-                                    </label>
-                                    <label class="message">
-                                        <textarea>@Model.FieldMessage</textarea>
-                                        <span class="error" style="display: none;">@Model.FieldValMessage</span> <span class="empty" style="display: none;">@Model.FieldRequired</span>
-                                    </label>
-                                    <br class="clear">
-                                    <div class="btns">
-                                        <a href="#" class="btn more_btn1" data-type="reset">@Model.BtnClear</a>
-                                        <a href="#" class="btn more_btn1" data-type="submit">@Model.SendFeedbackMsg</a>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
+                    
+               </div>
         </section>
     </div>
     <script type="text/javascript" src="/js/bootstrap.js"></script>

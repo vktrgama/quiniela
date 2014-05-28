@@ -38,7 +38,21 @@ namespace quiniela.Models
         public string Rules21 { get; set; }
         public string Rules22 { get; set; }
 
+        public object FeedbackSuccessMsg { get; set; }
+        public string FeedbackSuccessMsg1 { get; set; }
+        public object FeedbackFailMsg { get; set; }
+        public string FeedbackFailMsg1 { get; set; }
+        public object FeedbackTitle { get; set; }
 
+        public object SendFeedbackMsg { get; set; }
+        public object FieldMessage { get; set; }
+        public object FieldValMessage { get; set; }
+        public string FieldName { get; set; }
+        public string FieldValName { get; set; }
+        public string FieldEmail { get; set; }
         public string PageTitle { get; set; }
+        public string FieldRequired { get; set; }
+        public string FieldValEmail { get; set; }
+        public string BtnClear { get; set; }
     }
 }

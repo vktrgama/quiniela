@@ -183,7 +183,20 @@ namespace quiniela.Helpers
                 Rules19 = string.Format(Localizer.Get("Rules19"), "_link2"),
                 Rules20 = Localizer.Get("Rules20"),
                 Rules21 = Localizer.Get("Rules21"),
-                Rules22 = Localizer.Get("Rules22")
+                Rules22 = Localizer.Get("Rules22"),
+                FeedbackTitle = Localizer.Get("FeedbackTitle"),
+                FeedbackSuccessMsg = Localizer.Get("FeedbackSuccessMsg"),
+                FeedbackSuccessMsg1 = Localizer.Get("RegSuccessMsg1"),
+                FeedbackFailMsg = Localizer.Get("FeedbackFailMsg"),
+                FeedbackFailMsg1 = Localizer.Get("PleaseVerify"),
+                FieldValMessage = Localizer.Get("FieldValMessage"),
+                SendFeedbackMsg = Localizer.Get("SendFeedbackMsg"),
+                FieldName = Localizer.Get("FieldName"),
+                FieldRequired = Localizer.Get("FieldRequired"),
+                FieldValEmail = Localizer.Get("FieldValEmail"),
+                FieldValName = Localizer.Get("FieldValName"),
+                FieldMessage = Localizer.Get("FieldMessage"),
+                BtnClear = Localizer.Get("BtnClear")
             };
         }
 
@@ -211,13 +224,7 @@ namespace quiniela.Helpers
                 InvitationSuccessMsg = Localizer.Get("InvitationSuccessMsg"),
                 FormErrMsg = Localizer.Get("FormErrMsg"),
                 BtnSendMsg = Localizer.Get("SendMessage"),
-                FeedbackTitle = Localizer.Get("FeedbackTitle"),
-                FeedbackSuccessMsg = Localizer.Get("FeedbackSuccessMsg"),
-                FeedbackSuccessMsg1 = Localizer.Get("RegSuccessMsg1"),
-                FeedbackFailMsg = Localizer.Get("FeedbackFailMsg"),
-                FeedbackFailMsg1 = Localizer.Get("PleaseVerify"),
                 FieldValMessage = Localizer.Get("FieldValMessage"),
-                SendFeedbackMsg = Localizer.Get("SendFeedbackMsg"),
                 FieldName = Localizer.Get("FieldName"),
                 FieldPin = Localizer.Get("FieldPin"),
                 FieldPinConfirmation = Localizer.Get("FieldPinConfirmation"),
