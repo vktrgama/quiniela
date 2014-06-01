@@ -1105,7 +1105,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Winner Prize.
+        ///   Looks up a localized string similar to Accumulated Prize.
         /// </summary>
         internal static string WinnerPrize {
             get {

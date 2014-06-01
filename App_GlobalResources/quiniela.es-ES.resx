@@ -394,11 +394,11 @@
     <comment>If more than one, prize will be equally divided between winners.</comment>
   </data>
   <data name="Rules17" xml:space="preserve">
-    <value>Una donación es requierida para participar en la quiniela</value>
+    <value>Una donación es requerida para participar en la quiniela</value>
     <comment>A donation is require to participate in the pool</comment>
   </data>
   <data name="Rules18" xml:space="preserve">
-    <value>Las donaciones se toman a través de PayPal por un monto fijo de {0}</value>
+    <value>Las donaciones se toman a través de tarjeta de credito o PayPal por un monto fijo de {0}</value>
     <comment>Donations are taken via PayPal for the fix amount of {0}</comment>
   </data>
   <data name="Rules19" xml:space="preserve">
@@ -430,7 +430,7 @@
     <comment>When you are ready, you can submit your scores to enter the pool, use the  'Submit ...' button at the end of the &lt;a class='{0}' href='{1}'&gt;{2}&lt;/a&gt; page.</comment>
   </data>
   <data name="Rules5" xml:space="preserve">
-    <value>Los pronósticos seran enviados en dos ocasiones:</value>
+    <value>Los pronósticos podran seran enviados en dos ocasiones:</value>
     <comment>Scores are submitted to the pool in two occasions:</comment>
   </data>
   <data name="Rules6" xml:space="preserve">
@@ -442,11 +442,11 @@
     <comment>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 26th)&lt;/i&gt;</comment>
   </data>
   <data name="Rules8" xml:space="preserve">
-    <value>Una vez enviados los pronósticos, usted NO podrá cambiarlos nunca más.</value>
+    <value>Una vez enviados los pronósticos, NO podrán ser cambiarlos más.</value>
     <comment>Once the scores are submitted you will NOT be able to change them anymore.</comment>
   </data>
   <data name="Rules9" xml:space="preserve">
-    <value>Se requiere una donación para poder enviar sus pronósticos, consulte &lt;a class='{0}' href='#'&gt;Donaciones&lt;/a&gt; mas adelante para obtener más detalles.</value>
+    <value>Se requiere una donación para poder enviar tus pronósticos, consulta &lt;a class='{0}' href='#'&gt;Donaciones&lt;/a&gt; mas adelante para obtener más detalles.</value>
     <comment>A donation is required to submit your scores, see &lt;a class='{0}' href='#'&gt;Donantions&lt;/a&gt; below for more details.</comment>
   </data>
   <data name="RulesTitle" xml:space="preserve">
@@ -558,7 +558,7 @@
     <comment>Winner</comment>
   </data>
   <data name="WinnerPrize" xml:space="preserve">
-    <value>Premio del ganador</value>
+    <value>Premio acumulado</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
     <value>Comentarios</value>

@@ -558,7 +558,7 @@
     <comment>Bienvenido {0}</comment>
   </data>
   <data name="WinnerPrize" xml:space="preserve">
-    <value>Winner Prize</value>
+    <value>Accumulated Prize</value>
     <comment>Premio del ganador</comment>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
