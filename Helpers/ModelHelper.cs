@@ -78,7 +78,12 @@ namespace quiniela.Helpers
                 MoveDown = Localizer.Get("MoveDown"),
                 PrivatePolicyTitle = Localizer.Get("PrivatePolicyTitle"),
                 CurrencyExchange = currencyExchange,
-                CurrenctExchangeTitle = Localizer.Get("CurrenctExchange")
+                CurrenctExchangeTitle = Localizer.Get("CurrenctExchange"),
+                InvitationSuccessMsg = Localizer.Get("InvitationSuccessMsg"),
+                FormErrMsg = Localizer.Get("FormErrMsg"),
+                FieldEmail = Localizer.Get("FieldEmail"),
+                BtnInvite = Localizer.Get("BtnInvite"),
+                WantToJoin = Localizer.Get("WantToJoin")
             };
         }
 

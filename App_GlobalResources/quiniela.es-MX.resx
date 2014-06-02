@@ -581,4 +581,10 @@
   <data name="CurrenctExchange" xml:space="preserve">
     <value>Tipo de cambio del dia</value>
   </data>
+  <data name="BtnInvite" xml:space="preserve">
+    <value>Enviame una Invitación</value>
+  </data>
+  <data name="WantToJoin" xml:space="preserve">
+    <value>Quiero participar</value>
+  </data>
 </root>

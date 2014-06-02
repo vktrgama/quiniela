@@ -108,6 +108,21 @@
                                     <h2 class="textStyle8">@Model.ContentParagraph2</h2><br />
                                     <a class="btn btn-primary btn-large" href="@Model.DomainPath/Home/Rules">@Model.LearnMore</a>
                                 </div>
+                                <div class="wrap">
+                                    <h4>@Model.WantToJoin:</h4>
+                                    <form id="formInvite">
+                                        <input type="hidden" name="formType" value="InviteFriends" />
+                                        <div class="success alert alert-success hide"><span>@Model.InvitationSuccessMsg</span></div>
+                                        <div class="fail alert alert-error hide"><span>@Model.FormErrMsg</span></div>
+                                        <fieldset>
+                                            <label class="email">
+                                                <input type="email" value="@Model.FieldEmail">
+                                                <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
+                                            </label>
+                                            <a href="#" class="btn more_btn1" data-type="submit">@Model.BtnInvite</a>
+                                        </fieldset>
+                                    </form>
+                                </div>
                             </div>
                             <div class="span3">
                                 <div class="loginForm">
@@ -123,7 +138,7 @@
                                                     <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
                                                 </label>
                                                 <label class="pin">
-                                                    <input type="text" class="pin" maxlength="4" value="@Model.FieldPin" onkeyup="maxLengthCheck(this);" onkeydown="maxLengthCheck(this);" maxlength="4">
+                                                    <input type="text" class="pin" maxlength="4" value="@Model.FieldPin" onkeyup="maxLengthCheck(this);" onkeydown="maxLengthCheck(this);">
                                                     <span class="error" style="display: none;">@Model.FieldValPin</span> <span class="empty" style="display: none;">@Model.FieldRequired</span>
                                                 </label>
                                                 <br class="clear">
@@ -134,7 +149,7 @@
                                         </form>
                                         <a class="btn btn-primary" id="regHome" href="@Model.DomainPath/Home/Registration">@Model.MnuReg</a>
                                     </div>
-                                </div>                             
+                                </div>
                                 <h2>@Model.TopWinTitle</h2>
                                 <div class="wrap">
                                     <h3 class="margin4">@Model.TopWinner</h3>
@@ -203,9 +218,13 @@
     </div>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript">
-        $("[rel='tooltip']").tooltip();
-        jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
         initSession();
+        $("[rel='tooltip']").tooltip();
+        setTimeout(function () {
+            jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
+            jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        }, 2000);
+        
     </script>
 </body>
 </html>

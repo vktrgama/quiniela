@@ -78,7 +78,7 @@
                                     </label>
                                     <label class="pin1">
                                         <input type="text" class="pin" onkeyup="maxLengthCheck(this);" onkeydown="maxLengthCheck(this);" maxlength="4" value="@Model.FieldPin">
-                                        <span class="error" style="display: none;">@Model.FieldValPin</span> <span class="empty" style="display: none;">@Model.FieldRequired<span>
+                                        <span class="error" style="display: none;">@Model.FieldValPin</span> <span class="empty" style="display: none;">@Model.FieldRequired</span>
                                     </label>
                                     <label class="pin2">
                                         <input type="text" class="pin" onkeyup="maxLengthCheck(this);" onkeydown="maxLengthCheck(this);" maxlength="4" value="@Model.FieldPinConfirmation">
@@ -93,8 +93,9 @@
                             </form>
                         </div>
                     </div>
-                    
-               </div>
+
+                </div>
+            </div>
         </section>
     </div>
     <script type="text/javascript" src="/js/bootstrap.js"></script>

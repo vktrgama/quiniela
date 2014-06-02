@@ -584,4 +584,10 @@
   <data name="CurrenctExchange" xml:space="preserve">
     <value />
   </data>
+  <data name="BtnInvite" xml:space="preserve">
+    <value>Send me an Invitation</value>
+  </data>
+  <data name="WantToJoin" xml:space="preserve">
+    <value>I want to join</value>
+  </data>
 </root>

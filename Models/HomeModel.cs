@@ -48,5 +48,11 @@ namespace quiniela.Models
         public string UserName { get; set; }
         public double CurrencyExchange { get; set; }
         public object CurrenctExchangeTitle { get; set; }
+
+        public object InvitationSuccessMsg { get; set; }
+        public object FormErrMsg { get; set; }
+        public string FieldEmail { get; set; }
+        public string BtnInvite { get; set; }
+        public string WantToJoin { get; set; }
     }
 }

@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send me an Invitation.
+        /// </summary>
+        internal static string BtnInvite {
+            get {
+                return ResourceManager.GetString("BtnInvite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         internal static string BtnReg {
@@ -1092,6 +1101,15 @@ namespace Resources {
         internal static string UserLoginFail {
             get {
                 return ResourceManager.GetString("UserLoginFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I want to join.
+        /// </summary>
+        internal static string WantToJoin {
+            get {
+                return ResourceManager.GetString("WantToJoin", resourceCulture);
             }
         }
         
