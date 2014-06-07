@@ -1069,7 +1069,8 @@ footer {
 
 .fixed-navigation {
     position: fixed;
-    bottom: 0;
+    top: 0;
+    bottom: 100%;
     left: 0;
     display: block;
     filter: alpha(opacity=80);
@@ -1077,6 +1078,18 @@ footer {
     margin-left: 5px;
     margin-bottom: 5px;
 }
+
+#fixed-savescores {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    filter: alpha(opacity=80);
+    width: 135px;
+    z-index: 999;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    }
 
 #formMatchScores {
     width: 86%;

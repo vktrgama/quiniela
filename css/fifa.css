@@ -1,15 +1,4 @@
-﻿#fixed-savescores {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: block;
-    filter: alpha(opacity=80);
-    width: 135px;
-    z-index: 10;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    }
-
+﻿
 .t {
   position: absolute;
   z-index: 1;
