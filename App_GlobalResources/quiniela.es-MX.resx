@@ -587,4 +587,7 @@
   <data name="WantToJoin" xml:space="preserve">
     <value>Quiero participar</value>
   </data>
+  <data name="WeTakeCC" xml:space="preserve">
+    <value>Aceptamos las principales tarjetas de credito via PayPal</value>
+  </data>
 </root>

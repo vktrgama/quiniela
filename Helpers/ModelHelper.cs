@@ -83,7 +83,8 @@ namespace quiniela.Helpers
                 FormErrMsg = Localizer.Get("FormErrMsg"),
                 FieldEmail = Localizer.Get("FieldEmail"),
                 BtnInvite = Localizer.Get("BtnInvite"),
-                WantToJoin = Localizer.Get("WantToJoin")
+                WantToJoin = Localizer.Get("WantToJoin"),
+                WeTakeCC = Localizer.Get("WeTakeCC")
             };
         }
 

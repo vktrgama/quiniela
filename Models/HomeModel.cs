@@ -54,5 +54,7 @@ namespace quiniela.Models
         public string FieldEmail { get; set; }
         public string BtnInvite { get; set; }
         public string WantToJoin { get; set; }
+
+        public object WeTakeCC { get; set; }
     }
 }

@@ -590,4 +590,7 @@
   <data name="WantToJoin" xml:space="preserve">
     <value>I want to join</value>
   </data>
+  <data name="WeTakeCC" xml:space="preserve">
+    <value>We take all major credit cards via PayPal</value>
+  </data>
 </root>

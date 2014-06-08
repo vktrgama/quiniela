@@ -1123,6 +1123,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We take all major credit cards via PayPal.
+        /// </summary>
+        internal static string WeTakeCC {
+            get {
+                return ResourceManager.GetString("WeTakeCC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accumulated Prize.
         /// </summary>
         internal static string WinnerPrize {
