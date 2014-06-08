@@ -217,7 +217,7 @@ prepareChat = function()
                 } else {
                     $('#popRight').tmpl(data).appendTo($('#myChat'));
                 }
-                $('#myChat')[0].scrollTop = $('#myChat')[0].scrollHeight;
+                // $('#myChat')[0].scrollTop = $('#myChat')[0].scrollHeight;
             }
         }
     });
@@ -225,8 +225,8 @@ prepareChat = function()
     window.onresize = function () {
         if ($(window).height() > 600)
         {
-            var myh = $(window).height() - 500;
-            $("#myChat").height(myh);
+            // var myh = $(window).height() - 500;
+            // $("#myChat").height(myh);
         }
     };
 }
