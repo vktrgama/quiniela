@@ -205,6 +205,8 @@ prepareChat = function()
         }
     });
 
+    var currMsgName = "";
+    var alignTo = "#popLeft";
     // Add a callback that is triggered for each chat message.
     messagesRef.limit(20).on('child_added', function (snapshot) {
         var message = snapshot.val();
@@ -212,12 +214,16 @@ prepareChat = function()
             $("#chatSubtitle").show();
             var data = { name: message.name, msg: message.text, datetime: message.date }
             if (findSamePost(data) == 0) {
-                if (data.name != _userName) {
-                    $('#popLeft').tmpl(data).appendTo($('#myChat'));
-                } else {
-                    $('#popRight').tmpl(data).appendTo($('#myChat'));
+                if (currMsgName == "")
+                    currMsgName = data.name;
+
+                if (data.name != currMsgName) {
+                    currMsgName = data.name;
+                    alignTo = (alignTo == "#popLeft") ? "#popRight" : "#popLeft";
                 }
-                // $('#myChat')[0].scrollTop = $('#myChat')[0].scrollHeight;
+
+                $(alignTo).tmpl(data).appendTo($('#myChat'));
+                $('#myChat')[0].scrollTop = $('#myChat')[0].scrollHeight;
             }
         }
     });
