@@ -235,7 +235,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select State from dbo.Users where Email = '{0}' and InviteCode = '{1}'", email,
+                var sql = string.Format("select State from dbo.Users where InviteCode = '{1}'", email,
                     invitecode);
                 var command = new SqlCommand(sql, conn);
                 var UserState = (string)command.ExecuteScalar();
@@ -245,8 +245,8 @@ namespace quiniela.Services
                     var newCommand = new SqlCommand(sql, conn);
                     newCommand.CommandText =
                         string.Format(
-                            "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}' where Email = '{4}'",
-                            quinielaState.Active.ToString(), name, pin, ipaddress, email);
+                            "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}', Email = '{4}' where InviteCode = '{5}'",
+                            quinielaState.Active.ToString(), name, pin, ipaddress, email, invitecode);
                     newCommand.ExecuteNonQuery();
                 }
                 else
@@ -369,8 +369,8 @@ namespace quiniela.Services
                     {
                         totPrize = totPrize * GetCurrenctRate();
                     }
-                    winnerPrize = totPrize - (totPrize * .03) + .30; // paypal
-                    winnerPrize = winnerPrize - (winnerPrize * .15); // quiniela
+                    // winnerPrize = totPrize - (totPrize * .03) + .30; // paypal
+                    winnerPrize = totPrize - (totPrize * .15); // quiniela
                 }
 
                 CloseDatabase();
