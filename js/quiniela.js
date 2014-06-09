@@ -53,7 +53,7 @@ loadParticipantsEdit = function () {
             var usersInvolved = 0;
             $.each(data.users, function () {
                 if (this.State != "New") usersInvolved++;
-                $players.append($('<option></option>').attr("value", this.Email).text(this.Name + '-' + this.Email + '-' + this.State));
+                $players.append($('<option></option>').attr("value", this.Email).text(this.Name + '-' + this.Email + '-' + this.State + '-' + this.InviteCode));
             });
 
             $("#userCount").html('Total users:' + data.users.length + ' Involved:' + usersInvolved);

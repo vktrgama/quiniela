@@ -287,6 +287,9 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
+                SqlCommand newCommand = new SqlCommand(string.Format("delete from  dbo.Users where Email = '{0}'", email), conn);
+                newCommand.ExecuteNonQuery();
+
                 var invitecode = Guid.NewGuid().ToString().Split('-')[0].ToString();
                 var sql = string.Format("insert into dbo.Users (Email, InviteCode, state, TotalPoints) values ('{0}', '{1}', '{2}', 0)", email, invitecode, QuinielaState.New.ToString());
 
