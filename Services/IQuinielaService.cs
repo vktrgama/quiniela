@@ -15,6 +15,7 @@ namespace quiniela.Services
         Paticipant GetUser(string userId);
         Winner GetTopWinner();
         ParticipantList GetAllUsers();
+        List<string> GetStates();
         string UpdateField(string id, string fieldName, string fieldValue);
         string DeleteUser(string id);
         double GetCurrenctRate();

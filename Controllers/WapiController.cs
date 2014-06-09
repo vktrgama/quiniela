@@ -1,6 +1,7 @@
 ﻿using quiniela.Entities;
 using quiniela.Services;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Web.Mvc;
@@ -46,6 +47,15 @@ namespace quiniela.Controllers
         {
             var result = _quinielaService.GetAllUsers();
             return Json(new { err = result.Error, users = result.UserList }, "", JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Gets the states.
+        /// </summary>
+        /// <returns>list of user states</returns>
+        public JsonResult GetStates()
+        {
+            return Json(new { states = _quinielaService.GetStates() }, "", JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

@@ -20,12 +20,13 @@ namespace quiniela.Services
         private double _donation = 20.00;
         public double _dollarExchangeRateToPesos = .13;
 
-        private enum quinielaState
+        public enum QuinielaState
         {
             New = 1,
             Active = 2,
             Submitted = 3,
-            Playing = 4
+            Playing = 4,
+            Admin = 5
         }
 
         public ParticipantList GetParticipants()
@@ -36,7 +37,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select * from dbo.Users where state = '{0}' order by totalpoints desc, name", quinielaState.Playing.ToString());
+                var sql = string.Format("select * from dbo.Users where state = '{0}' order by totalpoints desc, name", QuinielaState.Playing.ToString());
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)
@@ -114,7 +115,7 @@ namespace quiniela.Services
 
                 if (submitted)
                 {
-                    command.CommandText = string.Format("update dbo.Users set state = '{0}' where Email = '{1}'", quinielaState.Submitted.ToString(), userId);
+                    command.CommandText = string.Format("update dbo.Users set state = '{0}' where Email = '{1}'", QuinielaState.Submitted.ToString(), userId);
                     command.ExecuteNonQuery();
                 }
 
@@ -246,7 +247,7 @@ namespace quiniela.Services
                     newCommand.CommandText =
                         string.Format(
                             "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}', Email = '{4}' where InviteCode = '{5}'",
-                            quinielaState.Active.ToString(), name, pin, ipaddress, email, invitecode);
+                            QuinielaState.Active.ToString(), name, pin, ipaddress, email, invitecode);
                     newCommand.ExecuteNonQuery();
                 }
                 else
@@ -287,7 +288,7 @@ namespace quiniela.Services
                 OpenDatabase();
 
                 var invitecode = Guid.NewGuid().ToString().Split('-')[0].ToString();
-                var sql = string.Format("insert into dbo.Users (Email, InviteCode, state, TotalPoints) values ('{0}', '{1}', '{2}', 0)", email, invitecode, quinielaState.New.ToString());
+                var sql = string.Format("insert into dbo.Users (Email, InviteCode, state, TotalPoints) values ('{0}', '{1}', '{2}', 0)", email, invitecode, QuinielaState.New.ToString());
 
                 SqlCommand command = new SqlCommand(sql, conn);
                 command.CommandText = sql;
@@ -350,7 +351,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select name from dbo.Users where state = '{0}' and TotalPoints > 0 order by TotalPoints desc", quinielaState.Playing.ToString());
+                var sql = string.Format("select name from dbo.Users where state = '{0}' and TotalPoints > 0 order by TotalPoints desc", QuinielaState.Playing.ToString());
                 SqlCommand command = new SqlCommand(sql, conn);
                 var winner = (string)command.ExecuteScalar();
 
@@ -359,7 +360,7 @@ namespace quiniela.Services
                     winnerName = winner;
                 }
 
-                command.CommandText = string.Format("select count(*) from dbo.Users where state='{0}'", quinielaState.Playing.ToString());
+                command.CommandText = string.Format("select count(*) from dbo.Users where state='{0}'", QuinielaState.Playing.ToString());
 
                 var numPartipants = (int)command.ExecuteScalar();
                 if (numPartipants > 0)
@@ -524,6 +525,15 @@ namespace quiniela.Services
             }
 
             return _dollarExchangeRateToPesos * 100;
+        }
+
+        /// <summary>
+        /// Gets the states.
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetStates()
+        {
+            return Enum.GetValues(typeof(QuinielaState)).Cast<QuinielaState>().Select(v => v.ToString()).ToList();
         }
 
         #region Database Connection

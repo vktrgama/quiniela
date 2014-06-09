@@ -15,19 +15,22 @@
                 <!--content-->
                 <div class="row">
                     <div class="span9">
-                        <h2>Admin</h2><div id="userCount"></div>
+                        <h2>Admin</h2><div id="userCount"></div><br />
                         <div id="alertSaved" class="alert alert-success hide">
                             <h4>Saved</h4>
                         </div>
                         <div class="wrap" id="editUsers" style="font-size:x-small;">
                         </div>
-                        <button class="btn btn-primary btn-large" onclick="loadParticipantsEdit();">Update List</button>
                         <div id="alertBox" class="alert alert-success hide">
                             <h4>User deleted</h4>
                         </div>
                         <div id="alertBox" class="alert alert-error hide">
                             <h4 class="alert-heading">Oh snap!</h4>You got an error!
                         </div>
+                        <select id="players" style="width:320px;"></select>
+                        <select id="states"></select>
+                        <button class="btn btn-primary" onclick="updateUser();">Update</button>
+                        <button class="btn btn-primary" onclick="deleteUser();">Delete</button>
                     </div>
                     <div class="span3" style="float: right;">
                         <h2>Invite</h2>
@@ -74,30 +77,10 @@
     </div>
     <script>
         loadParticipantsEdit();
+        loadStates();
         jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
         jQuery('#formInvites').forms({ ownerEmail: 'laquiniela@vgama.com' });
         $(".alert:not(.alert-block)").hide();
-
-        setTimeout(function () {
-            var grid = {}; //declare grid
-
-            //instance grid with server side controller and action name
-            grid = new Grid(_domainPath + "/wapi", "UpdateField"); //default actionName=UpdateField
-
-            //push to fieldsValidators array all the validation rules this way:
-            // {fieldName: name field to check
-            //  , checkValidateFunction: a boolean validation function
-            //  , msg: msg to alert in case checkValidateFunction == false
-            grid.fieldsValidators.push({
-                fieldName: "name"
-               , checkValidateFunc: function (value) { return (value.length > 0); }
-               , msg: "required field"
-            });
-
-            //bind fields definied with grid class.
-            grid.bindFields();
-        }, 6000);
-
     </script>
 </body>
 </html>

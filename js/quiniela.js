@@ -24,6 +24,22 @@ loadParticipants = function () {
     });
 }
 
+loadStates = function () {
+    $.ajax({
+        url: _domainPath + "/wapi/GetStates",
+        success: function (data) {
+            var $states = $("#states");
+            $states.empty();
+            $.each(data.states, function () {
+                $states.append($('<option></option>').attr("value", this).text(this));
+            });
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
 loadParticipantsEdit = function () {
     $.ajax({
         url: _domainPath + "/wapi/GetAllUsers",
@@ -32,12 +48,15 @@ loadParticipantsEdit = function () {
                 $('body').append("<div style='display:none;' id='sqlError'>" + data.err + "</div>");
             }
 
-            $.get(_domainPath + '/Templates/_userListEdit.tmpl.htm', function (templates) {
-                $('body').append(templates);
-                $('#editUsers').html('');
-                $('#userCount').html('(' + data.users.length + ' users)');
-                $('#userEditListTemplate').tmpl(data).appendTo('#editUsers');
+            var $players = $("#players");
+            $players.empty();
+            var usersInvolved = 0;
+            $.each(data.users, function () {
+                if (this.State != "New") usersInvolved++;
+                $players.append($('<option></option>').attr("value", this.Email).text(this.Name + '-' + this.Email + '-' + this.State));
             });
+
+            $("#userCount").html('Total users:' + data.users.length + ' Involved:' + usersInvolved);
         },
         error: function (err) {
             console.log(err);
@@ -154,8 +173,33 @@ populateUserScores = function (userId) {
     });
 }
 
-deleteUser = function (userId) {
-    if (confirm("delete?")) {
+updateUser = function()
+{
+    if (confirm("update?")) {
+        var userId = $("#players option:selected").val();
+        var state = $("#states option:selected").val();
+        if (userId != "" && state != "") {
+            $.ajax({
+                url: _domainPath + "/wapi/UpdateField",
+                data: { id: userId, fieldName: "State", fieldValue: state },
+                type: 'POST',
+                success: function (data) {
+                    loadParticipantsEdit();
+
+                    $("#alertBox.alert-success").html("User updated");
+                    $("#alertBox.alert-success").show();
+                    setTimeout(function () {
+                        $(".alert-success").hide();
+                    }, 3000);
+                }
+            });
+        }
+    }
+}
+
+deleteUser = function () {
+    var userId = $("#players option:selected").val();
+    if (confirm(userId + " delete?")) {
         $.ajax({
             url: _domainPath + "/wapi/DeleteUser",
             data: { userId: userId },
@@ -211,6 +255,7 @@ prepareChat = function()
     messagesRef.limit(20).on('child_added', function (snapshot) {
         var message = snapshot.val();
         if (message) {
+            $("#loadingMsg").hide();
             $("#chatSubtitle").show();
             var data = { name: message.name, msg: message.text, datetime: message.date }
             if (findSamePost(data) == 0) {
