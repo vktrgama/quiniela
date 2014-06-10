@@ -28,9 +28,12 @@
                             <h4 class="alert-heading">Oh snap!</h4>You got an error!
                         </div>
                         <select id="players" style="width:320px;"></select>
-                        <select id="states"></select>
+                        <select id="states"></select><br />
                         <button class="btn btn-primary" onclick="updateUser();">Update</button>
-                        <button class="btn btn-primary" onclick="deleteUser();">Delete</button>
+                        <button class="btn btn-primary" onclick="deleteUser();">Delete</button><br /><br />
+                        <select id="matches" style="width:300px;"></select>
+                        Home <input id="matchHome" type="number" style="width: 40px;" /> Away<input id="matchAway" type="number" style="width: 40px;" /><br />
+                        <button class="btn btn-primary" onclick="calculatePoints();">Calculate Points</button>
                     </div>
                     <div class="span3" style="float: right;">
                         <h2>Invite</h2>
@@ -78,6 +81,10 @@
     <script>
         loadParticipantsEdit();
         loadStates();
+
+        var matches = '@Model.MatchesList';
+        loadMatches(matches);
+
         jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
         jQuery('#formInvites').forms({ ownerEmail: 'laquiniela@vgama.com' });
         $(".alert:not(.alert-block)").hide();

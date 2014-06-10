@@ -19,5 +19,7 @@ namespace quiniela.Services
         string UpdateField(string id, string fieldName, string fieldValue);
         string DeleteUser(string id);
         double GetCurrenctRate();
+        QException CalcPoints(string matchId, string th, string ta);
+        List<Match> GetMatchList();
     }
 }

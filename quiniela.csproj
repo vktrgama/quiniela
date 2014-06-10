@@ -140,6 +140,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DependencyInjection\NinjectDependencyResolver.cs" />
     <Compile Include="Entities\ExchangeRate.cs" />
+    <Compile Include="Entities\Match.cs" />
     <Compile Include="Entities\MatchScore.cs" />
     <Compile Include="Entities\ParticipantList.cs" />
     <Compile Include="Entities\QException.cs" />

@@ -3,6 +3,7 @@ using quiniela.Helpers;
 using quiniela.Services;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace quiniela.Controllers
 {
@@ -111,7 +112,16 @@ namespace quiniela.Controllers
         /// <returns></returns>
         public ActionResult Admin()
         {
-            return View("admin", ModelHelper.GetAdminModel());
+            var model = ModelHelper.GetAdminModel();
+
+            var matchList = _quinielaService.GetMatchList();
+            if (matchList.Count>0){
+                var jsonSerialiser = new JavaScriptSerializer();
+                var json = jsonSerialiser.Serialize(matchList);
+                model.MatchesList = json;
+            }
+
+            return View("admin", model);
         }
     }
 }

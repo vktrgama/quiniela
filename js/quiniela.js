@@ -325,6 +325,45 @@ showUserScores = function (email) {
         "_blank", "location=0, status=0, width=1128, height=780, scrollbars=1");
 }
 
+calculatePoints = function () {
+    var matchId = $("#matches option:selected").val();
+    var thscore = $("#matchHome").val();
+    var tascore = $("#matchAway").val();
+
+    $.ajax({
+        url: _domainPath + "/wapi/CalcPoints",
+        type: 'POST',
+        data: { matchId: matchId, th: thscore, ta: tascore },
+        success: function (data) {
+            if (data.err == 0) {
+                $("#alertBox.alert-success").html("Puntos Calculados");
+                $("#alertBox.alert-success").show();
+                setTimeout(function () {
+                    $(".alert-success").hide();
+                    location.reload();
+                }, 3000);
+            } else {
+                $("#alertBox.alert-error").show();
+                setTimeout(function () {
+                    $(".alert-error").hide();
+                }, 4000);
+            }
+        }
+    });
+}
+
+loadMatches = function (list) {
+    var decodeList = $("<div/>").html(list).text();
+    var data = eval(decodeList);
+    if (data.length > 0) {
+        var $matches = $("#matches");
+        $matches.empty();
+        $.each(data, function () {
+            $matches.append($('<option></option>').attr("value", this.MatchId).text(this.MatchName));
+        });
+    }
+}
+
 initSession = function () {
     // user logged in
     if (_userId != "") {

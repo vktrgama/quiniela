@@ -253,5 +253,19 @@ namespace quiniela.Controllers
 
             return (result == "success") ? Json(new { err = 0 }) : Json(new { err = 1 });
         }
+
+        /// <summary>
+        /// Calculates the points.
+        /// </summary>
+        /// <param name="matchId">The match identifier.</param>
+        /// <param name="th">The th.</param>
+        /// <param name="ta">The ta.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult CalcPoints(string matchId, string th, string ta)
+        {
+            var result = _quinielaService.CalcPoints(matchId, th, ta);
+            return (result.Message != "") ? Json(new { err = 1 }) : Json(new { err = 0});
+        }
     }
 }

@@ -539,6 +539,81 @@ namespace quiniela.Services
             return Enum.GetValues(typeof(QuinielaState)).Cast<QuinielaState>().Select(v => v.ToString()).ToList();
         }
 
+        /// <summary>
+        /// Calculates the points.
+        /// </summary>
+        /// <param name="matchId">The match identifier.</param>
+        /// <param name="th">The th.</param>
+        /// <param name="ta">The ta.</param>
+        /// <returns>
+        /// exception
+        /// </returns>
+        public QException CalcPoints(string matchId, string th, string ta)
+        {
+            try
+            {
+                OpenDatabase();
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                if (!string.IsNullOrEmpty(matchId) && !string.IsNullOrEmpty(th) && !string.IsNullOrEmpty(ta))
+                {
+                    command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed=1 where MatchId = '{2}'", th, ta, matchId);
+                    command.ExecuteNonQuery();
+                }
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = string.Format("sp_calculateMatchPoints");
+                command.ExecuteNonQuery();
+                CloseDatabase();
+            }
+            catch (Exception ex)
+            {
+                return new QException
+                {
+                    Error = 1,
+                    Message = ex.Message
+                };
+            }
+
+            return new QException
+            {
+                Error = 0,
+                Message = ""
+            };
+
+        }
+
+        /// <summary>
+        /// Gets the match list.
+        /// </summary>
+        /// <returns></returns>
+        public List<Match> GetMatchList()
+        {
+            OpenDatabase();
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            command.CommandText = "select MatchId, TeamHome, TeamAway from dbo.FinalScores";
+            var reader = command.ExecuteReader();
+
+            var matchList = new List<Match>();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    matchList.Add(new Match { 
+                        MatchId = reader["MatchId"].ToString(),
+                        MatchName = string.Format("{0}-{1}-{2}", 
+                        reader["MatchId"].ToString(),
+                        reader["TeamHome"].ToString(),
+                        reader["TeamAway"].ToString()) 
+                    });
+                }
+            }
+
+            CloseDatabase();
+
+            return matchList;
+        }
+
         #region Database Connection
 
         /// <summary>
