@@ -202,6 +202,7 @@
     <Content Include="img\favicon.ico" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\hoveresult.jpg" />
     <Content Include="img\image_blank_black.jpg" />
     <Content Include="img\lang_en.gif" />
     <Content Include="img\lang_es.gif" />
