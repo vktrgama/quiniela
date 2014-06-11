@@ -614,6 +614,46 @@ namespace quiniela.Services
             return matchList;
         }
 
+        /// <summary>
+        /// Loads the final results.
+        /// </summary>
+        /// <returns>
+        /// List of final scores
+        /// </returns>
+        public List<MatchScore> LoadFinalResults()
+        {
+            var scores = new List<MatchScore>();
+            try
+            {
+                OpenDatabase();
+
+                var sql = string.Format("select * from dbo.FinalScores where MatchPlayed = 1");
+                SqlCommand command = new SqlCommand(sql, conn);
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        scores.Add(new MatchScore
+                        {
+                            name = string.Format("{0}_{1}_home", reader["MatchId"].ToString(), reader["TeamHome"].ToString().Trim()),
+                            value = reader["ScoreHome"].ToString()
+                        });
+                        scores.Add(new MatchScore
+                        {
+                            name = string.Format("{0}_{1}_away", reader["MatchId"].ToString(), reader["TeamAway"].ToString().Trim()),
+                            value = reader["ScoreAway"].ToString()
+                        });
+                    }
+                }
+
+                CloseDatabase();
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
+
+            return scores;
+        }
+
         #region Database Connection
 
         /// <summary>

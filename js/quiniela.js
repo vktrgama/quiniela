@@ -81,17 +81,20 @@ prepareScoreForm = function (userId, userState) {
     $('#back-to-bottom').stop(true).css({ "display": "block" }).animate({ "opacity": 1 }, 400);
     var user = (userId != "") ? userId : _userId
     var state = (userState != "") ? userState : _userState
+
+    addMatchInputBoxed();
+    populateUserScores(user);
+
     switch (state) {
         case "Active":
-            addMatchInputBoxed();
-            populateUserScores(user);
             break;
         case "Playing":
+            setTimeout(function () {
+                populateResults();
+            }, 1000);
         case "Submitted":
             $(".alert").hide();
             $(".btn").hide();
-            addMatchInputBoxed();
-            populateUserScores(user);
             $(".score input").attr('disabled', 'disabled');
             break;
 
@@ -168,6 +171,45 @@ populateUserScores = function (userId) {
                         $(".alert-error").hide();
                     }, 4000);
                 }
+            }
+        }
+    });
+}
+
+populateResults = function () {
+    $.ajax({
+        url: _domainPath + "/wapi/LoadFinalResults",
+        success: function (data) {
+            if (data) {
+                // populate scores
+                var s = data.scores;
+                $.each(s, function (i, score) {
+                    $("input[name=" + score.name + "]").attr("title", score.value);
+                    // Match exact scores
+                    if ($("input[name=" + score.name + "]").val() == score.value) {
+                        $("input[name=" + score.name + "]").css("background-color", "#06FA2D");
+                    } else {
+                        $("input[name=" + score.name + "]").css("background-color", "#B43659").css("color", "#fff");
+                    }
+
+                    // Determine winner
+                    var inputs = $("div[id=" + score.name.split('_')[0] + "]").find("input");
+                    if (inputs[0].title != "" && inputs[1].title != "" && inputs[0].value != "" && inputs[1].value != "") {
+                        if (inputs[0].title - inputs[1].title == 0 && inputs[0].value - inputs[1].value == 0) {
+                            // draw
+                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
+                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
+                        }
+                        if (inputs[0].title - inputs[1].title > 0 && inputs[0].value - inputs[1].value > 0) {
+                            // home winner
+                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
+                        } 
+                        if (inputs[0].title - inputs[1].title < 0 && inputs[0].value - inputs[1].value < 0) {
+                            // away winner
+                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
+                        }
+                    }
+                });
             }
         }
     });

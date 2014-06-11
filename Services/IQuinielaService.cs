@@ -21,5 +21,6 @@ namespace quiniela.Services
         double GetCurrenctRate();
         QException CalcPoints(string matchId, string th, string ta);
         List<Match> GetMatchList();
-    }
+        List<MatchScore> LoadFinalResults();
+     }
 }

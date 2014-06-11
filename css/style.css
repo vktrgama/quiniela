@@ -1178,10 +1178,11 @@ footer {
         margin-left: auto;
     }
 
-#myChat .popover-title {
+#myChat .popover-title, #formMatchScores .popover-title {
     padding: 0 10px;
     font-size: x-small;
     background-color: #CCDBD0;
+     color: #000;
 }
 
 #myChat .popover-title span {
@@ -1195,6 +1196,12 @@ footer {
     #myChat .popover-title, #myChat .popover-content p {
         color: #000;
     }
+
+#formMatchScores .popover-content
+{
+   text-align: center;
+}
+
 #chatSubtitle
 {
     display:none;

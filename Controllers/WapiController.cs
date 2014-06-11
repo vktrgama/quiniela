@@ -267,5 +267,16 @@ namespace quiniela.Controllers
             var result = _quinielaService.CalcPoints(matchId, th, ta);
             return (result.Message != "") ? Json(new { err = 1 }) : Json(new { err = 0});
         }
+
+        /// <summary>
+        /// Loads the final results.
+        /// </summary>
+        /// <param name="userId">The user identifier.</param>
+        /// <returns></returns>
+        public JsonResult LoadFinalResults()
+        {
+            var scores = _quinielaService.LoadFinalResults();
+            return Json(new { scores = scores }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
