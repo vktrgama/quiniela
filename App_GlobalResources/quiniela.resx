@@ -593,4 +593,7 @@
   <data name="WeTakeCC" xml:space="preserve">
     <value>We take all major credit cards via PayPal</value>
   </data>
+  <data name="CheckScores" xml:space="preserve">
+    <value>Check your score updates</value>
+  </data>
 </root>

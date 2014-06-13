@@ -482,11 +482,11 @@
     <comment>A donation of {0} needs to be made, for you to participation in this Quiniela, if you are not sure, please read more details from our </comment>
   </data>
   <data name="SSModalBullet2" xml:space="preserve">
-    <value>Por favor asegurese que la dirección de correo electrónico de su donación es la misma que uso en su registro, para poder verificar su donació.</value>
+    <value>Por favor asegurese que la dirección de correo electrónico de su donación es la misma que uso en su registro, para poder verificar su donación.</value>
     <comment>Please make sure email address for payment is the same as your registration, so we can verify the donation.</comment>
   </data>
   <data name="SSModalBullet3" xml:space="preserve">
-    <value>Alacenaremos sus pronósticos y procesaremos su donación a través de una conexión segura a través de Paypal</value>
+    <value>Almacenaremos sus pronósticos y procesaremos su donación a través de una conexión segura a través de Paypal</value>
     <comment>We would save your scores and process your donation via a secure connection via Paypal</comment>
   </data>
   <data name="SSModalBullet4" xml:space="preserve">
@@ -589,5 +589,8 @@
   </data>
   <data name="WeTakeCC" xml:space="preserve">
     <value>Aceptamos las principales tarjetas de credito via PayPal</value>
+  </data>
+  <data name="CheckScores" xml:space="preserve">
+    <value>Revisa tus resultados</value>
   </data>
 </root>

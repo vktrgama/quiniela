@@ -39,22 +39,23 @@ namespace quiniela.Models
         public string MoveDown { get; set; }
         public string PayPalFormCode { get; set; }
         public string PayPalButton { get; set; }
-        public object WelcomeUser { get; set; }
+        public string WelcomeUser { get; set; }
         
         public ScoresModal ScoresModal { get; set; }
 
-        public object WinningPrize { get; set; }
-        public object PrivatePolicyTitle { get; set; }
+        public string WinningPrize { get; set; }
+        public string PrivatePolicyTitle { get; set; }
         public string UserName { get; set; }
         public double CurrencyExchange { get; set; }
-        public object CurrenctExchangeTitle { get; set; }
+        public string CurrenctExchangeTitle { get; set; }
 
-        public object InvitationSuccessMsg { get; set; }
-        public object FormErrMsg { get; set; }
+        public string InvitationSuccessMsg { get; set; }
+        public string FormErrMsg { get; set; }
         public string FieldEmail { get; set; }
         public string BtnInvite { get; set; }
         public string WantToJoin { get; set; }
 
-        public object WeTakeCC { get; set; }
+        public string WeTakeCC { get; set; }
+        public string CheckScores { get; set; }
     }
 }

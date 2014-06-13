@@ -84,7 +84,8 @@ namespace quiniela.Helpers
                 FieldEmail = Localizer.Get("FieldEmail"),
                 BtnInvite = Localizer.Get("BtnInvite"),
                 WantToJoin = Localizer.Get("WantToJoin"),
-                WeTakeCC = Localizer.Get("WeTakeCC")
+                WeTakeCC = Localizer.Get("WeTakeCC"),
+                CheckScores = Localizer.Get("CheckScores")
             };
         }
 

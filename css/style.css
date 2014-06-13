@@ -1197,9 +1197,26 @@ footer {
         color: #000;
     }
 
+#homePop {
+    left: 136px;
+    top: 109px;
+}
+
+    #homePop .popover-content {
+        background-color: #57760F;
+        margin: 1px;
+        text-align: center;
+    }
+
+    #homePop .popover-title {
+        color: #000;
+    }
+
 #formMatchScores .popover-content
 {
    text-align: center;
+   background-color: #57760F;
+   margin: 1px;
 }
 
 #chatSubtitle

@@ -125,6 +125,15 @@
                                 </div>
                             </div>
                             <div class="span3">
+                                <div id="homePop" class="popover bottom">
+                                    <div class="arrow"></div>
+                                    <h3 class="popover-title">@Model.CheckScores</h3>
+                                    <div class="popover-content">
+                                        <img src="~/img/hoveresult.jpg" border="0" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span3">
                                 <div class="loginForm">
                                     <h2> @Model.SignIn</h2>
                                     <div class="wrap">
@@ -223,11 +232,20 @@
     <script type="text/javascript">
         initSession();
         $("[rel='tooltip']").tooltip();
+
         setTimeout(function () {
-            jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
-            jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
-        }, 2000);
-        
+            $(".popover").fadeIn(2000);
+            setTimeout(function () {
+                $("#homePop").fadeOut(2000);
+            }, 5000);
+        }, 2000);        
+
+        $(document).ready(function () {
+            setTimeout(function () {
+                jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
+                jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+            }, 2000);
+        });        
     </script>
 </body>
 </html>

@@ -124,6 +124,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check your score updates.
+        /// </summary>
+        internal static string CheckScores {
+            get {
+                return ResourceManager.GetString("CheckScores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to the 2014 FIFA Pool Site.
         /// </summary>
         internal static string ContentParagraph1 {

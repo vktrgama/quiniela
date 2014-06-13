@@ -100,9 +100,12 @@
     </div>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript">
-        jQuery('#formReg').forms({ ownerEmail: 'laquiniela@vgama.com' });
-        jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
-        jQuery('#formFeedback').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        setTimeout(function () {
+            jQuery('#formReg').forms({ ownerEmail: 'laquiniela@vgama.com' });
+            jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+            jQuery('#formFeedback').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        }, 2000);
+
         if (_userId == "") {
             $("#InviteFriends").hide();
         }

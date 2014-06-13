@@ -241,8 +241,13 @@
         prepareScoreForm('@Model.UserId', '@Model.UserState');
         $(".alert:not(.alert-block)").hide();
         $(".alert-info").show();
-        $("body").css("background-color", "#57760E");
-        // $(".popover").css("left","900px").css("top","100px").show();
+        $("body").css("background-color", "#E9F3E8");
+        setTimeout(function () {
+            $(".popover").css("left", "900px").css("top", "100px").fadeIn(2000);
+            setTimeout(function () {
+                $(".popover").fadeOut(2000);
+            }, 5000);
+        }, 2000);
     </script>
 </body>
 </html>
