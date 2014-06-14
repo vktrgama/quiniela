@@ -85,7 +85,11 @@ namespace quiniela.Helpers
                 BtnInvite = Localizer.Get("BtnInvite"),
                 WantToJoin = Localizer.Get("WantToJoin"),
                 WeTakeCC = Localizer.Get("WeTakeCC"),
-                CheckScores = Localizer.Get("CheckScores")
+                CheckScores = Localizer.Get("CheckScores"),
+                ChatTitle = Localizer.Get("ChatTitle"),
+                ChatSubTitle = Localizer.Get("ChatSubTitle"),
+                SendMessage = Localizer.Get("SendMessage"),
+                FieldMessage = Localizer.Get("FieldMessage")
             };
         }
 
@@ -141,14 +145,14 @@ namespace quiniela.Helpers
             {
                 PageTitle = Localizer.Get("MnuChat"),
                 ChatTitle = Localizer.Get("ChatTitle"),
+                ChatSubTitle = Localizer.Get("ChatSubTitle"),
                 LinksTitle = Localizer.Get("LinksTitle"),
                 Link1Text = Localizer.Get("Link1Text"),
                 Link1Url = Localizer.Get("Link1Url"),
                 Link2Text = Localizer.Get("Link2Text"),
                 Link2Url = Localizer.Get("Link2Url"),
                 SendMessage = Localizer.Get("SendMessage"),
-                FieldMessage = Localizer.Get("FieldMessage"),
-                ChatSubTitle = Localizer.Get("ChatSubTitle")
+                FieldMessage = Localizer.Get("FieldMessage")
             };
         }
 

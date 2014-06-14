@@ -57,5 +57,9 @@ namespace quiniela.Models
 
         public string WeTakeCC { get; set; }
         public string CheckScores { get; set; }
+        public string ChatTitle { get; set; }
+        public string ChatSubTitle { get; set; }
+        public string SendMessage { get; set; }
+        public string FieldMessage { get; set; }
     }
 }

@@ -102,37 +102,50 @@
                     <h3 class="margin4" id="welcomeUser"></h3>
                     <div class="dynamicContent">
                         <div class="row">
-                            <div class="span9">
-                                <div class="wrap padding1 margin8">
-                                    <h2 class="textStyle7 _marginNull">@Model.ContentParagraph1</h2>
-                                    <h2 class="textStyle8">@Model.ContentParagraph2</h2><br />
-                                    <a class="btn btn-primary btn-large" href="@Model.DomainPath/Home/Rules">@Model.LearnMore</a>
-                                </div>
+                            <div class="span6">
+                                <h2>@Model.ChatTitle</h2>
+                                <h5 id="chatSubtitle">@Model.ChatSubTitle</h5>
                                 <div class="wrap">
-                                    <h4>@Model.WantToJoin:</h4>
-                                    <form id="formInvite">
-                                        <input type="hidden" name="formType" value="InviteFriends" />
-                                        <div class="success alert alert-success hide"><span>@Model.InvitationSuccessMsg</span></div>
-                                        <div class="fail alert alert-error hide"><span>@Model.FormErrMsg</span></div>
-                                        <fieldset>
-                                            <label class="email">
-                                                <input type="email" value="@Model.FieldEmail">
-                                                <span class="error w1" style="display: none;">@Model.FieldValEmail</span> <span class="empty w1" style="display: none;">@Model.FieldRequired</span>
-                                            </label>
-                                            <a href="#" class="btn more_btn1" data-type="submit">@Model.BtnInvite</a>
-                                        </fieldset>
-                                    </form>
+                                    <div id="myChat"><h2 id="loadingMsg">Loading ...</h2></div>
+                                    <script>
+                                        prepareChat();
+                                    </script>
                                 </div>
                             </div>
                             <div class="span3">
-                                <div id="homePop" class="popover bottom">
-                                    <div class="arrow"></div>
-                                    <h3 class="popover-title">@Model.CheckScores</h3>
-                                    <div class="popover-content">
-                                        <img src="~/img/hoveresult.jpg" border="0" />
-                                    </div>
+                                <div id="chatEntry">
+                                    <h2>@Model.SendMessage</h2>
+                                    <textarea id='messageInput' rows="3" placeholder="@Model.FieldMessage"></textarea>
                                 </div>
                             </div>
+                            <script id="popLeft" type="text/html">
+                                <div>
+                                    <div class="popover left">
+                                        <div class="arrow"></div>
+                                        <h3 class="popover-title"><span>${name}</span> - ${datetime}</h3>
+                                        <div class="popover-content">
+                                            <p>${msg}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </script>
+                            <script id="popRight" type="text/html">
+                                <div class="popover right">
+                                    <div class="arrow"></div>
+                                    <h3 class="popover-title"><span>${name}</span> - ${datetime}</h3>
+                                    <div class="popover-content">
+                                        <p>${msg}</p>
+                                    </div>
+                                </div>
+                            </script>
+                            <div id="homePop" class="popover bottom">
+                                <div class="arrow"></div>
+                                <h3 class="popover-title">@Model.CheckScores</h3>
+                                <div class="popover-content">
+                                    <img src="~/img/hoveresult.jpg" border="0" />
+                                </div>
+                            </div>
+                            
                             <div class="span3">
                                 <div class="loginForm">
                                     <h2> @Model.SignIn</h2>
@@ -243,8 +256,9 @@
         $(document).ready(function () {
             setTimeout(function () {
                 jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
-                jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+                // jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
             }, 2000);
+
         });        
     </script>
 </body>
