@@ -264,8 +264,20 @@ namespace quiniela.Controllers
         [HttpPost]
         public JsonResult CalcPoints(string matchId, string th, string ta)
         {
-            var result = _quinielaService.CalcPoints(matchId, th, ta);
-            return (result.Message != "") ? Json(new { err = 1 }) : Json(new { err = 0});
+            try
+            {
+                if (string.IsNullOrEmpty(th) && string.IsNullOrEmpty(ta))
+                {
+                    _quinielaService.UpdateTodayScores();
+                }
+                _quinielaService.CalcPoints(matchId, th, ta);
+
+                return Json(new { err = 0 });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { err = 1, msg = ex.Message });
+            }            
         }
 
         /// <summary>

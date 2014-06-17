@@ -278,5 +278,6 @@ namespace quiniela.Helpers
                 SendMessage = Localizer.Get("SendMessage")
             };
         }
+
     }
 }

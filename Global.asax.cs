@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
 using quiniela.Services;
+using quiniela.Helpers;
 
 namespace quiniela
 {
@@ -18,6 +19,13 @@ namespace quiniela
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var _quinielaService = DependencyResolver.Current.GetService<IQuinielaService>();
+
+            // Update Date/time for each match
+            // _quinielaService.UpdateMatchDates();
+            // Load in memory for future comparison
+            // Application["MatchDates"] = _quinielaService.GetMatchDatesInMem();
         }
 
         /// <summary>

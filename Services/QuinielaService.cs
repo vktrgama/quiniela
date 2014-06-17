@@ -531,6 +531,148 @@ namespace quiniela.Services
         }
 
         /// <summary>
+        /// Gets the score fifa.
+        /// </summary>
+        /// <param name="matchId">The match identifier.</param>
+        /// <returns></returns>
+        public List<MatchScore> GetScoreFifa(string matchId)
+        {
+            var finalScore = new List<MatchScore>();
+            try
+            {
+                WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+
+                CsQuery.CQ htmlBody = responseFromServer;
+                var score = htmlBody[string.Format("div[data-id='{0}']", matchId)].Find(".s-scoreText").Html();
+                if (score.Contains('-'))
+                {
+                    finalScore.Add(new MatchScore { name = "home", value = score.Split('-')[0] });
+                    finalScore.Add(new MatchScore { name = "away", value = score.Split('-')[1] });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            return finalScore;
+        }
+
+        /// <summary>
+        /// Updates the match dates.
+        /// </summary>
+        public void UpdateMatchDates()
+        {
+            try
+            {
+                WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+
+                CsQuery.CQ htmlBody = responseFromServer;
+                var matches = htmlBody[string.Format("[data-id]")];
+                if (matches.Length > 0)
+                {
+                    OpenDatabase();
+                    foreach (var el in matches)
+                    {
+                        var id = el["data-id"];
+                        var div = el.Cq();
+                        var time = div.Find(".s-scoreText").Html();
+                        var dat = div.Find(".mu-i-date").Html();
+                        if (time.Contains(':'))
+                        {
+                            time = Convert.ToDateTime(time).Subtract(new TimeSpan(0, 90, 0)).ToString("HH:mm");
+
+                            SqlCommand command = new SqlCommand();
+                            command.Connection = conn;
+                            command.CommandText = string.Format("update dbo.MatchDate set MatchDate = convert(datetime, '{0}', 20) where MatchId = '{1}'", dat + ' ' + time, id);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    CloseDatabase();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Updates the today scores.
+        /// </summary>
+        public void UpdateTodayScores()
+        {
+            WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+
+            CsQuery.CQ htmlBody = responseFromServer;
+            var todayMatch = htmlBody[string.Format("div[id='{0}{1}{2}']", DateTime.Now.Year, ("0" + DateTime.Now.Month).Substring(0, 2), DateTime.Now.Day)];
+            var matches = todayMatch.Find("[data-id]");
+            if (matches.Length > 0)
+            {
+                foreach (var el in matches)
+                {
+                    var id = el["data-id"];
+                    var div = el.Cq();
+                    var score = div.Find(".s-scoreText").Html();
+                    if (score.Contains('-'))
+                    {
+                        OpenDatabase();
+                        SqlCommand command = new SqlCommand();
+                        command.Connection = conn;
+                        command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}'",
+                            score.Split('-')[0], score.Split('-')[1], id);
+                        command.ExecuteNonQuery();
+                        CloseDatabase();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Stores the match dates in memory.
+        /// </summary>
+        /// <returns></returns>
+        public List<MatchDate> GetMatchDatesInMem()
+        {
+            var matchDates = new List<MatchDate>();
+
+            OpenDatabase();
+
+            var sql = "select * from dbo.MatchDate order by MatchDate";
+            SqlCommand command = new SqlCommand(sql, conn);
+            var reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    DateTime dtime;
+                    DateTime.TryParse(reader["MatchDate"].ToString(), out dtime);
+                    matchDates.Add(new MatchDate
+                    {
+                        MatchId = reader["MatchId"].ToString(),
+                        Date = dtime
+                    });
+                }
+            }
+            CloseDatabase();
+
+            return matchDates;
+        }
+
+        /// <summary>
         /// Gets the states.
         /// </summary>
         /// <returns></returns>
@@ -548,38 +690,20 @@ namespace quiniela.Services
         /// <returns>
         /// exception
         /// </returns>
-        public QException CalcPoints(string matchId, string th, string ta)
+        public void CalcPoints(string matchId, string th, string ta)
         {
-            try
+            OpenDatabase();
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            if (!string.IsNullOrEmpty(matchId) && !string.IsNullOrEmpty(th) && !string.IsNullOrEmpty(ta))
             {
-                OpenDatabase();
-                SqlCommand command = new SqlCommand();
-                command.Connection = conn;
-                if (!string.IsNullOrEmpty(matchId) && !string.IsNullOrEmpty(th) && !string.IsNullOrEmpty(ta))
-                {
-                    command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed=1 where MatchId = '{2}'", th, ta, matchId);
-                    command.ExecuteNonQuery();
-                }
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = string.Format("sp_calculateMatchPoints");
+                command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed=1 where MatchId = '{2}'", th, ta, matchId);
                 command.ExecuteNonQuery();
-                CloseDatabase();
             }
-            catch (Exception ex)
-            {
-                return new QException
-                {
-                    Error = 1,
-                    Message = ex.Message
-                };
-            }
-
-            return new QException
-            {
-                Error = 0,
-                Message = ""
-            };
-
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = string.Format("sp_calculateMatchPoints");
+            command.ExecuteNonQuery();
+            CloseDatabase();
         }
 
         /// <summary>
@@ -599,12 +723,13 @@ namespace quiniela.Services
             {
                 while (reader.Read())
                 {
-                    matchList.Add(new Match { 
+                    matchList.Add(new Match
+                    {
                         MatchId = reader["MatchId"].ToString(),
-                        MatchName = string.Format("{0}-{1}-{2}", 
+                        MatchName = string.Format("{0}-{1}-{2}",
                         reader["MatchId"].ToString(),
                         reader["TeamHome"].ToString(),
-                        reader["TeamAway"].ToString()) 
+                        reader["TeamAway"].ToString())
                     });
                 }
             }

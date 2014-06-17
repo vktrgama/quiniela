@@ -19,8 +19,12 @@ namespace quiniela.Services
         string UpdateField(string id, string fieldName, string fieldValue);
         string DeleteUser(string id);
         double GetCurrenctRate();
-        QException CalcPoints(string matchId, string th, string ta);
+        void CalcPoints(string matchId, string th, string ta);
         List<Match> GetMatchList();
         List<MatchScore> LoadFinalResults();
+        List<MatchScore> GetScoreFifa(string matchId);
+        void UpdateMatchDates();
+        List<MatchDate> GetMatchDatesInMem();
+        void UpdateTodayScores();
      }
 }
