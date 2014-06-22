@@ -55,7 +55,7 @@ namespace quiniela.Helpers
                 Title = Localizer.Get("Title"),
                 TopWinDesc = Localizer.Get("TopWinDesc"),
                 TopWinner = TopWinner.topWinner,
-                TopWinnerPrice = string.Format("{0:C} {1}", TopWinner.prize, currentCode),
+                TopWinnerPrice = string.Format("{0:C} {1}", TopWinner.prize, (currentCode != "USD") ? "MXN" : currentCode),
                 TopWinTitle = Localizer.Get("TopWinTitle"),
                 TopWinPrizeDesc = Localizer.Get("TopWinPrizeDesc"),
                 WinningPrize = Localizer.Get("WinnerPrize"),
