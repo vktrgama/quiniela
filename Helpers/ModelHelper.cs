@@ -89,7 +89,8 @@ namespace quiniela.Helpers
                 ChatTitle = Localizer.Get("ChatTitle"),
                 ChatSubTitle = Localizer.Get("ChatSubTitle"),
                 SendMessage = Localizer.Get("SendMessage"),
-                FieldMessage = Localizer.Get("FieldMessage")
+                FieldMessage = Localizer.Get("FieldMessage"),
+                FinalScoresMsg = Localizer.Get("FinalScoresMsg")
             };
         }
 

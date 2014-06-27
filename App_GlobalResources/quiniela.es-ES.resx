@@ -593,4 +593,7 @@
   <data name="CheckScores" xml:space="preserve">
     <value>Revisa tus resultados</value>
   </data>
+  <data name="FinalScoresMsg" xml:space="preserve">
+    <value>Ya puedes ingresar tus pronosticos para los Octavos de Final, Ve al menu [mis pronosticos], ingresa tus resultados y guardalos, envio de scores se cerrara justo antes del primer juego de esta elimiación.</value>
+  </data>
 </root>

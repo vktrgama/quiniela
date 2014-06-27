@@ -313,6 +313,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can enter now your scores for the Round of 16, just go to the menu [my scores], enter your results and save, submission will be close right before first game on these elinations..
+        /// </summary>
+        internal static string FinalScoresMsg {
+            get {
+                return ResourceManager.GetString("FinalScoresMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ohh Snap!, Error happen, please try again later.
         /// </summary>
         internal static string FormErrMsg {

@@ -169,6 +169,38 @@ namespace quiniela.Controllers
         }
 
         /// <summary>
+        /// Sends the reminder.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="emailFrom">The email from.</param>
+        /// <returns></returns>
+        public JsonResult SendReminder(string email, string emailFrom)
+        {
+            var subject = "La Quniela - Esta es la oportunidad de recuperarte [Here it's your chance to recover]";
+            var message = "Ya estan abiertos los pronosticos para la eliminación de los Octavos de Final, Ve a <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> e ingresa tus pronosticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos pronosticos en cada fase de eliminacion. El ingreso de los marcadores se bloquera automaticamente al inicio del primer juego en esta fase de eliminacion. Suerte!";
+            message += "<br/><br/>You can enter your scores for the Round 16 of elimination, go to <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!";
+            var msg = Localizer.Get("RegFormFail");
+
+            try
+            {
+                ParticipantList participants = _quinielaService.GetAllUsers();
+                foreach (Paticipant user in participants.UserList)
+                {
+                    if (!string.IsNullOrEmpty(user.Name))
+                    {
+                        new Smtp().SendEmail(user.Email.Trim(),
+                            string.Format(subject, user.Name),
+                            message);
+                    }
+                }
+                return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex) { Console.Write(ex.Message); }
+
+            return Json(new { err = 1, msg }, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
         /// Sends the invites.
         /// </summary>
         /// <param name="emails">The emails.</param>
@@ -277,7 +309,7 @@ namespace quiniela.Controllers
             catch (Exception ex)
             {
                 return Json(new { err = 1, msg = ex.Message });
-            }            
+            }
         }
 
         /// <summary>

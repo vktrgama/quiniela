@@ -61,5 +61,7 @@ namespace quiniela.Models
         public string ChatSubTitle { get; set; }
         public string SendMessage { get; set; }
         public string FieldMessage { get; set; }
+
+        public string FinalScoresMsg { get; set; }
     }
 }

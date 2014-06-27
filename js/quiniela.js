@@ -97,7 +97,6 @@ prepareScoreForm = function (userId, userState) {
             $(".btn").hide();
             $(".score input").attr('disabled', 'disabled');
             break;
-
         default:
             $(".alert").hide();
             $(".btn").hide();
@@ -106,12 +105,12 @@ prepareScoreForm = function (userId, userState) {
 }
 
 addMatchInputBoxed = function () {
-    $(".home").each(function () {
-        var scoreId = $(this).closest('.fixture').attr('id') + "_" + $(this).find('.t-nTri').html() + '_home';
+    $("#newScores").find(".home").each(function () {
+        var scoreId = $(this).closest('.fixture').attr('data-id') + "_" + $(this).find('.t-nTri').html() + '_home';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "' /></div>");
     })
-    $(".away").each(function () {
-        var scoreId = $(this).closest('.fixture').attr('id') + "_" + $(this).find('.t-nTri').html() + '_away';
+    $("#newScores").find(".away").each(function () {
+        var scoreId = $(this).closest('.fixture').attr('data-id') + "_" + $(this).find('.t-nTri').html() + '_away';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "'/></div>");
     })
 }
@@ -427,4 +426,25 @@ initSession = function () {
     } else {
         $("#logoutLink").hide();
     }
+}
+
+SendReminderEmail = function()
+{
+    $.ajax({
+        url: _domainPath + "/wapi/SendReminder",
+        type: 'POST',
+        success: function (data) {
+            if (data.err == 0) {
+                setTimeout(function () {
+                    $(".alert-success").hide();
+                    location.reload();
+                }, 3000);
+            } else {
+                $("#alertBox.alert-error").show();
+                setTimeout(function () {
+                    $(".alert-error").hide();
+                }, 4000);
+            }
+        }
+    });
 }
