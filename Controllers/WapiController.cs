@@ -179,6 +179,7 @@ namespace quiniela.Controllers
             var subject = "La Quniela - Esta es la oportunidad de recuperarte [Here it's your chance to recover]";
             var message = "Ya estan abiertos los pronosticos para la eliminación de los Octavos de Final, Ve a <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> e ingresa tus pronosticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos pronosticos en cada fase de eliminacion. El ingreso de los marcadores se bloquera automaticamente al inicio del primer juego en esta fase de eliminacion. Suerte!";
             message += "<br/><br/>You can enter your scores for the Round 16 of elimination, go to <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!";
+            message += "<br/><br/>User/Usuario:<b>{0}</b> <br/>PIN/NIP:<b>{1}</b>";
             var msg = Localizer.Get("RegFormFail");
 
             try
@@ -190,7 +191,7 @@ namespace quiniela.Controllers
                     {
                         new Smtp().SendEmail(user.Email.Trim(),
                             string.Format(subject, user.Name),
-                            message);
+                            string.Format(message, user.Email, user.AccessCode));
                     }
                 }
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);

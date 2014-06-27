@@ -354,7 +354,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select name from dbo.Users where state = '{0}' and TotalPoints > 0 order by TotalPoints desc", QuinielaState.Playing.ToString());
+                var sql = string.Format("select name from dbo.Users where TotalPoints > 0 order by TotalPoints desc", QuinielaState.Playing.ToString());
                 SqlCommand command = new SqlCommand(sql, conn);
                 var winner = (string)command.ExecuteScalar();
 
@@ -363,7 +363,7 @@ namespace quiniela.Services
                     winnerName = winner;
                 }
 
-                command.CommandText = string.Format("select count(*) from dbo.Users where state='{0}'", QuinielaState.Playing.ToString());
+                command.CommandText = string.Format("select count(*) from dbo.Users where state <> 'Admin'", QuinielaState.Playing.ToString());
 
                 var numPartipants = (int)command.ExecuteScalar();
                 if (numPartipants > 0)
