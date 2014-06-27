@@ -100,6 +100,8 @@ prepareScoreForm = function (userId, userState) {
         default:
             $(".alert").hide();
             $(".btn").hide();
+            $(".score input").attr('disabled', 'disabled');
+
             break;
     }
 }
