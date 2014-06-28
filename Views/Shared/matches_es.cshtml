@@ -41,9 +41,9 @@
                                     <h4>Note:</h4>
                                     Ya puedes ingresar tu pronóstios para los octavos de final
                                 </div>
-                                
+
                                 <div class="matches">
-                                    <div id="firstRound" style="display:none;">
+                                    <div id="firstRound" style="display:block;">
                                         <div class="match-list-round" id="255931" data-roundid="255931"><h2>Group stage</h2></div><div class="match-list-date anchor" id="20140612">
                                             <h3><span class="h3-wrap">Thursday 12 June</span></h3><div class="time-converter"></div>
                                             <div class="col-xs-12 clear-grid ">
@@ -258,18 +258,18 @@
                                     <h4>Bien Hecho!</h4> Tus pronosticos han sido guardados
                                 </div>
                                 <!--
-            <div class="alert alert-block fade in">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <h4>Warning!</h4>
-                Once the scores are submited you will not be able to change them anymore. You can save as many times as you want before submitting your scores. Use the geeen button on the right side bottom corner to save.
-            </div>
+                                <div class="alert alert-block fade in">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <h4>Warning!</h4>
+                                    Once the scores are submited you will not be able to change them anymore. You can save as many times as you want before submitting your scores. Use the geeen button on the right side bottom corner to save.
+                                </div>
 
-            <div id="alertBox" class="alert alert-error hide">
-                <h4 class="alert-heading">Oh snap!</h4>You got an error!
-                Try again later.
-            </div>
-            <button id="btnSubmitScores" data-toggle="modal" data-target="#submitModal" class="btn btn-primary btn-large">Submit your scores</button>
-                -->
+                                <div id="alertBox" class="alert alert-error hide">
+                                    <h4 class="alert-heading">Oh snap!</h4>You got an error!
+                                    Try again later.
+                                </div>
+                                <button id="btnSubmitScores" data-toggle="modal" data-target="#submitModal" class="btn btn-primary btn-large">Submit your scores</button>
+                                    -->
                             </form>
                         </div>
                     </div>
@@ -283,12 +283,14 @@
         $(".alert:not(.alert-block)").hide();
         $(".alert-info").show();
         $("body").css("background-color", "#57760F");
+        /*
         setTimeout(function () {
             $(".popover").css("left", "900px").css("top", "100px").fadeIn(2000);
             setTimeout(function () {
                 $(".popover").fadeOut(2000);
             }, 5000);
         }, 2000);
+        */
     </script>
 </body>
 </html>

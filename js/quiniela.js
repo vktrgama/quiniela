@@ -107,12 +107,15 @@ prepareScoreForm = function (userId, userState) {
 }
 
 addMatchInputBoxed = function () {
-    $("#newScores").find(".home").each(function () {
-        var scoreId = $(this).closest('.fixture').attr('data-id') + "_" + $(this).find('.t-nTri').html() + '_home';
+    // ("#newScores").find
+    $(".home").each(function () {
+        var matchId = (typeof $(this).closest('.fixture').attr('id') != "undefined") ? $(this).closest('.fixture').attr('id') : $(this).closest('.fixture').attr('data-id');
+        var scoreId = matchId + "_" + $(this).find('.t-nTri').html() + '_home';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "' /></div>");
     })
-    $("#newScores").find(".away").each(function () {
-        var scoreId = $(this).closest('.fixture').attr('data-id') + "_" + $(this).find('.t-nTri').html() + '_away';
+    $(".away").each(function () {
+        var matchId = ($(this).closest('.fixture').attr('id')) ? $(this).closest('.fixture').attr('id') : $(this).closest('.fixture').attr('data-id');
+        var scoreId = matchId + "_" + $(this).find('.t-nTri').html() + '_away';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "'/></div>");
     })
 }
