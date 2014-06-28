@@ -20,6 +20,7 @@ include('forms.js');
 include('bgStretch.js');
 include('quiniela.js');
 include('bootstrap-tooltip.js');
+include('bootstrap-collapse.js');
 
 include('_grid.js');
 include('_LINQtoJquery.js');

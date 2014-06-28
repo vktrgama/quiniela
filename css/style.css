@@ -1247,3 +1247,8 @@ footer {
 #regHome{
     margin-top: -90px;
 }
+
+.accordion-toggle {
+    background-color: #fff;
+    opacity: .6;
+}
