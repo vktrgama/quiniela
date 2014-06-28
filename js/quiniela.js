@@ -345,6 +345,13 @@ persistSession = function(keepCreddentials) {
     }
 }
 
+resetSession = function () {
+    var session = window.localStorage["qs"];
+    if (session != null) {
+        window.localStorage.removeItem("qs");
+    }
+}
+
 readPersistedSession = function() {
     if (supports_html5_storage()) {
         var session = window.localStorage["qs"];

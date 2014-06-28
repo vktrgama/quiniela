@@ -26,8 +26,12 @@
         var _userState = '@Model.UserState';
         var _domainPath = '@Model.DomainPath';
         var _welcome = '@Model.WelcomeUser';
+        if (_userId!='')
+        {
+            persistSession(true);
+        }
         // first load, chk for existing session
-        readPersistedSession();
+        // readPersistedSession();
     </script>
 
     <!--[if lt IE 8]><div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div><![endif]-->
