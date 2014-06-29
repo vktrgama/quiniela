@@ -197,7 +197,7 @@ populateResults = function () {
                     }
 
                     // Determine winner
-                    var inputs = $("div[id=" + score.name.split('_')[0] + "]").find("input");
+                    var inputs = $("div[id=" + score.name.split('_')[0] + "]").length > 0 ? $("div[id=" + score.name.split('_')[0] + "]").find("input") : $("div[data-id=" + score.name.split('_')[0] + "]").find("input")
                     if (inputs[0].title != "" && inputs[1].title != "" && inputs[0].value != "" && inputs[1].value != "") {
                         if (inputs[0].title - inputs[1].title == 0 && inputs[0].value - inputs[1].value == 0) {
                             // draw
