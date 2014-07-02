@@ -87,6 +87,8 @@ prepareScoreForm = function (userId, userState) {
 
     switch (state) {
         case "Active":
+            $(".score input").attr('disabled', 'disabled');
+            $("#collapseThree .score input").removeAttr("disabled")
             break;
         case "Playing":
             setTimeout(function () {
