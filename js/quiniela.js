@@ -129,6 +129,10 @@ maxLengthCheck = function (object) {
 }
 
 saveMatchScores = function (bSubmitted, form) {
+    var btn = event.target;
+    var btnCaption = $(btn).text();
+    $(event.target).text($(btn).attr("data-title"));
+
     var inputs = JSON.stringify($(form).serializeArray());
     $.ajax({
         url: _domainPath + "/wapi/SubmitMatchScores",
@@ -145,6 +149,7 @@ saveMatchScores = function (bSubmitted, form) {
                         $(".alert-success").hide();
                     }, 3000);
                 }
+                $(btn).text(btnCaption);
             } else {
                 $(".alert-error").show();
                 setTimeout(function () {
