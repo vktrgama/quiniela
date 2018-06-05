@@ -136,6 +136,16 @@ namespace quiniela.Helpers
             };
         }
 
+        public static LogOut GetLogOutModel()
+        {
+            return new LogOut
+            {
+                LogOutDescription = Localizer.Get("LogOutDescription"),
+                LogOutMessage = Localizer.Get("LogOutMessage"),
+                PageTitle = Localizer.Get("LogOutPageTitle"),
+            };
+        }
+
         /// <summary>
         /// Gets the chat model.
         /// </summary>

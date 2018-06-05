@@ -77,7 +77,7 @@
                     <div class="extra_block1">
                         <div>
                             <span class="icon-envelope"></span>
-                            E-mail: <span class="_link2">laquiniela@vgama.com</span>
+                            E-mail: <span class="_link2">@Model.OwnerEmail</span>
                         </div>
                     </div>
                 </div>
@@ -253,8 +253,8 @@
 
         $(document).ready(function () {
             setTimeout(function () {
-                jQuery('#form0').forms({ ownerEmail: 'laquiniela@vgama.com' });
-                // jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+                jQuery('#form0').forms({ ownerEmail: '@Model.OwnerEmail' });
+                // jQuery('#formInvite').forms({ ownerEmail: '@Model.OwnerEmail' });
             }, 2000);
 
         });        

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace quiniela.Models
 {
-    public class PrivacyModel
+    public class PrivacyModel : BaseClass
     {
         public object PrivatePolicyTitle { get; set; }
         public string PrivacyMsg { get; set; }

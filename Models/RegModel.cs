@@ -5,7 +5,7 @@ using System.Web;
 
 namespace quiniela.Models
 {
-    public class RegModel
+    public class RegModel : BaseClass
     {
         public string RegSuccessMsg { get; set; }
         public string RegSuccessMsg1 { get; set; }

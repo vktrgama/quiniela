@@ -37,7 +37,9 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select * from dbo.Users where state <> '{0}' order by totalpoints desc, name", QuinielaState.Admin.ToString());
+                var sql = string.Format("select * from dbo.Users where state <> '{0}' and year = {1} order by totalpoints desc, name", 
+                                QuinielaState.Admin.ToString(),
+                                ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)

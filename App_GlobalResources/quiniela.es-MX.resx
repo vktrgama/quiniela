@@ -596,4 +596,13 @@
   <data name="FinalScoresMsg" xml:space="preserve">
     <value>Ya puedes ingresar tus pronosticos para las Semi-finales, Ve al menu [mis pronosticos], ingresa tus resultados y guardalos, envio de scores se cerrara justo antes del primer juego de esta elimiación.</value>
   </data>
+  <data name="LogOutDescription" xml:space="preserve">
+    <value>No podras ver tus resultados hasta que entres al sitio.</value>
+  </data>
+  <data name="LogOutMessage" xml:space="preserve">
+    <value>Necesitas hacer 'Sign-In'</value>
+  </data>
+  <data name="LogOutPageTitle" xml:space="preserve">
+    <value>Fuera de Linea</value>
+  </data>
 </root>

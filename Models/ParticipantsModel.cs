@@ -5,7 +5,7 @@ using System.Web;
 
 namespace quiniela.Models
 {
-    public class ParticipantsModel
+    public class ParticipantsModel : BaseClass
     {
         public string UserListTitle { get; set; }
         public string Participants { get; set; }

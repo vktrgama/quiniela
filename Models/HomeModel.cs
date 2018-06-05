@@ -6,7 +6,7 @@ using System.Web;
 
 namespace quiniela.Models
 {
-    public class HomeModel
+    public class HomeModel : BaseClass
     {
         public string UserId { get; set; }
         public string UserState { get; set; }

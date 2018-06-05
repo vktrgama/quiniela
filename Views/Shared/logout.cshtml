@@ -1,4 +1,4 @@
-﻿@model quiniela.Models.PrivacyModel
+﻿@model quiniela.Models.LogOut
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/preview.css" type="text/css">
-
     <script type="text/javascript" src="/js/include_script.js"></script>
     <!--[if lt IE 9]>
 
@@ -29,35 +28,8 @@
                 <!--content-->
                 <div class="row">
                     <div class="span12">
-                        <h2>@Model.PrivatePolicyTitle</h2>
-                        <h3>@Model.PrivacyMsg</h3>
-                        <br /><br />
-                        <p>
-                            <span class="textStyle5">
-                                @Model.PrivacyMsg1
-                            </span>
-                        </p>
-                        <p>
-                            <span class="textStyle5">
-                                @Model.PrivacyMsg2
-                            </span>
-                        </p>
-                        <p>
-                            <span class="textStyle5">
-                                @Model.PrivacyMsg3
-                            </span>
-                        </p>
-                        <p>
-                            <span class="textStyle5">
-                                @Model.PrivacyMsg4
-                            </span>
-                        </p>
-                        <p>
-                            <span class="textStyle5">
-                                @Model.PrivacyMsg5
-                            </span>
-                        </p>
-                        <p class="_marginNull"><!--email_off--><a href="" class="_link6">@Model.OwnerEmail</a><!--/email_off--></p>
+                        <h2>@Model.LogOutMessage</h2>
+                        <h3>@Model.LogOutDescription</h3>
                     </div>
                 </div>
             </div>

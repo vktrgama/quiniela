@@ -77,7 +77,7 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script>
         loadParticipants();
-        jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        jQuery('#formInvite').forms({ ownerEmail: '@Model.OwnerEmail' });
         if (_userId == "") {
             $("#InviteFriends").hide();
         }

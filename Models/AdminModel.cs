@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace quiniela.Models
 {
-    public class AdminModel
+    public class AdminModel : BaseClass
     {
         public string InviteFriendText { get; set; }
         public string FieldValEmail { get; set; }

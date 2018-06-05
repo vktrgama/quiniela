@@ -66,8 +66,12 @@ namespace quiniela.Controllers
             {
                 userid = HttpUtility.UrlDecode(userid);
                 user = _quinielaService.GetUser(userid);
+                return View("matches_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel(user));
+            } else
+            {
+                return View("LogOut", ModelHelper.GetLogOutModel());
             }
-            return View("matches_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel(user));
+
         }
 
         /// <summary>

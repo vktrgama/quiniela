@@ -87,8 +87,8 @@
         var matches = '@Model.MatchesList';
         loadMatches(matches);
 
-        jQuery('#formInvite').forms({ ownerEmail: 'laquiniela@vgama.com' });
-        jQuery('#formInvites').forms({ ownerEmail: 'laquiniela@vgama.com' });
+        jQuery('#formInvite').forms({ ownerEmail: '@Model.OwnerEmail' });
+        jQuery('#formInvites').forms({ ownerEmail: '@Model.OwnerEmail' });
         $(".alert:not(.alert-block)").hide();
     </script>
 </body>

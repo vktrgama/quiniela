@@ -212,7 +212,7 @@ namespace quiniela.Controllers
             var emailList = emails.Split(',');
             foreach (var email in emailList)
             {
-                var result = SendInvite(email.Trim(), "laquiniela@vgama.com");
+                var result = SendInvite(email.Trim(), ConfigurationManager.AppSettings["ownerEmail"]);
             }
 
             return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);
