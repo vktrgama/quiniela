@@ -382,7 +382,7 @@ supports_html5_storage = function() {
 }
 
 showUserScores = function (email) {
-    var w = window.open(_domainPath + "/Home/Matches/dummy?userid=" + encodeURIComponent(email),
+    var w = window.open(_domainPath + "/Home/Matches?userid=" + encodeURIComponent(email),
         "_blank", "location=0, status=0, width=1128, height=780, scrollbars=1");
 }
 

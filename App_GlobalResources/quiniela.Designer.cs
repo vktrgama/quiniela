@@ -133,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to the 2014 FIFA Pool Site.
+        ///   Looks up a localized string similar to Welcome to the FIFA Pool Site.
         /// </summary>
         internal static string ContentParagraph1 {
             get {
@@ -673,7 +673,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h1&gt;Welcome to 2014 FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!.
+        ///   Looks up a localized string similar to &lt;h1&gt;Welcome to FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!.
         /// </summary>
         internal static string RegFormMessage {
             get {
@@ -682,7 +682,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to 2014 FIFA Pool.
+        ///   Looks up a localized string similar to Welcome to FIFA Pool.
         /// </summary>
         internal static string RegFormSubjet {
             get {
@@ -943,7 +943,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have been invited to join a FIFA World Cup 2014 Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup 2014 Pool, go to &lt;b&gt;&lt;a href=&apos;{1}&apos; &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!.
+        ///   Looks up a localized string similar to You have been invited to join a FIFA World Cup Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup Pool, go to &lt;b&gt;&lt;a href=&apos;{1}&apos; &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!.
         /// </summary>
         internal static string SendInviteMessage {
             get {
@@ -952,7 +952,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}, sent you an invitation to join a FIFA World Cup 2014 Pool.
+        ///   Looks up a localized string similar to {0}, sent you an invitation to join a FIFA World Cup Pool.
         /// </summary>
         internal static string SendInviteSubject {
             get {

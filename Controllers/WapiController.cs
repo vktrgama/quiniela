@@ -229,7 +229,7 @@ namespace quiniela.Controllers
         {
             try
             {
-                new Smtp().SendEmail(email, "Quiniela 2014 Feedback from " + name, msg);
+                new Smtp().SendEmail(email, "Quiniela Feedback from " + name, msg);
 
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);
             }
@@ -246,7 +246,7 @@ namespace quiniela.Controllers
         {
             try
             {
-                // new Smtp().SendEmail(email, "Quiniela 2014 Feedback from " + name, msg);
+                // new Smtp().SendEmail(email, "Quiniela Feedback from " + name, msg);
                 return Json(new { err = 0, msg = "sucessful payment", callback = custom, email = email }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

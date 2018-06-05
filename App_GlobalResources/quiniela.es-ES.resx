@@ -138,8 +138,8 @@
     <comment>Message board</comment>
   </data>
   <data name="ContentParagraph1" xml:space="preserve">
-    <value>Bienvenido al sitio Quiniela 2014</value>
-    <comment>Welcome to the 2014 FIFA Pool Site</comment>
+    <value>Bienvenido al sitio Quiniela</value>
+    <comment>Welcome to the FIFA Pool Site</comment>
   </data>
   <data name="ContentParagraph2" xml:space="preserve">
     <value>Participa y posiblemente gana dinero.</value>
@@ -226,8 +226,8 @@
     <comment>Learn more</comment>
   </data>
   <data name="Link1Text" xml:space="preserve">
-    <value>Copa Mundial de la FIFA 2014</value>
-    <comment>2014 FIFA World Cup</comment>
+    <value>Copa Mundial de la FIFA</value>
+    <comment>FIFA World Cup</comment>
   </data>
   <data name="Link1Url" xml:space="preserve">
     <value>http://es.fifa.com/index.html</value>
@@ -342,12 +342,12 @@
     <comment>Registration fail, user already exists.</comment>
   </data>
   <data name="RegFormMessage" xml:space="preserve">
-    <value>&lt;h1&gt;Bienvenido a la Quiniela 2014&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Ahora podras ingresar tus pronósticos en nuestro sitio, usar tu dirección de correo electrónico y NIP para ingresar al sitio, y ve a la opcion de [Mis pronósticos] .&lt;br/&gt;&lt;br/&gt;Nuestro sitio es:&lt;b&gt;&lt;a href='{0}'&gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Suerte!</value>
-    <comment>&lt;h1&gt;Welcome to 2014 FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!</comment>
+    <value>&lt;h1&gt;Bienvenido a la Quiniela&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Ahora podras ingresar tus pronósticos en nuestro sitio, usar tu dirección de correo electrónico y NIP para ingresar al sitio, y ve a la opcion de [Mis pronósticos] .&lt;br/&gt;&lt;br/&gt;Nuestro sitio es:&lt;b&gt;&lt;a href='{0}'&gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Suerte!</value>
+    <comment>&lt;h1&gt;Welcome to FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!</comment>
   </data>
   <data name="RegFormSubjet" xml:space="preserve">
-    <value>Bienvenido a la Quiniela 2014</value>
-    <comment>Welcome to 2014 FIFA Pool</comment>
+    <value>Bienvenido a la Quiniela</value>
+    <comment>Welcome to FIFA Pool</comment>
   </data>
   <data name="RegFormSuccess" xml:space="preserve">
     <value>Tu registro ha sido procesado, recibiras noticias nuestras pronto por email.</value>
@@ -411,7 +411,7 @@
   </data>
   <data name="Rules20" xml:space="preserve">
     <value>Una comisión del 15% sobre el total de la quiniela sera hecha por el sitio [laquiniela.info] por los servicios prestados, al final del torneo.</value>
-    <comment>A 15% commission of the total pool will be charged by the Quiniela2014 Site for services provided, at the end of the tournament.</comment>
+    <comment>A 15% commission of the total pool will be charged by the Quiniela Site for services provided, at the end of the tournament.</comment>
   </data>
   <data name="Rules21" xml:space="preserve">
     <value>El resto de la donación se acumulará y se dará a la persona con el mayor número de puntos acumulados al final del torneo.</value>
@@ -458,12 +458,12 @@
     <comment>Send Feedback</comment>
   </data>
   <data name="SendInviteMessage" xml:space="preserve">
-    <value>Haz sido invitado para unirte a la Quiniela de la Copa Mundial FIFA 2014.  Este sitio es por invitación unicamente, y necesitas un código para poder registrarte. &lt;br&gt;&lt;br&gt;Aquí esta tu código para registrarte &lt;b&gt; {0} &lt;/b&gt; Para particpar en la Quiniela de la Copa Mundial FIFA 2014, ve a &lt;b&gt; &lt;a href='{1}'&gt;http://laquiniela.info&lt;/a&gt; &lt;/b&gt; y selecciona la opción de &lt;b&gt;[Registro]&lt;/b&gt; &lt;br/&gt; tambien tóma un tiempo para revisar las [Reglas] de la quiniela. &lt;br/&gt; Buena suerte!</value>
-    <comment>&lt;h1&gt;Here is your code to join the Quiniela 2014&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Use this code &lt;b&gt;{0}&lt;/b&gt; To register and participate in a FIFA World Cup 2014 Pool, go to &lt;b&gt;&lt;a href='{1}' &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!</comment>
+    <value>Haz sido invitado para unirte a la Quiniela de la Copa Mundial FIFA.  Este sitio es por invitación unicamente, y necesitas un código para poder registrarte. &lt;br&gt;&lt;br&gt;Aquí esta tu código para registrarte &lt;b&gt; {0} &lt;/b&gt; Para particpar en la Quiniela de la Copa Mundial FIFA, ve a &lt;b&gt; &lt;a href='{1}'&gt;http://laquiniela.info&lt;/a&gt; &lt;/b&gt; y selecciona la opción de &lt;b&gt;[Registro]&lt;/b&gt; &lt;br/&gt; tambien tóma un tiempo para revisar las [Reglas] de la quiniela. &lt;br/&gt; Buena suerte!</value>
+    <comment>&lt;h1&gt;Here is your code to join the Quiniela&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Use this code &lt;b&gt;{0}&lt;/b&gt; To register and participate in a FIFA World Cup  Pool, go to &lt;b&gt;&lt;a href='{1}' &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!</comment>
   </data>
   <data name="SendInviteSubject" xml:space="preserve">
-    <value>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA 2014</value>
-    <comment>{0}, sent you an invitation to join a FIFA World Cup 2014 Quiniela</comment>
+    <value>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA </value>
+    <comment>{0}, sent you an invitation to join a FIFA World Cup Quiniela</comment>
   </data>
   <data name="SendMessage" xml:space="preserve">
     <value>Enviar Mensaje</value>
@@ -518,8 +518,8 @@
     <comment>Once the scores are submited, you will not be able to change them anymore.</comment>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Quiniela 2014</value>
-    <comment>2014 Pool</comment>
+    <value>Quiniela</value>
+    <comment>Pool</comment>
   </data>
   <data name="TopWinDesc" xml:space="preserve">
     <value>Esta es la persona con el mayor número de puntos</value>
@@ -567,10 +567,10 @@
     <value>Mensaje</value>
   </data>
   <data name="Link2Text" xml:space="preserve">
-    <value>Copa Mundial de la FIFA 2014  | EA SPORTS</value>
+    <value>Copa Mundial de la FIFA | EA SPORTS</value>
   </data>
   <data name="Link2Url" xml:space="preserve">
-    <value>http://www.easports.com/es/2014-fifa-world-cup</value>
+    <value>http://www</value>
   </data>
   <data name="RegInvalidCodeMsg" xml:space="preserve">
     <value>El código de invitación o dirección de email no es válido</value>

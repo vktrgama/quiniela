@@ -130,24 +130,24 @@
     <comment>El registro falló, el usuario ya existe.</comment>
   </data>
   <data name="RegFormMessage" xml:space="preserve">
-    <value>&lt;h1&gt;Welcome to 2014 FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!</value>
-    <comment>&lt;h1&gt;Bienvenido a la Quiniela 2014&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Ahora podras ingresar tus pronósticos en nuestro sitio, usar tu dirección de correo electrónico y NIP para ingresar al sitio, y ve a la opcion de [Mis pronósticos] .&lt;br/&gt;&lt;br/&gt;Nuestro sitio es:&lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Suerte!</comment>
+    <value>&lt;h1&gt;Welcome to FIFA Pool&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Your can now load your match scores in our site, use your email and PIN to sign in the site, then go to the [My Scores] menu option.&lt;br/&gt;&lt;br/&gt;Go to &lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Good luck!</value>
+    <comment>&lt;h1&gt;Bienvenido a la Quiniela&lt;/h1&gt;&lt;br&gt;&lt;br&gt;Ahora podras ingresar tus pronósticos en nuestro sitio, usar tu dirección de correo electrónico y NIP para ingresar al sitio, y ve a la opcion de [Mis pronósticos] .&lt;br/&gt;&lt;br/&gt;Nuestro sitio es:&lt;b&gt;&lt;a href='{0}' &gt;http://laquiniela.Info&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Suerte!</comment>
   </data>
   <data name="RegFormSubjet" xml:space="preserve">
-    <value>Welcome to 2014 FIFA Pool</value>
-    <comment>Bienvenido a la Quiniela 2014</comment>
+    <value>Welcome to FIFA Pool</value>
+    <comment>Bienvenido a la Quiniela</comment>
   </data>
   <data name="RegFormSuccess" xml:space="preserve">
     <value>Your registration has been processed, you will get and email shortly</value>
     <comment>Tu registro ha sido procesado, recibiras noticias nuestras pronto por email.</comment>
   </data>
   <data name="SendInviteMessage" xml:space="preserve">
-    <value>You have been invited to join a FIFA World Cup 2014 Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup 2014 Pool, go to &lt;b&gt;&lt;a href='{1}' &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!</value>
-    <comment>&lt;h1&gt;Aquí encontrarás el código para regsitrarte en la Quiniela 2014&lt;/ h1&gt; &lt;br&gt; Utilice el código de inviatación&lt;b&gt; {0} &lt;/ b&gt; Para registrarse y particpar en la Quiniela de la Copa Mundial FIFA 2014, ve a &lt;b&gt; &lt;a href='{1}'&gt; http://laquiniela.info &lt;/ a&gt; &lt;/ b&gt; y selecciona la opción de [Registro] &lt;b&gt; &lt;/ b&gt; &lt;br/&gt; tambien tóma un tiempo para revisar las [Reglas] de la quiniela. &lt;br/&gt; Buena suerte!</comment>
+    <value>You have been invited to join a FIFA World Cup Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup Pool, go to &lt;b&gt;&lt;a href='{1}' &gt;http://laquiniela.info&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!</value>
+    <comment>&lt;h1&gt;Aquí encontrarás el código para regsitrarte en la Quiniela&lt;/ h1&gt; &lt;br&gt; Utilice el código de inviatación&lt;b&gt; {0} &lt;/ b&gt; Para registrarse y particpar en la Quiniela de la Copa Mundial FIFA, ve a &lt;b&gt; &lt;a href='{1}'&gt; http://laquiniela.info &lt;/ a&gt; &lt;/ b&gt; y selecciona la opción de [Registro] &lt;b&gt; &lt;/ b&gt; &lt;br/&gt; tambien tóma un tiempo para revisar las [Reglas] de la quiniela. &lt;br/&gt; Buena suerte!</comment>
   </data>
   <data name="SendInviteSubject" xml:space="preserve">
-    <value>{0}, sent you an invitation to join a FIFA World Cup 2014 Pool</value>
-    <comment>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA 2014</comment>
+    <value>{0}, sent you an invitation to join a FIFA World Cup Pool</value>
+    <comment>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA</comment>
   </data>
   <data name="SiteSubtitle" xml:space="preserve">
     <value>FIFAWorld Cup Brazil</value>
@@ -218,8 +218,8 @@
     <comment>Registro</comment>
   </data>
   <data name="ContentParagraph1" xml:space="preserve">
-    <value>Welcome to the 2014 FIFA Pool Site</value>
-    <comment>Bienvenido al sitio Quiniela 2014</comment>
+    <value>Welcome to the FIFA Pool Site</value>
+    <comment>Bienvenido al sitio Quiniela</comment>
   </data>
   <data name="ContentParagraph2" xml:space="preserve">
     <value>Have fun and possibly win some money</value>
@@ -259,7 +259,7 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>2014 Pool</value>
-    <comment>Quiniela 2014</comment>
+    <comment>Quiniela</comment>
   </data>
   <data name="TopWinDesc" xml:space="preserve">
     <value>This is the person with a higher number of points</value>
@@ -539,7 +539,7 @@
   </data>
   <data name="Link1Text" xml:space="preserve">
     <value>2014 FIFA World Cup</value>
-    <comment>Copa Mundial de la FIFA 2014</comment>
+    <comment>Copa Mundial de la FIFA</comment>
   </data>
   <data name="Link1Url" xml:space="preserve">
     <value>http://www.fifa.com/index.html</value>
@@ -569,7 +569,7 @@
   </data>
   <data name="Link2Text" xml:space="preserve">
     <value>FIFA World Cup | EA SPORTS</value>
-    <comment>Copa Mundial de la FIFA 2014</comment>
+    <comment>Copa Mundial de la FIFA</comment>
   </data>
   <data name="Link2Url" xml:space="preserve">
     <value>http://www.easports.com/2014-fifa-world-cup</value>
