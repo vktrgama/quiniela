@@ -1,6 +1,7 @@
 ﻿using quiniela.Entities;
 using quiniela.Helpers;
 using quiniela.Services;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
@@ -40,7 +41,7 @@ namespace quiniela.Controllers
             }
 
             var winner = _quinielaService.GetTopWinner();
-            var currencyExchange = _quinielaService.GetCurrenctRate();
+            var currencyExchange = Math.Round(_quinielaService.GetCurrenctRate(), 2);
 
             return View("Index", ModelHelper.GetHomeModel(user, winner, currencyExchange));
         }

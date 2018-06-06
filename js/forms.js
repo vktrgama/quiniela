@@ -130,7 +130,7 @@
 					            }
 					            break;
 					        case "InviteFriends":
-					            endpointUrl = _domainPath + "/wapi/SendReminder";
+                                endpointUrl = _domainPath + "/wapi/SendInvite";
 					            formVals = {
 					                email: _.getValFromLabel($('.email', _.form)),
 					                emailFrom: _userId

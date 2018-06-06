@@ -96,16 +96,16 @@ namespace quiniela.Services
                     var keys = score.name.Split('_');
                     try
                     {
-                        command.CommandText = string.Format("insert into dbo.MatchScores (UserId, MatchId, Team, Score, Type) values ('{0}', '{1}', '{2}', {3}, '{4}')",
-                                                             userId, keys[0], keys[1], score.value, keys[2]);
+                        command.CommandText = string.Format("insert into dbo.MatchScores (UserId, MatchId, Team, Score, Type, Year) values ('{0}', '{1}', '{2}', {3}, '{4}', {5})",
+                                                             userId, keys[0], keys[1], score.value, keys[2], ConfigurationManager.AppSettings["WorldCupYear"]);
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException sqlex)
                     {
                         if (sqlex.Message.IndexOf("duplicate key") > 0)
                         {
-                            command.CommandText = string.Format("update dbo.MatchScores set Score = {0}, Type = '{1}' where UserId = '{2}' and MatchId = '{3}' and Team = '{4}'",
-                                                             score.value, keys[2], userId, keys[0], keys[1]);
+                            command.CommandText = string.Format("update dbo.MatchScores set Score = {0}, Type = '{1}' where UserId = '{2}' and MatchId = '{3}' and Team = '{4}' and Year = {5}",
+                                                             score.value, keys[2], userId, keys[0], keys[1], ConfigurationManager.AppSettings["WorldCupYear"]);
                             command.ExecuteNonQuery();
                         }
                         else
@@ -146,7 +146,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select State from dbo.Users where Email = '{0}'", userId);
+                var sql = string.Format("select State from dbo.Users where Email = '{0}' and Year = {1}", userId, ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 UserState = (string)command.ExecuteScalar();
 
@@ -170,7 +170,8 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select * from dbo.MatchScores where userId = '{0}' order by MatchId", userId);
+                var sql = string.Format("select * from dbo.MatchScores where userId = '{0}' and Year = {1} order by MatchId", 
+                            userId, ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)
@@ -205,7 +206,8 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select State from dbo.Users where Email = '{0}' and AccessCode = '{1}'", userId, password);
+                var sql = string.Format("select State from dbo.Users where Email = '{0}' and AccessCode = '{1}' and Year = {2}", 
+                            userId, password, ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var UserState = (string)command.ExecuteScalar();
 
@@ -238,8 +240,10 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select State from dbo.Users where InviteCode = '{1}'", email,
-                    invitecode);
+                var sql = string.Format("select State from dbo.Users where InviteCode = '{1}' and Year = {2}", 
+                    email,
+                    invitecode,
+                    ConfigurationManager.AppSettings["WorldCupYear"]);
                 var command = new SqlCommand(sql, conn);
                 var UserState = (string)command.ExecuteScalar();
 
@@ -248,8 +252,11 @@ namespace quiniela.Services
                     var newCommand = new SqlCommand(sql, conn);
                     newCommand.CommandText =
                         string.Format(
-                            "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}', Email = '{4}' where InviteCode = '{5}'",
-                            QuinielaState.Active.ToString(), name, pin, ipaddress, email, invitecode);
+                            "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}', Email = '{4}', Year = {5} where InviteCode = '{6}'",
+                            QuinielaState.Active.ToString(), 
+                            name, pin, ipaddress, email, 
+                            ConfigurationManager.AppSettings["WorldCupYear"],
+                            invitecode);
                     newCommand.ExecuteNonQuery();
                 }
                 else
@@ -289,11 +296,14 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                SqlCommand newCommand = new SqlCommand(string.Format("delete from  dbo.Users where Email = '{0}'", email), conn);
+                SqlCommand newCommand = new SqlCommand(string.Format("delete from dbo.Users where Email = '{0}' and Year = {1}", 
+                    email,
+                    ConfigurationManager.AppSettings["WorldCupYear"]), conn);
                 newCommand.ExecuteNonQuery();
 
                 var invitecode = Guid.NewGuid().ToString().Split('-')[0].ToString();
-                var sql = string.Format("insert into dbo.Users (Email, InviteCode, state, TotalPoints) values ('{0}', '{1}', '{2}', 0)", email, invitecode, QuinielaState.New.ToString());
+                var sql = string.Format("insert into dbo.Users (Email, InviteCode, state, TotalPoints, Year) values ('{0}', '{1}', '{2}', {3}, {4})", 
+                            email, invitecode, QuinielaState.New.ToString(), 0, ConfigurationManager.AppSettings["WorldCupYear"]);
 
                 SqlCommand command = new SqlCommand(sql, conn);
                 command.CommandText = sql;
@@ -317,7 +327,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select * from dbo.Users where Email = '{0}'", userId);
+                var sql = string.Format("select * from dbo.Users where Email = '{0}' and Year = {1}", userId, ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)
@@ -346,7 +356,7 @@ namespace quiniela.Services
         /// <summary>
         /// Gets the top winner.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Winner's Name</returns>
         public Winner GetTopWinner()
         {
             var winnerName = Localizer.Get("TopWinner");
@@ -356,7 +366,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select name from dbo.Users where TotalPoints > 0 order by TotalPoints desc", QuinielaState.Playing.ToString());
+                var sql = string.Format("select name from dbo.Users where TotalPoints > 0 and Year = {0} order by TotalPoints desc", ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var winner = (string)command.ExecuteScalar();
 
@@ -365,7 +375,7 @@ namespace quiniela.Services
                     winnerName = winner;
                 }
 
-                command.CommandText = string.Format("select count(*) from dbo.Users where state <> 'Admin'", QuinielaState.Playing.ToString());
+                command.CommandText = string.Format("select count(*) from dbo.Users where state <> 'Admin' and Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
 
                 var numPartipants = (int)command.ExecuteScalar();
                 if (numPartipants > 0)
@@ -373,7 +383,7 @@ namespace quiniela.Services
                     var totPrize = (numPartipants * _donation);
                     if (Localizer.GetCulture().TwoLetterISOLanguageName != "en")
                     {
-                        totPrize = totPrize * GetCurrenctRate();
+                        totPrize = Math.Round(totPrize * GetCurrenctRate(), 2);
                     }
                     // winnerPrize = totPrize - (totPrize * .03) + .30; // paypal
                     winnerPrize = totPrize - (totPrize * .15); // quiniela
@@ -401,7 +411,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = "select * from dbo.Users order by name";
+                var sql = string.Format("select * from dbo.Users Where Year = {0} order by name", ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)
@@ -451,11 +461,13 @@ namespace quiniela.Services
 
                 if (fieldName == "TotalPoints")
                 {
-                    command.CommandText = string.Format("update dbo.Users set {0} = {1} where Email = '{2}'", fieldName, fieldValue, id);
+                    command.CommandText = string.Format("update dbo.Users set {0} = {1} where Email = '{2}' and Year = {3}", 
+                        fieldName, fieldValue, id, ConfigurationManager.AppSettings["WorldCupYear"]);
                 }
                 else
                 {
-                    command.CommandText = string.Format("update dbo.Users set {0} = '{1}' where Email = '{2}'", fieldName, fieldValue, id);
+                    command.CommandText = string.Format("update dbo.Users set {0} = '{1}' where Email = '{2}' and Year = {3}", 
+                        fieldName, fieldValue, id, ConfigurationManager.AppSettings["WorldCupYear"]);
                 }
                 command.ExecuteNonQuery();
 
@@ -485,9 +497,9 @@ namespace quiniela.Services
 
             try
             {
-                command.CommandText = string.Format("delete from dbo.Users where Email = '{0}'", id);
+                command.CommandText = string.Format("delete from dbo.Users where Email = '{0}' and Year = {1}", id, ConfigurationManager.AppSettings["WorldCupYear"]);
                 command.ExecuteNonQuery();
-                command.CommandText = string.Format("delete from dbo.MatchScores where UserId = '{0}'", id);
+                command.CommandText = string.Format("delete from dbo.MatchScores where UserId = '{0}' and Year = {1}", id, ConfigurationManager.AppSettings["WorldCupYear"]);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -511,7 +523,7 @@ namespace quiniela.Services
         {
             try
             {
-                WebRequest request = WebRequest.Create("http://rate-exchange.appspot.com/currency?from=USD&to=MXN");
+                WebRequest request = WebRequest.Create("http://free.currencyconverterapi.com/api/v5/convert?q=USD_MXN&compact=y");
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -520,13 +532,14 @@ namespace quiniela.Services
                 var json = new JavaScriptSerializer();
                 var result = json.Deserialize<ExchangeRate>(responseFromServer);
 
-                if (result != null && result.rate > 0)
+                if (result != null && result.USD_MXN.val > 0)
                 {
-                    return result.rate;
+                   return result.USD_MXN.val;
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Write(ex.Message);
             }
 
             return _dollarExchangeRateToPesos * 100;
@@ -634,8 +647,8 @@ namespace quiniela.Services
                         OpenDatabase();
                         SqlCommand command = new SqlCommand();
                         command.Connection = conn;
-                        command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}'",
-                            score.Split('-')[0], score.Split('-')[1], id);
+                        command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}', Year = {3}",
+                            score.Split('-')[0], score.Split('-')[1], id, ConfigurationManager.AppSettings["WorldCupYear"]);
                         command.ExecuteNonQuery();
                         CloseDatabase();
                     }
@@ -699,7 +712,8 @@ namespace quiniela.Services
             command.Connection = conn;
             if (!string.IsNullOrEmpty(matchId) && !string.IsNullOrEmpty(th) && !string.IsNullOrEmpty(ta))
             {
-                command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed=1 where MatchId = '{2}'", th, ta, matchId);
+                command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed=1 where MatchId = '{2}' and Year = {3}", 
+                    th, ta, matchId, ConfigurationManager.AppSettings["WorldCupYear"]);
                 command.ExecuteNonQuery();
             }
             command.CommandType = CommandType.StoredProcedure;
@@ -717,7 +731,7 @@ namespace quiniela.Services
             OpenDatabase();
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = "select MatchId, TeamHome, TeamAway from dbo.FinalScores";
+            command.CommandText = string.Format("select MatchId, TeamHome, TeamAway from dbo.FinalScores and Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
             var reader = command.ExecuteReader();
 
             var matchList = new List<Match>();
@@ -754,7 +768,7 @@ namespace quiniela.Services
             {
                 OpenDatabase();
 
-                var sql = string.Format("select * from dbo.FinalScores where MatchPlayed = 1");
+                var sql = string.Format("select * from dbo.FinalScores where MatchPlayed = 1 and Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
                 SqlCommand command = new SqlCommand(sql, conn);
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)

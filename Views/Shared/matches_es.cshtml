@@ -385,7 +385,9 @@
     </div>
     <script type="text/javascript">
         var _domainPath = '@Model.DomainPath';
-        prepareScoreForm('@Model.UserId', '@Model.UserState');
+        // populate scores and enable only the collapsable group element
+        prepareScoreForm('@Model.UserId', '@Model.UserState', "#collapseOne");
+
         $(".alert:not(.alert-block)").hide();
         $(".alert-info").show();
         $("body").css("background-color", "#57760F");

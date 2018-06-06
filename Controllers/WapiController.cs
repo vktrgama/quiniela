@@ -82,10 +82,18 @@ namespace quiniela.Controllers
             QException result = _quinielaService.VerifyInvitation(name, email, invitecode, pin,
                 HttpContext.Request.ServerVariables["REMOTE_ADDR"]);
 
-            if (result.Error == 0 && result.Message != "")
+            try
             {
-                new Smtp().SendEmail(email, subject, string.Format(message, ConfigurationManager.AppSettings["SiteDomain"]));
+                if (result.Error == 0 && result.Message != "")
+                {
+                    new Smtp().SendEmail(email, subject, string.Format(message, ConfigurationManager.AppSettings["SiteDomain"]));
+                }
             }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+           
 
             return Json(new { err = result.Error, msg = result.Message }, JsonRequestBehavior.AllowGet);
         }
@@ -176,10 +184,13 @@ namespace quiniela.Controllers
         /// <returns></returns>
         public JsonResult SendReminder(string email, string emailFrom)
         {
-            // var subject = "La Quiniela - Esta es la oportunidad de recuperarte [Here it's your chance to recover]";
-            var subject = "La Quiniela - Don't forget to enter your scores [No olvides ingresar tus resultados]";
-            var message = "Ya estan abiertos los pronósticos para la eliminación de FINAL, Ve a <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> e ingresa tus pronósticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos resultados en cada fase de eliminación. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego en esta fase de eliminación. Suerte!";
-            message += "<br/><br/>You can enter your scores for the FINAL of elimination, go to <b><a href='http://vgama.com/laquiniela' >http://vgama.com/laquiniela</a></b> and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!";
+            // var subject = "FIFA WorldCup - Here it's your chance to recover. [Esta es la oportunidad de recuperarte]";
+            var subject = "FIFA WorldCup - Don't forget to enter your scores. [No olvides ingresar tus resultados]";
+            //  para la eliminación de FINAL
+            var message = "Ya estan abiertos los pronósticos, ve a <b><a href='" + ConfigurationManager.AppSettings["SiteDomain"] + "'>" + ConfigurationManager.AppSettings["SiteDomain"] + "</a></b> e ingresa tus pronósticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos resultados en cada fase de eliminación. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego en esta fase de eliminación. Suerte!";
+            // for the FINAL of elimination
+            message += "<br/><br/>You can enter your scores, go to <b><a href='" + ConfigurationManager.AppSettings["SiteDomain"] + "' >" + ConfigurationManager.AppSettings["SiteDomain"] + "</a></b> and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!";
+
             message += "<br/><br/>User/Usuario:<b>{0}</b> <br/>PIN/NIP:<b>{1}</b>";
             var msg = Localizer.Get("RegFormFail");
 

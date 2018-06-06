@@ -77,7 +77,7 @@ setLang = function (lang) {
     });
 }
 
-prepareScoreForm = function (userId, userState) {
+prepareScoreForm = function (userId, userState, collapseGroup) {
     $('#back-to-bottom').stop(true).css({ "display": "block" }).animate({ "opacity": 1 }, 400);
     var user = (userId != "") ? userId : _userId
     var state = (userState != "") ? userState : _userState
@@ -88,8 +88,8 @@ prepareScoreForm = function (userId, userState) {
     switch (state) {
         case "Active":
             $(".score input").attr('disabled', 'disabled');
-            // enable only editable group
-            $("#collapseFive .score input").removeAttr("disabled")
+            // enable only editable group (e.g. collapseOne, collapseTwo, collapseThree, collapseFour ...)
+            $(collapseGroup + " .score input").removeAttr("disabled")
             break;
         case "Playing":
             setTimeout(function () {

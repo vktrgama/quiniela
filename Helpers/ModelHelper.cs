@@ -39,7 +39,7 @@ namespace quiniela.Helpers
                 PayPalToolTip = Localizer.Get("SSModalPayPalToolTip")
             };
 
-            return new HomeModel
+            var homeModel = new HomeModel
             {
                 UserId = user.Email,
                 UserState = user.State,
@@ -77,7 +77,6 @@ namespace quiniela.Helpers
                 MoveUp = Localizer.Get("MoveUp"),
                 MoveDown = Localizer.Get("MoveDown"),
                 PrivatePolicyTitle = Localizer.Get("PrivatePolicyTitle"),
-                CurrencyExchange = currencyExchange,
                 CurrenctExchangeTitle = Localizer.Get("CurrenctExchange"),
                 InvitationSuccessMsg = Localizer.Get("InvitationSuccessMsg"),
                 FormErrMsg = Localizer.Get("FormErrMsg"),
@@ -92,6 +91,14 @@ namespace quiniela.Helpers
                 FieldMessage = Localizer.Get("FieldMessage"),
                 FinalScoresMsg = Localizer.Get("FinalScoresMsg")
             };
+
+            if (Localizer.Get("CurrenctExchange") != "")
+            {
+                homeModel.CurrenctExchangeTitle += " " + currencyExchange;
+                homeModel.CurrencyExchange = currencyExchange;
+            }
+
+            return homeModel;
         }
 
         /// <summary>
