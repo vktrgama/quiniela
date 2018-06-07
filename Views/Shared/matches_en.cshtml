@@ -36,18 +36,31 @@
                         <div class="match-list">
                             <form id="formMatchScores">
                                 <br />
+                                <div class="alert alert-block fade in">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <h4>Warning!</h4>
+                                    Once the scores are submited you will not be able to change them anymore. You can save as many times as you want before submitting your scores. Use the geeen button on the right side bottom corner to save.
+                                </div>
+                                <div style="text-align: right;">
+                                    <button id="btnSubmitScores" data-toggle="modal" data-target="#submitModal" class="btn btn-primary btn-large">I want to submit your scores</button>
+                                </div>
+                                <br /><br />
                                 <!--
                                 <div class="alert alert-info fade in">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                                     <h4>Note:</h4>
                                     You can enter now your scores for the Quarter-finals
                                 </div>
-                                    -->
+                                 -->
+                                <!--
+                                    ///////////////////////////////// Matches ////////////////////
+                                -->
                                 <div class="matches">
                                     <div class="accordion" id="accordion2">
                                         <div class="accordion-group">
                                             <div class="accordion-heading">
-                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">First Round
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                                    First Round
                                                 </a>
                                                 <div id="collapseOne" class="accordion-body collapse">
                                                     <div class="accordion-inner">
@@ -80,7 +93,6 @@
                                                                     <div id="300186507" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">14 Jun 2014 - 22:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">14 Jun 2014</div><div class="mu-i-matchnum">Match 6</div><div class="mu-i-group">Group C</div><div class="mu-i-location"><div class="mu-i-stadium">Arena Pernambuco</div><div class="mu-i-venue">Recife </div></div></div><div class="mu-day"><span class="t-day">14</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/civ.png" alt="Côte d'Ivoire" class="CIV i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Côte d'Ivoire</span><span class="t-nTri">CIV</span></div></div><div class="t away"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/jpn.png" alt="Japan" class="JPN i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Japan</span><span class="t-nTri">JPN</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="01:00" data-daymonthutc="1506" data-timelocal="22:00" data-mytime="18:00"><span class="s-scoreText">18:00</span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></div>
                                                                 </div>
                                                                 <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             </div><div class="match-list-date anchor" id="20140615">
                                                                 <h3><span class="h3-wrap">Sunday 15 June</span></h3><div class="time-converter"></div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -91,7 +103,6 @@
                                                                     <div id="300186477" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">15 Jun 2014 - 19:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">15 Jun 2014</div><div class="mu-i-matchnum">Match 11</div><div class="mu-i-group">Group F</div><div class="mu-i-location"><div class="mu-i-stadium">Maracanã - Estádio Jornalista Mário Filho</div><div class="mu-i-venue">Rio De Janeiro </div></div></div><div class="mu-day"><span class="t-day">15</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/arg.png" alt="Argentina" class="ARG i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Argentina</span><span class="t-nTri">ARG</span></div></div><div class="t away"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/bih.png" alt="Bosnia and Herzegovina" class="BIH i-4-flag flag"></span></div><div class="t-n" style="width: 230px;"><span class="t-nText kern">Bosnia and Herzegovina</span><span class="t-nTri">BIH</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="22:00" data-daymonthutc="1506" data-timelocal="19:00" data-mytime="15:00"><span class="s-scoreText">15:00</span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></div>
                                                                 </div>
                                                                 <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             </div><div class="match-list-date anchor" id="20140616">
                                                                 <h3><span class="h3-wrap">Monday 16 June</span></h3><div class="time-converter"></div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -102,7 +113,6 @@
                                                                     <div id="300186512" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">16 Jun 2014 - 19:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">16 Jun 2014</div><div class="mu-i-matchnum">Match 14</div><div class="mu-i-group">Group G</div><div class="mu-i-location"><div class="mu-i-stadium">Estadio das Dunas</div><div class="mu-i-venue">Natal </div></div></div><div class="mu-day"><span class="t-day">16</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/gha.png" alt="Ghana" class="GHA i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Ghana</span><span class="t-nTri">GHA</span></div></div><div class="t away"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/usa.png" alt="USA" class="USA i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">USA</span><span class="t-nTri">USA</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="22:00" data-daymonthutc="1606" data-timelocal="19:00" data-mytime="15:00"><span class="s-scoreText">15:00</span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></div>
                                                                 </div>
                                                                 <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             </div><div class="match-list-date anchor" id="20140617">
                                                                 <h3><span class="h3-wrap">Tuesday 17 June</span></h3><div class="time-converter"></div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -113,7 +123,6 @@
                                                                     <div id="300186499" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">17 Jun 2014 - 18:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">17 Jun 2014</div><div class="mu-i-matchnum">Match 16</div><div class="mu-i-group">Group H</div><div class="mu-i-location"><div class="mu-i-stadium">Arena Pantanal</div><div class="mu-i-venue">Cuiaba </div></div></div><div class="mu-day"><span class="t-day">17</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/rus.png" alt="Russia" class="RUS i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Russia</span><span class="t-nTri">RUS</span></div></div><div class="t away"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/kor.png" alt="Korea Republic" class="KOR i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Korea Republic</span><span class="t-nTri">KOR</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="22:00" data-daymonthutc="1706" data-timelocal="18:00" data-mytime="15:00"><span class="s-scoreText">15:00</span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></div>
                                                                 </div>
                                                                 <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             </div><div class="match-list-date anchor" id="20140618">
                                                                 <h3><span class="h3-wrap">Wednesday 18 June</span></h3><div class="time-converter"></div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -124,7 +133,6 @@
                                                                     <div id="300186453" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">18 Jun 2014 - 18:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">18 Jun 2014</div><div class="mu-i-matchnum">Match 18</div><div class="mu-i-group">Group A</div><div class="mu-i-location"><div class="mu-i-stadium">Arena Amazonia</div><div class="mu-i-venue">Manaus </div></div></div><div class="mu-day"><span class="t-day">18</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/cmr.png" alt="Cameroon" class="CMR i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Cameroon</span><span class="t-nTri">CMR</span></div></div><div class="t away"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/cro.png" alt="Croatia" class="CRO i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Croatia</span><span class="t-nTri">CRO</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="22:00" data-daymonthutc="1806" data-timelocal="18:00" data-mytime="15:00"><span class="s-scoreText">15:00</span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></div>
                                                                 </div>
                                                                 <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             </div><div class="match-list-date anchor" id="20140619">
                                                                 <h3><span class="h3-wrap">Thursday 19 June</span></h3><div class="time-converter"></div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -216,13 +224,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>                                                
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="accordion-group">
                                             <div class="accordion-heading">
                                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                                   Round of 16
+                                                    Round of 16
                                                 </a>
                                             </div>
                                             <div id="collapseTwo" class="accordion-body collapse">
@@ -234,13 +242,11 @@
                                                             <div class="col-xs-12 clear-grid ">
                                                                 <div data-id="300186487" class="mu fixture">
                                                                     <div class="mu-i"><div class="mu-i-datetime">28 Jun 2014 - 13:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">28 Jun 2014</div><div class="mu-i-matchnum">Match 49</div><div class="mu-i-group">Round of 16</div><div class="mu-i-location"><div class="mu-i-stadium">Estadio Mineirao</div><div class="mu-i-venue">Belo Horizonte </div></div></div><div class="mu-day"><span class="t-day">28</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home" data-team-id="43924"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/bra.png" alt="Brazil" class="BRA i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Brazil</span><span class="t-nTri">BRA</span></div></div><div class="t away" data-team-id="43925"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/chi.png" alt="Chile" class="CHI i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Chile</span><span class="t-nTri">CHI</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="16:00" data-daymonthutc="2806" data-timelocal="13:00" data-mytime="09:00" data-dayplus="+"><span class="s-scoreText">09:00 </span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div>
-
                                                                 </div>
                                                             </div><div class="col-xs-12 clear-grid ">
                                                                 <div data-id="300186491" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">28 Jun 2014 - 17:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">28 Jun 2014</div><div class="mu-i-matchnum">Match 50</div><div class="mu-i-group">Round of 16</div><div class="mu-i-location"><div class="mu-i-stadium">Estadio do Maracana</div><div class="mu-i-venue">Rio De Janeiro </div></div></div><div class="mu-day"><span class="t-day">28</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home" data-team-id="43926"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/col.png" alt="Colombia" class="COL i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Colombia</span><span class="t-nTri">COL</span></div></div><div class="t away" data-team-id="43930"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/uru.png" alt="Uruguay" class="URU i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Uruguay</span><span class="t-nTri">URU</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="20:00" data-daymonthutc="2806" data-timelocal="17:00" data-mytime="13:00" data-dayplus="+"><span class="s-scoreText">13:00 </span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></a></div>
                                                             </div>
                                                             <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                         </div>
                                                         <div class="match-list-date anchor" id="20140629" data-title="The matches of the 2014 FIFA World Cup Brazil™ - FIFA.com">
                                                             <h3><span class="h3-wrap">Sunday 29 June</span></h3><div class="time-converter"></div>
@@ -250,7 +256,6 @@
                                                                 <div data-id="300186459" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">29 Jun 2014 - 17:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">29 Jun 2014</div><div class="mu-i-matchnum">Match 52</div><div class="mu-i-group">Round of 16</div><div class="mu-i-location"><div class="mu-i-stadium">Arena Pernambuco</div><div class="mu-i-venue">Recife </div></div></div><div class="mu-day"><span class="t-day">29</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home" data-team-id="43901"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/crc.png" alt="Costa Rica" class="CRC i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Costa Rica</span><span class="t-nTri">CRC</span></div></div><div class="t away" data-team-id="43949"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/gre.png" alt="Greece" class="GRE i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Greece</span><span class="t-nTri">GRE</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="20:00" data-daymonthutc="2906" data-timelocal="17:00" data-mytime="13:00" data-dayplus="+"><span class="s-scoreText">13:00 </span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></a></div>
                                                             </div>
                                                             <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                         </div>
                                                         <div class="match-list-date anchor" id="20140630" data-title="The matches of the 2014 FIFA World Cup Brazil™ - FIFA.com">
                                                             <h3><span class="h3-wrap">Monday 30 June</span></h3><div class="time-converter"> </div>
@@ -260,7 +265,6 @@
                                                                 <div data-id="300186460" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">30 Jun 2014 - 17:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">30 Jun 2014</div><div class="mu-i-matchnum">Match 54</div><div class="mu-i-group">Round of 16</div><div class="mu-i-location"><div class="mu-i-stadium">Estadio Beira-Rio</div><div class="mu-i-venue">Porto Alegre </div></div></div><div class="mu-day"><span class="t-day">30</span><span class="t-month">Jun</span></div><div class="mu-m"><div class="t home" data-team-id="43948"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/ger.png" alt="Germany" class="GER i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Germany</span><span class="t-nTri">GER</span></div></div><div class="t away" data-team-id="43843"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/alg.png" alt="Algeria" class="ALG i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Algeria</span><span class="t-nTri">ALG</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="20:00" data-daymonthutc="3006" data-timelocal="17:00" data-mytime="13:00" data-dayplus="+"><span class="s-scoreText">13:00 </span>   </div></div></div><div class="mu-reasonwin"> </div><div class="mu-reasonwin-abbr"> </div></div></a></div>
                                                             </div>
                                                             <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
-
                                                             <div class="match-list-date anchor" id="20140701" data-title="The matches of the 2014 FIFA World Cup Brazil™ - FIFA.com">
                                                                 <h3><span class="h3-wrap">Tuesday 01 July</span></h3><div class="time-converter"> </div>
                                                                 <div class="col-xs-12 clear-grid ">
@@ -284,7 +288,6 @@
                                             <div id="collapseThree" class="accordion-body collapse">
                                                 <div class="accordion-inner">
                                                     <div class="match-list-round" id="255931" data-roundid="255931"><h2>QUARTER FINALS</h2></div>
-
                                                     <div class="match-list-date anchor" id="20140704" data-title="The matches of the 2014 FIFA World Cup Brazil™ - FIFA.com">
                                                         <h3><span class="h3-wrap">Friday 04 July</span></h3><div class="time-converter"><span class="my-time hidden">Change to your time</span></div>
                                                         <div class="col-xs-12 clear-grid ">
@@ -353,7 +356,7 @@
                                                             <div data-id="300186501" class="mu fixture"><div class="mu-i"><div class="mu-i-datetime">13 Jul 2014 - 16:00 <span class="wrap-localtime">Local time</span></div><div class="mu-i-date">13 Jul 2014</div><div class="mu-i-matchnum">Match 64</div><div class="mu-i-group">Final</div><div class="mu-i-location"><div class="mu-i-stadium">Estadio do Maracana</div><div class="mu-i-venue">Rio De Janeiro </div></div></div><div class="mu-day"><span class="t-day">13</span><span class="t-month">Jul</span></div><div class="mu-m"><div class="t home" data-team-id="43948"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/ger.png" alt="Germany" class="GER i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Germany</span><span class="t-nTri">GER</span></div></div><div class="t away" data-team-id="43922"><div class="t-i i-4"><span class="t-i-wrap"><img src="http://img.fifa.com/images/flags/4/arg.png" alt="Argentina" class="ARG i-4-flag flag"></span></div><div class="t-n"><span class="t-nText ">Argentina</span><span class="t-nTri">ARG</span></div></div><div class="s"><div class="s-fixture"><div class="s-status"> </div><div class="s-status-abbr"> </div><div class="s-score s-date-HHmm" data-timeutc="19:00" data-daymonthutc="1307" data-timelocal="16:00" data-mytime="12:00" data-dayplus="+"><span class="s-scoreText">12:00</span>   </div></div></div><div class="mu-reasonwin"><span class="text-reasonwin"> </span> </div><div class="mu-reasonwin-abbr"><span class="text-reasonwin"> </span> </div></div></a></div>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Guarda tus resultados</button>
+                                                    <button class="btn btn-success" onclick="saveMatchScores(false, formMatchScores); return false;">Save your scores</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -366,19 +369,11 @@
                                 <div id="alertBox" class="alert alert-success hide">
                                     <h4>Good Job!</h4> You scores were successfully saved
                                 </div>
-                                <!--
-                                <div class="alert alert-block fade in">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <h4>Warning!</h4>
-                                    Once the scores are submited you will not be able to change them anymore. You can save as many times as you want before submitting your scores. Use the geeen button on the right side bottom corner to save.
-                                </div>
-
                                 <div id="alertBox" class="alert alert-error hide">
                                     <h4 class="alert-heading">Oh snap!</h4>You got an error!
                                     Try again later.
                                 </div>
-                                <button id="btnSubmitScores" data-toggle="modal" data-target="#submitModal" class="btn btn-primary btn-large">Submit your scores</button>
-                                    -->
+
                             </form>
                         </div>
                     </div>

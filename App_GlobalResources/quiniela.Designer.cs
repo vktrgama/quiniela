@@ -1015,7 +1015,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A donation of {0} needs to be made, for you to participation in this Quiniela, if you are not sure, please read more details from our .
+        ///   Looks up a localized string similar to A donation of {0} needs to be made, for you to participation in this FIFA World Cup Pool, if you are not sure, please read more details from our .
         /// </summary>
         internal static string SSModalBullet1 {
             get {

@@ -154,7 +154,7 @@
     <comment>Copa Mundial FIFA Brasil </comment>
   </data>
   <data name="SSModalBullet1" xml:space="preserve">
-    <value>A donation of {0} needs to be made, for you to participation in this Quiniela, if you are not sure, please read more details from our </value>
+    <value>A donation of {0} needs to be made, for you to participation in this FIFA World Cup Pool, if you are not sure, please read more details from our </value>
     <comment>Una donación de {0} necesita ser hecha, para que la participar en esta Quiniela, si usted no está seguro, por favor, lea más detalles de nuestra pagina de </comment>
   </data>
   <data name="SSModalBullet2" xml:space="preserve">
@@ -191,7 +191,7 @@
   </data>
   <data name="SSModalWarningTxt" xml:space="preserve">
     <value>Once the scores are submited, you will not be able to change them anymore.</value>
-    <comment>Una vez que los pronósticos sean enviados, usted no será capaz de cambiarlos nunca más.</comment>
+    <comment>Una vez que los pronósticos sean enviados, quedaran bloqueados y no podran ser cambiados.</comment>
   </data>
   <data name="TopWinner" xml:space="preserve">
     <value>[Winner Name Here]</value>
@@ -199,7 +199,7 @@
   </data>
   <data name="BetAmount" xml:space="preserve">
     <value>$20.00 USD</value>
-    <comment>$260.00 MXN</comment>
+    <comment>400.00 MXN</comment>
   </data>
   <data name="MnuChat" xml:space="preserve">
     <value>Messages</value>

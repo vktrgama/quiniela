@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BetAmount" xml:space="preserve">
-    <value>$260.00 MXN</value>
+    <value>$400.00 MXN</value>
     <comment>$20.00 USD</comment>
   </data>
   <data name="BtnClear" xml:space="preserve">
@@ -514,7 +514,7 @@
     <comment>Warning!</comment>
   </data>
   <data name="SSModalWarningTxt" xml:space="preserve">
-    <value>Una vez que los pronósticos sean enviados, usted no será capaz de cambiarlos nunca más.</value>
+    <value>Una vez que los pronósticos sean enviados, quedaran bloqueados y no podran ser cambiados.</value>
     <comment>Once the scores are submited, you will not be able to change them anymore.</comment>
   </data>
   <data name="Title" xml:space="preserve">
