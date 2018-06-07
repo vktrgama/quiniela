@@ -404,6 +404,7 @@ calculatePoints = function () {
                     location.reload();
                 }, 3000);
             } else {
+                $("#alertBox.alert-error").find("p").html(data.msg);
                 $("#alertBox.alert-error").show();
                 setTimeout(function () {
                     $(".alert-error").hide();

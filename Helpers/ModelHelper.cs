@@ -221,6 +221,7 @@ namespace quiniela.Helpers
                 FieldValMessage = Localizer.Get("FieldValMessage"),
                 SendFeedbackMsg = Localizer.Get("SendFeedbackMsg"),
                 FieldName = Localizer.Get("FieldName"),
+                FieldEmail = Localizer.Get("FieldEmail"),
                 FieldRequired = Localizer.Get("FieldRequired"),
                 FieldValEmail = Localizer.Get("FieldValEmail"),
                 FieldValName = Localizer.Get("FieldValName"),

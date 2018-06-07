@@ -358,8 +358,8 @@
     <comment>Registration form submitted!</comment>
   </data>
   <data name="RegSuccessMsg1" xml:space="preserve">
-    <value>Estaremos en contacto pronto.</value>
-    <comment>We will be in touch soon.</comment>
+    <value>Recibiras un email en breve.</value>
+    <comment>You will receive and email shortly.</comment>
   </data>
   <data name="Rules1" xml:space="preserve">
     <value>Cada participante deberá &lt;a class='{0}' href='{1}'&gt;registrarse&lt;/a&gt; usando un código de inviación, que sera enviado a el previamente.</value>
@@ -604,5 +604,14 @@
   </data>
   <data name="LogOutPageTitle" xml:space="preserve">
     <value>Fuera de Linea</value>
+  </data>
+  <data name="ReminderEmailBody" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href='{0}'&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos resultados en cada fase de eliminación. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego en esta fase de eliminación. Suerte!</value>
+  </data>
+  <data name="ReminderEmailSubject" xml:space="preserve">
+    <value>FIFA Copa Mundial - No olvides ingresar tus resultados</value>
+  </data>
+  <data name="ReminderEmailSubjectCatchup" xml:space="preserve">
+    <value>Esta es la oportunidad de recuperarte</value>
   </data>
 </root>

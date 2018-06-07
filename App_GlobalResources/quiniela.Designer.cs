@@ -718,11 +718,38 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We will be in touch soon..
+        ///   Looks up a localized string similar to &gt;You will receive and email shortly..
         /// </summary>
         internal static string RegSuccessMsg1 {
             get {
                 return ResourceManager.GetString("RegSuccessMsg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;br/&gt;&lt;br/&gt;You can enter your scores now, go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!.
+        /// </summary>
+        internal static string ReminderEmailBody {
+            get {
+                return ResourceManager.GetString("ReminderEmailBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FIFA WorldCup - Don&apos;t forget to enter your scores..
+        /// </summary>
+        internal static string ReminderEmailSubject {
+            get {
+                return ResourceManager.GetString("ReminderEmailSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta es la oportunidad de recuperarte.
+        /// </summary>
+        internal static string ReminderEmailSubjectCatchup {
+            get {
+                return ResourceManager.GetString("ReminderEmailSubjectCatchup", resourceCulture);
             }
         }
         

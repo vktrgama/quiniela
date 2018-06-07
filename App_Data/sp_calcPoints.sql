@@ -1,28 +1,12 @@
--- ================================================
--- Template generated from Template Explorer using:
--- Create Procedure (New Menu).SQL
---
--- Use the Specify Values for Template Parameters 
--- command (Ctrl-Shift-M) to fill in the parameter 
--- values below.
---
--- This block of comments will not be included in
--- the definition of the procedure.
--- ================================================
+USE [quiniela]
+GO
+/****** Object:  StoredProcedure [vktr].[sp_calculateMatchPoints]    Script Date: 06/06/2018 22:04:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
--- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
--- =============================================
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'sp_calculateMatchPoints'))
-DROP PROCEDURE sp_calculateMatchPoints	
-GO
 
-CREATE PROCEDURE sp_calculateMatchPoints	
+ALTER PROCEDURE [vktr].[sp_calculateMatchPoints] @Year nvarchar(4)
 AS
 BEGIN
 	DECLARE @MatchId nvarchar(10)
@@ -34,7 +18,7 @@ BEGIN
 
 	DECLARE @Final CURSOR 
 	SET @Final = CURSOR FAST_FORWARD 
-	FOR Select MatchId, TeamHome, TeamAway, ScoreHome, ScoreAway From FinalScores where MatchPlayed = 1 order by MatchId
+	FOR Select MatchId, TeamHome, TeamAway, ScoreHome, ScoreAway From FinalScores where MatchPlayed = 1 and [Year] = @Year order by MatchId
 
 	OPEN @Final
 	FETCH NEXT FROM @Final
@@ -43,49 +27,54 @@ BEGIN
 	BEGIN TRAN @TransactionName
 	BEGIN TRY
 		-- clear points to all
-		update Users SET TotalPoints = 0
+		update Users SET TotalPoints = 0 WHERE [Year] = @Year
 		
 		WHILE @@FETCH_STATUS = 0 
 		BEGIN 			
 			-- It is a match
-			update t SET t.TotalPoints = t.TotalPoints + 1 
-						FROM Users t inner join v_MatchByUser on v_MatchByUser.UserId = t.Email
+			update u SET u.TotalPoints = u.TotalPoints + 1 
+						FROM Users u inner join v_MatchByUser on v_MatchByUser.UserId = u.Email
 							where MatchId = @MatchId
 							and SH = @SH
+							and u.[Year] = @Year
 			
-			update t SET t.TotalPoints = t.TotalPoints + 1 
-						FROM Users t inner join v_MatchByUser on v_MatchByUser.UserId = t.Email
+			update u SET u.TotalPoints = u.TotalPoints + 1 
+						FROM Users u inner join v_MatchByUser on v_MatchByUser.UserId = u.Email
 							where MatchId = @MatchId
 							and SA = @SA
+							and u.[Year] = @Year
 
 			-- No match			
-			IF @SH = @SA
+			IF (@SH - @SA) = 0
 			BEGIN
 				PRINT 'DRAW =>' + @MatchId + @TH + @TA 
-				update t SET t.TotalPoints = t.TotalPoints + 1 
-						FROM Users t inner join v_MatchByUser on v_MatchByUser.UserId = t.Email
+				update u SET u.TotalPoints = u.TotalPoints + 1 
+						FROM Users u inner join v_MatchByUser on v_MatchByUser.UserId = u.Email
 							where MatchId = @MatchId
-							and SH = SA
+							and SH - SA = 0
+							and u.[Year] = @Year
 			END
 			ELSE
 			BEGIN
 				-- Home Won
-				IF (@SH - @SA) >= 0
+				IF (@SH - @SA) > 0
 					BEGIN
 						PRINT 'HOME =>' + @MatchId + @TH + @TA 
-						update t SET t.TotalPoints = t.TotalPoints + 1 
-							FROM Users t inner join v_MatchByUser on v_MatchByUser.UserId = t.Email
+						update u SET u.TotalPoints = u.TotalPoints + 1 
+							FROM Users u inner join v_MatchByUser on v_MatchByUser.UserId = u.Email
 								where MatchId = @MatchId
-								and SH - SA >= 0
+								and SH - SA > 0
+								and u.[Year] = @Year
 					END
 				ELSE
 				-- Away Won
 					BEGIN
 						PRINT 'AWAY =>' + @MatchId + @TH + @TA 
-						update t SET t.TotalPoints = t.TotalPoints + 1 
-								FROM Users t inner join v_MatchByUser on v_MatchByUser.UserId = t.Email
+						update u SET u.TotalPoints = u.TotalPoints + 1 
+								FROM Users u inner join v_MatchByUser on v_MatchByUser.UserId = u.Email
 									where MatchId = @MatchId
 									and SH - SA < 0
+									and u.[Year] = @Year
 					END
 			END
 			
@@ -102,4 +91,7 @@ BEGIN
 		ROLLBACK TRANSACTION @TransactionName
 	END CATCH
 END
-GO
+
+GRANT EXECUTE ON [vktr].[sp_calculateMatchPoints]
+    TO PUBLIC;  
+GO 

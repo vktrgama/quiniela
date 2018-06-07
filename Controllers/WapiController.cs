@@ -184,15 +184,9 @@ namespace quiniela.Controllers
         /// <returns></returns>
         public JsonResult SendReminder(string email, string emailFrom)
         {
-            // var subject = "FIFA WorldCup - Here it's your chance to recover. [Esta es la oportunidad de recuperarte]";
-            var subject = "FIFA WorldCup - Don't forget to enter your scores. [No olvides ingresar tus resultados]";
-            //  para la eliminación de FINAL
-            var message = "Ya estan abiertos los pronósticos, ve a <b><a href='" + ConfigurationManager.AppSettings["SiteDomain"] + "'>" + ConfigurationManager.AppSettings["SiteDomain"] + "</a></b> e ingresa tus pronósticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos resultados en cada fase de eliminación. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego en esta fase de eliminación. Suerte!";
-            // for the FINAL of elimination
-            message += "<br/><br/>You can enter your scores, go to <b><a href='" + ConfigurationManager.AppSettings["SiteDomain"] + "' >" + ConfigurationManager.AppSettings["SiteDomain"] + "</a></b> and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!";
-
-            message += "<br/><br/>User/Usuario:<b>{0}</b> <br/>PIN/NIP:<b>{1}</b>";
-            var msg = Localizer.Get("RegFormFail");
+            // var subject = Localizer.Get("ReminderEmailSubjectCatchup");
+            var subject = Localizer.Get("ReminderEmailSubject");
+            var message = string.Format(Localizer.Get("ReminderEmailBody"), ConfigurationManager.AppSettings["SiteDomain"]);
 
             try
             {
@@ -210,6 +204,7 @@ namespace quiniela.Controllers
             }
             catch (Exception ex) { Console.Write(ex.Message); }
 
+            var msg = Localizer.Get("RegFormFail");
             return Json(new { err = 1, msg }, JsonRequestBehavior.AllowGet);
         }
 
@@ -240,7 +235,7 @@ namespace quiniela.Controllers
         {
             try
             {
-                new Smtp().SendEmail(email, "Quiniela Feedback from " + name, msg);
+                new Smtp().SendEmail(email, "FIFA World Cup Feedback from " + name, msg);
 
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);
             }

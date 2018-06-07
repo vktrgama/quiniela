@@ -562,7 +562,7 @@ namespace quiniela.Services
                 string responseFromServer = reader.ReadToEnd();
 
                 CsQuery.CQ htmlBody = responseFromServer;
-                var score = htmlBody[string.Format("div[data-id='{0}']", matchId)].Find(".s-scoreText").Html();
+                var score = htmlBody[string.Format("div[data-id='{0}']", matchId)].Find(".fi-s__scoreText").Html();
                 if (score.Contains('-'))
                 {
                     finalScore.Add(new MatchScore { name = "home", value = score.Split('-')[0] });
@@ -599,7 +599,7 @@ namespace quiniela.Services
                     {
                         var id = el["data-id"];
                         var div = el.Cq();
-                        var time = div.Find(".s-scoreText").Html();
+                        var time = div.Find(".fi-s__scoreText").Html();
                         var dat = div.Find(".mu-i-date").Html();
                         if (time.Contains(':'))
                         {
@@ -633,24 +633,28 @@ namespace quiniela.Services
             string responseFromServer = reader.ReadToEnd();
 
             CsQuery.CQ htmlBody = responseFromServer;
-            var todayMatch = htmlBody[string.Format("div[id='{0}{1}{2}']", DateTime.Now.Year, ("0" + DateTime.Now.Month).Substring(0, 2), DateTime.Now.Day)];
+            var todayMatch = htmlBody[string.Format("div[data-matchesdate='{0}{1}{2}']", DateTime.Now.Year, ("0" + DateTime.Now.Month).Substring(0, 2), DateTime.Now.Day)];
             var matches = todayMatch.Find("[data-id]");
             if (matches.Length > 0)
             {
-                foreach (var el in matches)
+                foreach (var match in matches)
                 {
-                    var id = el["data-id"];
-                    var div = el.Cq();
-                    var score = div.Find(".s-scoreText").Html();
-                    if (score.Contains('-'))
+                    var id = match["data-id"];
+                    // scape elements that are not related to match game
+                    if (int.Parse(id) > 11000)
                     {
-                        OpenDatabase();
-                        SqlCommand command = new SqlCommand();
-                        command.Connection = conn;
-                        command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}', Year = {3}",
-                            score.Split('-')[0], score.Split('-')[1], id, ConfigurationManager.AppSettings["WorldCupYear"]);
-                        command.ExecuteNonQuery();
-                        CloseDatabase();
+                        var div = match.Cq();
+                        var score = div.Find(".fi-s__scoreText").Html();
+                        if (score.Contains('-'))
+                        {
+                            OpenDatabase();
+                            SqlCommand command = new SqlCommand();
+                            command.Connection = conn;
+                            command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}', Year = {3}",
+                                score.Split('-')[0], score.Split('-')[1], id, ConfigurationManager.AppSettings["WorldCupYear"]);
+                            command.ExecuteNonQuery();
+                            CloseDatabase();
+                        }
                     }
                 }
             }
@@ -717,7 +721,8 @@ namespace quiniela.Services
                 command.ExecuteNonQuery();
             }
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = string.Format("sp_calculateMatchPoints");
+            command.CommandText = string.Format("[vktr].[sp_calculateMatchPoints]");
+            command.Parameters.Add("@Year", SqlDbType.VarChar).Value = ConfigurationManager.AppSettings["WorldCupYear"];
             command.ExecuteNonQuery();
             CloseDatabase();
         }
@@ -731,7 +736,7 @@ namespace quiniela.Services
             OpenDatabase();
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = string.Format("select MatchId, TeamHome, TeamAway from dbo.FinalScores and Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
+            command.CommandText = string.Format("select MatchId, TeamHome, TeamAway from dbo.FinalScores where Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
             var reader = command.ExecuteReader();
 
             var matchList = new List<Match>();
