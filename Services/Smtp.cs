@@ -8,7 +8,7 @@ namespace quiniela.Services
         public void  SendEmail(string address, string subject, string message)
         {
             string email = "vktrgama@gmail.com";
-            string password = "tl@t0ani";
+            string password = "4lsPWD}A";
 
             var loginInfo = new NetworkCredential(email, password);
             var msg = new MailMessage();
