@@ -258,6 +258,7 @@
     <Content Include="Views\Shared\admin.cshtml" />
     <Content Include="Views\Shared\matches.cshtml" />
     <Content Include="Views\Shared\logout.cshtml" />
+    <Content Include="Views\Home\pronto.cshtml" />
     <None Include="Views\Shared\matches_en.cshtml" />
     <Content Include="Views\Shared\payment.cshtml" />
     <None Include="Views\Shared\registration.cshtml" />

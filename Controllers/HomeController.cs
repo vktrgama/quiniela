@@ -43,7 +43,8 @@ namespace quiniela.Controllers
             var winner = _quinielaService.GetTopWinner();
             var currencyExchange = Math.Round(_quinielaService.GetCurrenctRate(), 2);
 
-            return View("Index", ModelHelper.GetHomeModel(user, winner, currencyExchange));
+            // return View("Index", ModelHelper.GetHomeModel(user, winner, currencyExchange));
+            return View("pronto");
         }
 
         /// <summary>
