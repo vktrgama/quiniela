@@ -124,6 +124,11 @@ h2, h3, h4 {
     color: white;
 }
 
+.matchesHeader {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
 .alertMatches h4 {
     font-family: inherit;
     font-weight: bold;

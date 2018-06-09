@@ -10,7 +10,9 @@
     <meta name="description" content="La quiniela web site is fun">
     <meta name="keywords" content="none">
     <meta name="author" content="@Model.Author">
-    <!-- THIS references are required because this file is loaded independently too.-->
+    <!-- 
+        THIS references are required because this file is loaded independently too.
+        -->
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/quiniela.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css" media="screen">
@@ -28,7 +30,9 @@
     <!--content wrapper-->
     <div id="wrapper">
         <section>
-            <h2>@Model.UserName Quiniela</h2>
+            <div class="matchesHeader">
+                <h2>@Model.UserName Quiniela</h2>
+            </div>
             <div class="dynamicContent">
                 <link rel="stylesheet" href="/css/fifabase.css" type="text/css" />
                 <link rel="stylesheet" href="/css/matches.css" type="text/css" />
@@ -15426,7 +15430,7 @@
         prepareScoreForm('@Model.UserId', userState, "#collapseOne");
         $(".alert:not(.alert-block)").hide();
         $(".alert-info").show();
-        $("body").css("background-color", "#57760F");
+        $("body").css("background-image", "url(/img/bgfifa2018.png)");
         /*
         setTimeout(function () {
             $(".popover").css("left", "900px").css("top", "100px").fadeIn(2000);

@@ -573,7 +573,7 @@
     <value>http://www.easports.com/es/2014-fifa-world-cup</value>
   </data>
   <data name="RegInvalidCodeMsg" xml:space="preserve">
-    <value>El código de invitación o dirección de email no es válido</value>
+    <value>El código de invitación o dirección de email no es válido, verifiquelo.</value>
   </data>
   <data name="ChatSubTitle" xml:space="preserve">
     <value>(Ultimos 20 Mensajes)</value>

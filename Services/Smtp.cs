@@ -14,7 +14,7 @@ namespace quiniela.Services
             var msg = new MailMessage();
             var smtpClient = new SmtpClient("smtp.gmail.com", 587);
 
-            msg.From = new MailAddress(email);
+            msg.From = new MailAddress(email, "Victor Gama");
             msg.To.Add(new MailAddress(address));
             msg.Subject = subject;
             msg.Body = message;

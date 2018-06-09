@@ -84,6 +84,7 @@ namespace quiniela.Controllers
 
             try
             {
+                // Smtp requires authorization fro Gmail before sending any email
                 if (result.Error == 0 && result.Message != "")
                 {
                     new Smtp().SendEmail(email, subject, string.Format(message, ConfigurationManager.AppSettings["SiteDomain"]));
@@ -156,8 +157,6 @@ namespace quiniela.Controllers
         /// </returns>
         public JsonResult SendInvite(string email, string emailFrom)
         {
-            var subject = Localizer.Get("SendInviteSubject");
-            var message = Localizer.Get("SendInviteMessage");
             var msg = Localizer.Get("RegFormFail");
 
             try
@@ -168,9 +167,11 @@ namespace quiniela.Controllers
                     Paticipant user = _quinielaService.GetUser(emailFrom);
                     if (user.Name != null)
                     {
-                        new Smtp().SendEmail(email.Trim(),
-                            string.Format(subject, user.Name),
-                            string.Format(message, invitationCode, ConfigurationManager.AppSettings["SiteDomain"]));
+                        var subject = string.Format(Localizer.Get("SendInviteSubject"), user.Name);
+                        var message = string.Format(Localizer.Get("SendInviteMessage"), invitationCode, ConfigurationManager.AppSettings["SiteDomain"]);
+
+                        // Smtp requires authorization fro Gmail before sending any email
+                        new Smtp().SendEmail(email.Trim(), subject, message);
                     }
                 }
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);
@@ -199,6 +200,7 @@ namespace quiniela.Controllers
                 {
                     if (!string.IsNullOrEmpty(user.Name))
                     {
+                        // Smtp requires authorization fro Gmail before sending any email
                         new Smtp().SendEmail(user.Email.Trim(),
                             string.Format(subject, user.Name),
                             string.Format(message, user.Email, user.AccessCode));
@@ -239,6 +241,7 @@ namespace quiniela.Controllers
         {
             try
             {
+                // Smtp requires authorization fro Gmail before sending any email
                 new Smtp().SendEmail(email, "FIFA World Cup Feedback from " + name, msg);
 
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);

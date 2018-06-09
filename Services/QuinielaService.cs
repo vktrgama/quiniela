@@ -236,6 +236,12 @@ namespace quiniela.Services
         /// </returns>
         public QException VerifyInvitation(string name, string email, string invitecode, string pin, string ipaddress)
         {
+            var possibleException = new QException
+            {
+                Error = 1,
+                Message = Localizer.Get("RegInvalidCodeMsg")
+            };
+
             try
             {
                 OpenDatabase();
@@ -246,26 +252,25 @@ namespace quiniela.Services
                     ConfigurationManager.AppSettings["WorldCupYear"]);
                 var command = new SqlCommand(sql, conn);
                 var UserState = (string)command.ExecuteScalar();
-
                 if (UserState != null)
                 {
                     var newCommand = new SqlCommand(sql, conn);
                     newCommand.CommandText =
                         string.Format(
-                            "update dbo.Users set state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}', Email = '{4}', Year = {5} where InviteCode = '{6}'",
+                            "UPDATE dbo.Users SET state = '{0}', name = '{1}', accesscode='{2}', IpAddress = '{3}' WHERE Email = '{4}' AND Year = {5} AND InviteCode = '{6}'",
                             QuinielaState.Active.ToString(), 
                             name, pin, ipaddress, email, 
                             ConfigurationManager.AppSettings["WorldCupYear"],
                             invitecode);
-                    newCommand.ExecuteNonQuery();
+                    var result = newCommand.ExecuteNonQuery();
+                    if (result == 0)
+                    {
+                        return possibleException;
+                    }
                 }
                 else
                 {
-                    return new QException
-                    {
-                        Error = 1,
-                        Message = Localizer.Get("RegInvalidCodeMsg")
-                    };
+                    return possibleException;
                 }
 
                 CloseDatabase();

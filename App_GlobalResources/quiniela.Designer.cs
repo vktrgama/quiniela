@@ -727,7 +727,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &gt;You will receive and email shortly..
+        ///   Looks up a localized string similar to You will receive and email shortly..
         /// </summary>
         internal static string RegSuccessMsg1 {
             get {
@@ -979,7 +979,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have been invited to join a FIFA World Cup Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup Pool, go to &lt;b&gt;&lt;a href=&apos;{1}&apos; &gt;Quiniela&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!.
+        ///   Looks up a localized string similar to You have been invited to join a FIFA World Cup Pool, this site is by invitation only, and you need an invitation code to register.&lt;br&gt;&lt;br&gt;Here is your code &lt;b&gt;{0}&lt;/b&gt; to register and participate in a FIFA World Cup Pool, go to &lt;b&gt;&lt;a href=&apos;{1}&apos; &gt;Quiniela&lt;/a&gt;&lt;/b&gt; and select the option for [Register]&lt;br/&gt;&lt;br/&gt;And take some time to check the Rules of the pool.&lt;br/&gt;&lt;br/&gt;Have fun!&lt;br/&gt;&lt;br/&gt;==============&lt;br/&gt;&lt;br/&gt;Haz sido invitado para unirte a la Quiniela de la Copa Mundial FIFA.  Este sitio es por invitación un [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SendInviteMessage {
             get {
@@ -988,7 +988,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}, sent you an invitation to join a FIFA World Cup Pool.
+        ///   Looks up a localized string similar to Invitation to join a FIFA World Cup Pool | Inviación para unirte a una Quiniela de la Copa Mundial FIFA.
         /// </summary>
         internal static string SendInviteSubject {
             get {

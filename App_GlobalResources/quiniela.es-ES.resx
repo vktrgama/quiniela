@@ -353,13 +353,13 @@
     <value>Tu registro ha sido procesado, recibiras noticias nuestras pronto por email.</value>
     <comment>Your registration has been processed, you will get and email shortly</comment>
   </data>
-  <data name="RegSuccessMsg" xml:space="preserve">
+  <data name="" xml:space="preserve">
     <value>Forma de registro enviada!</value>
     <comment>Registration form submitted!</comment>
   </data>
   <data name="RegSuccessMsg1" xml:space="preserve">
     <value>Recibiras un email en breve.</value>
-    <comment>You will receive and email shortly.</comment>
+    <comment>You will RegSuccessMsgreceive and email shortly.</comment>
   </data>
   <data name="Rules1" xml:space="preserve">
     <value>Cada participante deberá &lt;a class='{0}' href='{1}'&gt;registrarse&lt;/a&gt; usando un código de inviación, que sera enviado a el previamente.</value>
@@ -573,7 +573,7 @@
     <value>http://www</value>
   </data>
   <data name="RegInvalidCodeMsg" xml:space="preserve">
-    <value>El código de invitación o dirección de email no es válido</value>
+    <value>El código de invitación o dirección de email no es válido, verifiquelo.</value>
   </data>
   <data name="ChatSubTitle" xml:space="preserve">
     <value>(Ultimos 20 Mensajes)</value>
