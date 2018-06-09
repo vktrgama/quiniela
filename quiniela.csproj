@@ -251,6 +251,8 @@
     <Content Include="Global.asax" />
     <Content Include="js\bootstrap-collapse.js" />
     <Content Include="js\bootstrap-tooltip.js" />
+    <Content Include="js\include_script2014.js" />
+    <Content Include="js\quiniela2014.js" />
     <Content Include="js\_grid.js" />
     <Content Include="js\_LINQtoJquery.js" />
     <Content Include="Templates\_submitScores.tmpl.htm" />
