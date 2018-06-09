@@ -1,7 +1,7 @@
 ﻿
 namespace quiniela.Models
 {
-    public class LogOut
+    public class LogOut : BaseClass
     {
         public string LogOutMessage { get; set; }
         public string LogOutDescription { get; set; }

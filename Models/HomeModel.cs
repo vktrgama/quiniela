@@ -8,6 +8,7 @@ namespace quiniela.Models
 {
     public class HomeModel : BaseClass
     {
+        public string BgImage { get; set; }
         public string UserId { get; set; }
         public string UserState { get; set; }
         public string DomainPath { get; set; }
@@ -63,5 +64,6 @@ namespace quiniela.Models
         public string FieldMessage { get; set; }
 
         public string FinalScoresMsg { get; set; }
+        public string RegisterNow { get; set; }
     }
 }

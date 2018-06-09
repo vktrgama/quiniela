@@ -709,6 +709,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go and register Now!.
+        /// </summary>
+        internal static string RegisterNow {
+            get {
+                return ResourceManager.GetString("RegisterNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registration form submitted!.
         /// </summary>
         internal static string RegSuccessMsg {
@@ -1006,7 +1015,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FIFAWorld Cup Brazil.
+        ///   Looks up a localized string similar to FIFAWorld Cup.
         /// </summary>
         internal static string SiteSubtitle {
             get {
@@ -1105,7 +1114,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2014 Pool.
+        ///   Looks up a localized string similar to {0} Pool.
         /// </summary>
         internal static string Title {
             get {
@@ -1141,7 +1150,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current Winner.
+        ///   Looks up a localized string similar to Top Winner.
         /// </summary>
         internal static string TopWinTitle {
             get {

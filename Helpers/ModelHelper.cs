@@ -46,13 +46,14 @@ namespace quiniela.Helpers
                 UserName = user.Name,
                 WelcomeUser = string.Format( Localizer.Get("WelcomeUser"), string.Empty),
                 DomainPath = ConfigurationManager.AppSettings["DomainPath"],
+                BgImage = ConfigurationManager.AppSettings["BgImage"],
                 SiteSubtitle = Localizer.Get("SiteSubtitle"),
                 MnuRules = Localizer.Get("MnuRules"),
                 MnuParticipants = Localizer.Get("MnuParticipants"),
                 MnuMatches = Localizer.Get("MnuMatches"),
                 MnuChat = Localizer.Get("MnuChat"),
                 MnuReg = Localizer.Get("MnuReg"),
-                Title = Localizer.Get("Title"),
+                Title = string.Format(Localizer.Get("Title"), ConfigurationManager.AppSettings["WorldCupYear"]),
                 TopWinDesc = Localizer.Get("TopWinDesc"),
                 TopWinner = TopWinner.topWinner,
                 TopWinnerPrice = string.Format("{0:C} {1}", TopWinner.prize, (currentCode != "USD") ? "MXN" : currentCode),
@@ -89,7 +90,8 @@ namespace quiniela.Helpers
                 ChatSubTitle = Localizer.Get("ChatSubTitle"),
                 SendMessage = Localizer.Get("SendMessage"),
                 FieldMessage = Localizer.Get("FieldMessage"),
-                FinalScoresMsg = Localizer.Get("FinalScoresMsg")
+                FinalScoresMsg = Localizer.Get("FinalScoresMsg"),
+                RegisterNow = Localizer.Get("RegisterNow")
             };
 
             if (Localizer.Get("CurrenctExchange") != "")

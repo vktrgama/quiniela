@@ -7,17 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="La quiniela web site is fun">
+    <meta name="description" content="This site is fun">
     <meta name="keywords" content="none">
-    <meta name="author" content="vktr g">
+    <meta name="author" content="@Model.Author">
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/bootstrap-responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/quiniela.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/grid.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen">
-
     <script type="text/javascript" src="/js/include_script.js"></script>
-
     <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
     <script>
         // Global Vars
@@ -33,7 +32,6 @@
         // first load, chk for existing session
         // readPersistedSession();
     </script>
-
     <!--[if lt IE 8]><div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div><![endif]-->
     <!--[if lt IE 9]>
 
@@ -46,10 +44,10 @@
     <div id="webSiteLoader"><span></span></div>
     <!--button back top-->
     <div class="fixed-navigation">
-        <div id="back-top" class="btn btn-inverse hide">
+        <div id="back-top" class="btn btn-inverse">
             <i class="icon-arrow-up icon-white"></i><span>@Model.MoveUp</span>
         </div>
-        <div id="back-to-bottom" class="btn btn-inverse hide">
+        <div id="back-to-bottom" class="btn btn-inverse">
             <i class="icon-arrow-down icon-white"></i><span>@Model.MoveDown</span>
         </div>
     </div>
@@ -58,7 +56,7 @@
     <!--content wrapper-->
 
     <div id="wrapper">
-        <div id="bgStretch"><img src="/img/bg_img1.jpg" alt=""></div>
+        <div id="bgStretch"><img src="/img/@Model.BgImage" alt=""></div>
         <h2 id="payPalMessage">Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com/us to view details of this transaction.</h2>
 
         <div class="extraBg1"></div>
@@ -68,13 +66,13 @@
                 <div class="wrap">
                     <!--logo and company name-->
                     <a href="@Model.DomainPath/Home/Index" style="text-decoration:none;">
-                        <h2 class="textStyle7">@Model.Title</h2>
-                        <div class="textStyle8">@Model.SiteSubtitle</div>
+                        <h2 class="headerTitle">@Model.Title</h2>
+                        <div class="headerSubTitle">@Model.SiteSubtitle</div>
                     </a>
-                    <div id="logoutLink" class="extra_block1 hide">
-                        <a href="#"><div class="_link2"><span class="icon-off"></span>  @Model.LogOut</div></a>
+                    <div id="logoutLink" class="logoutContainer hide">
+                        <a href="#"><div class="logout"><span class="icon-off"></span>@Model.LogOut</div></a>
                     </div>
-                    <div class="extra_block1">
+                    <div class="extraBlock">
                         <div>
                             <span class="icon-envelope"></span>
                             E-mail: <span class="_link2">@Model.OwnerEmail</span>
@@ -103,16 +101,33 @@
             <div class="contentBg"></div>
             <section>
                 <div class="container">
-                    <h3 class="margin4" id="welcomeUser"></h3>
+                    <h3 class="welcomeTitle margin4" id="welcomeUser"></h3>
                     <div class="dynamicContent">
                         <div class="row">
                             <div class="span9">
-                                <br /><br />
-                                <div>
-                                    <h2 class="textStyle7">CONGRATULATIONS!</h2>
-                                    <br />
-                                </div>  
-                                <h2>George Pinhead, you are the Winner, along Germany :)</h2>
+                                <br />
+                                <!-- WINNER MESSAGE -->
+                                <!--
+    <div>
+        <h2 class="headerTitle">CONGRATULATIONS!</h2>
+        <br />
+    </div>
+    <h2>George Pinhead, you are the Winner, along Germany :)</h2>
+        -->
+                                <div class="home-left-pane">
+                                    <h2>@Model.TopWinTitle</h2>
+                                    <div class="wrap">
+                                        <h3 class="margin4">@Model.TopWinner</h3>
+                                        <p>@Model.TopWinDesc</p>
+                                    </div>
+                                    <h2>@Model.WinningPrize</h2>
+                                    <div class="wrap">
+                                        <h3 class="margin4">@Model.TopWinnerPrice</h3>
+                                        <a href="#" class="_link2" rel="tooltip" data-placement="right" data-original-title="@Model.CurrencyExchange">@Model.CurrenctExchangeTitle</a>
+                                        <p>@Model.TopWinPrizeDesc</p>
+                                    </div>
+                                    <a class="btn btn-primary" href="@Model.DomainPath/Home/Registration">@Model.RegisterNow</a>
+                                </div>
                             </div>
                             <script id="popLeft" type="text/html">
                                 <div>
@@ -165,20 +180,9 @@
                                                 </div>
                                             </fieldset>
                                         </form>
-                                        <a class="btn btn-primary" id="regHome" href="@Model.DomainPath/Home/Registration">@Model.MnuReg</a>
                                     </div>
                                 </div>
-                                <h2>@Model.TopWinTitle</h2>
-                                <div class="wrap">
-                                    <h3 class="margin4">@Model.TopWinner</h3>
-                                    <p>@Model.TopWinDesc</p>
-                                </div>
-                                <h2>@Model.WinningPrize</h2>
-                                <div class="wrap">
-                                    <h3 class="margin4">@Model.TopWinnerPrice</h3>
-                                    <a href="#" class="_link2" rel="tooltip" data-placement="right" data-original-title="@Model.CurrencyExchange">@Model.CurrenctExchangeTitle</a>
-                                    <p>@Model.TopWinPrizeDesc</p>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -186,7 +190,7 @@
             </section>
         </div>
         <!-- submit scores modal-->
-        <div id="submitModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div id="submitModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>@Model.ScoresModal.Title</h3>
@@ -225,7 +229,7 @@
             <div class="container">
                 <div class="row">
                     <div class="span5">
-                        <div class="privacy_text margin2"><span class="textStyle1">copyright</span><br>Victor G &copy; 2014 | <a class="_link1" href="@Model.DomainPath/Home/privacy">@Model.PrivatePolicyTitle</a><br><!-- {%FOOTER_LINK} --></div>
+                        <div class="privacy_text margin2"><span class="textStyle1">copyright</span><br>Victor G &copy; 2018 | <a class="_link1" href="@Model.DomainPath/Home/privacy">@Model.PrivatePolicyTitle</a><br><!-- {%FOOTER_LINK} --></div>
                     </div>
                     <div class="span4">
 

@@ -1,7 +1,7 @@
 ﻿
 namespace quiniela.Models
 {
-    public class MatchesModel
+    public class MatchesModel : BaseClass
     {
         public string UserId { get; set; }
         public string UserState { get; set; }

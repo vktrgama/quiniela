@@ -43,8 +43,7 @@ namespace quiniela.Controllers
             var winner = _quinielaService.GetTopWinner();
             var currencyExchange = Math.Round(_quinielaService.GetCurrenctRate(), 2);
 
-            // return View("Index", ModelHelper.GetHomeModel(user, winner, currencyExchange));
-            return View("pronto");
+            return View("Index", ModelHelper.GetHomeModel(user, winner, currencyExchange));
         }
 
         /// <summary>
@@ -68,10 +67,10 @@ namespace quiniela.Controllers
             {
                 userid = HttpUtility.UrlDecode(userid);
                 user = _quinielaService.GetUser(userid);
-                return View("matches_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel(user));
+                return View("match_" + Localizer.GetCulture().TwoLetterISOLanguageName, ModelHelper.GetMatchesModel(user));
             } else
             {
-                return View("LogOut", ModelHelper.GetLogOutModel());
+                return View("logout", ModelHelper.GetLogOutModel());
             }
 
         }
@@ -121,11 +120,16 @@ namespace quiniela.Controllers
             var model = ModelHelper.GetAdminModel();
 
             var matchList = _quinielaService.GetMatchList();
-            if (matchList.Count>0){
+            if (matchList.Count > 0){
                 var jsonSerialiser = new JavaScriptSerializer();
                 var json = jsonSerialiser.Serialize(matchList);
                 model.MatchesList = json;
             }
+
+            // Page load will make ajax calls to load the following:
+            // loadParticipantsEdit();
+            // loadStates();
+            // loadMatches(matches);
 
             return View("admin", model);
         }

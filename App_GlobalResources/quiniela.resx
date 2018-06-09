@@ -150,8 +150,8 @@
     <comment>{0}, te ha enviado una inviación para unirte a una Quiniela de la Copa Mundial FIFA</comment>
   </data>
   <data name="SiteSubtitle" xml:space="preserve">
-    <value>FIFAWorld Cup Brazil</value>
-    <comment>Copa Mundial FIFA Brasil </comment>
+    <value>FIFAWorld Cup</value>
+    <comment>Copa Mundial FIFA</comment>
   </data>
   <data name="SSModalBullet1" xml:space="preserve">
     <value>A donation of {0} needs to be made, for you to participation in this FIFA World Cup Pool, if you are not sure, please read more details from our </value>
@@ -258,7 +258,7 @@
     <comment>Entrar al sitio</comment>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>2014 Pool</value>
+    <value>{0} Pool</value>
     <comment>Quiniela</comment>
   </data>
   <data name="TopWinDesc" xml:space="preserve">
@@ -270,7 +270,7 @@
     <comment>Esta cantidad representa el total acumulado de todos los participantes (comisiones ya aplicadas).</comment>
   </data>
   <data name="TopWinTitle" xml:space="preserve">
-    <value>Current Winner</value>
+    <value>Top Winner</value>
     <comment>Ganador Al momento </comment>
   </data>
   <data name="UserListTitle" xml:space="preserve">
@@ -616,5 +616,8 @@
   </data>
   <data name="ReminderEmailSubjectCatchup" xml:space="preserve">
     <value>Esta es la oportunidad de recuperarte</value>
+  </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Go and register Now!</value>
   </data>
 </root>

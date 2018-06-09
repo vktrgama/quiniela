@@ -90,11 +90,14 @@ prepareScoreForm = function (userId, userState, collapseGroup) {
             $(".score input").attr('disabled', 'disabled');
             // enable only editable group (e.g. collapseOne, collapseTwo, collapseThree, collapseFour ...)
             $(collapseGroup + " .score input").removeAttr("disabled")
+            $("#submitScoresContainer").show();
             break;
         case "Playing":
+            $("#submitScoresContainer").html('');
             setTimeout(function () {
                 populateResults();
             }, 1000);
+            // no break, we need to disable also
         case "Submitted":
             $(".alert").hide();
             $(".btn").hide();
@@ -110,15 +113,14 @@ prepareScoreForm = function (userId, userState, collapseGroup) {
 }
 
 addMatchInputBoxed = function () {
-    // ("#newScores").find
     $(".home").each(function () {
         var matchId = (typeof $(this).closest('.fixture').attr('id') != "undefined") ? $(this).closest('.fixture').attr('id') : $(this).closest('.fixture').attr('data-id');
-        var scoreId = matchId + "_" + $(this).find('.t-nTri').html() + '_home';
+        var scoreId = matchId + "_" + $(this).find('.fi-t__nTri').html() + '_home';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "' /></div>");
     })
     $(".away").each(function () {
         var matchId = ($(this).closest('.fixture').attr('id')) ? $(this).closest('.fixture').attr('id') : $(this).closest('.fixture').attr('data-id');
-        var scoreId = matchId + "_" + $(this).find('.t-nTri').html() + '_away';
+        var scoreId = matchId + "_" + $(this).find('.fi-t__nTri').html() + '_away';
         $(this).prepend("<div class='score'><input type='text' onkeyup='maxLengthCheck(this);' onkeydown='maxLengthCheck(this);' maxlength='1' name='" + scoreId + "'/></div>");
     })
 }
@@ -150,14 +152,14 @@ saveMatchScores = function (bSubmitted, form) {
                     $(".alert-success").show();
                     setTimeout(function () {
                         $(".alert-success").hide();
-                    }, 3000);
+                    }, 2000);
                 }
                 $(btn).text(btnCaption);
             } else {
                 $(".alert-error").show();
                 setTimeout(function () {
                     $(".alert-error").hide();
-                }, 4000);
+                }, 2000);
             }
         }
     });
@@ -197,28 +199,38 @@ populateResults = function () {
                 var s = data.scores;
                 $.each(s, function (i, score) {
                     $("input[name=" + score.name + "]").attr("title", score.value);
-                    // Match exact scores
-                    if ($("input[name=" + score.name + "]").val() == score.value) {
-                        $("input[name=" + score.name + "]").css("background-color", "#06FA2D");
-                    } else {
-                        $("input[name=" + score.name + "]").css("background-color", "#B43659").css("color", "#fff");
-                    }
+                });
 
+                $.each(s, function (i, score) {
                     // Determine winner
-                    var inputs = $("div[id=" + score.name.split('_')[0] + "]").length > 0 ? $("div[id=" + score.name.split('_')[0] + "]").find("input") : $("div[data-id=" + score.name.split('_')[0] + "]").find("input")
+                    var matchId = score.name.split('_')[0];
+                    var inputs = $("div[data-id=" + matchId + "]").find("input")
+                    // title - hold the real result, value - the users result (2 times one both home and one away)
                     if (inputs[0].title != "" && inputs[1].title != "" && inputs[0].value != "" && inputs[1].value != "") {
+                        // Match exact scores
+                        if ($(inputs[0]).title == inputs[0].value) {
+                            $(inputs[0]).attr('class', 'goodScore');
+                        } else {
+                            $(inputs[0]).attr('class', 'badScore');
+                        }
+                        if ($(inputs[1]).title == inputs[1].value) {
+                            $(inputs[1]).attr('class', 'goodScore');
+                        } else {
+                            $(inputs[1]).attr('class', 'badScore');
+                        }
+
                         if (inputs[0].title - inputs[1].title == 0 && inputs[0].value - inputs[1].value == 0) {
                             // draw
-                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
-                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
+                            $(inputs[0]).attr('class', 'goodScore');
+                            $(inputs[1]).attr('class', 'goodScore');
                         }
                         if (inputs[0].title - inputs[1].title > 0 && inputs[0].value - inputs[1].value > 0) {
                             // home winner
-                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
+                            $(inputs[0]).attr('class', 'goodScore');
                         } 
                         if (inputs[0].title - inputs[1].title < 0 && inputs[0].value - inputs[1].value < 0) {
                             // away winner
-                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
+                            $(inputs[1]).attr('class', 'goodScore');
                         }
                     }
                 });
@@ -382,7 +394,7 @@ supports_html5_storage = function() {
 }
 
 showUserScores = function (email) {
-    var w = window.open(_domainPath + "/Home/Matches?userid=" + encodeURIComponent(email),
+    var w = window.open(`${_domainPath}/Home/Matches?userid=${encodeURIComponent(email)}&state=Playing`,
         "_blank", "location=0, status=0, width=1128, height=780, scrollbars=1");
 }
 
@@ -415,14 +427,16 @@ calculatePoints = function () {
 }
 
 loadMatches = function (list) {
-    var decodeList = $("<div/>").html(list).text();
-    var data = eval(decodeList);
-    if (data.length > 0) {
-        var $matches = $("#matches");
-        $matches.empty();
-        $.each(data, function () {
-            $matches.append($('<option></option>').attr("value", this.MatchId).text(this.MatchName));
-        });
+    if (list) {
+        var decodeList = $("<div/>").html(list).text();
+        var data = eval(decodeList);
+        if (data.length > 0) {
+            var $matches = $("#matches");
+            $matches.empty();
+            $.each(data, function () {
+                $matches.append($('<option></option>').attr("value", this.MatchId).text(this.MatchName));
+            });
+        }
     }
 }
 
@@ -468,4 +482,14 @@ SendReminderEmail = function()
             }
         }
     });
+}
+
+getParameterByName = function(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

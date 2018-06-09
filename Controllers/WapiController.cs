@@ -108,9 +108,13 @@ namespace quiniela.Controllers
         [HttpPost]
         public JsonResult SubmitMatchScores(string userId, bool submitted, Array scores)
         {
+            var feedback = new QException();
             var jss = new JavaScriptSerializer();
             var scoreList = jss.Deserialize<List<MatchScore>>(scores.GetValue(0).ToString());
-            var feedback = _quinielaService.SaveScores(scoreList, userId, submitted);
+            if (scoreList.Count > 0)
+            {
+                feedback = _quinielaService.SaveScores(scoreList, userId, submitted);
+            }
 
             return Json(new { err = feedback.Error, msg = feedback.Message }, JsonRequestBehavior.AllowGet);
         }

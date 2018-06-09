@@ -5,7 +5,7 @@ using System.Web;
 
 namespace quiniela.Models
 {
-    public class ChatModel
+    public class ChatModel : BaseClass
     {
         public string PageTitle { get; set; }
         public string ChatTitle { get; set; }

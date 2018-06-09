@@ -106,7 +106,7 @@
 
     $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
 
-    $parent.trigger(e = $.Event('close'))
+    $parent.triggerHandler(e = $.Event('close'))
 
     if (e.isDefaultPrevented()) return
 
@@ -114,7 +114,7 @@
 
     function removeElement() {
       $parent
-        .trigger('closed')
+        .triggerHandler('closed')
         .remove()
     }
 
@@ -329,7 +329,7 @@
   , pause: function (e) {
       if (!e) this.paused = true
       if (this.$element.find('.next, .prev').length && $.support.transition.end) {
-        this.$element.trigger($.support.transition.end)
+        this.$element.triggerHandler($.support.transition.end)
         this.cycle()
       }
       clearInterval(this.interval)
@@ -369,7 +369,7 @@
       if ($next.hasClass('active')) return
 
       if ($.support.transition && this.$element.hasClass('slide')) {
-        this.$element.trigger(e)
+        this.$element.triggerHandler(e)
         if (e.isDefaultPrevented()) return
         $next.addClass(type)
         $next[0].offsetWidth // force reflow
@@ -379,15 +379,15 @@
           $next.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
-          setTimeout(function () { that.$element.trigger('slid') }, 0)
+          setTimeout(function () { that.$element.triggerHandler('slid') }, 0)
         })
       } else {
-        this.$element.trigger(e)
+        this.$element.triggerHandler(e)
         if (e.isDefaultPrevented()) return
         $active.removeClass('active')
         $next.addClass('active')
         this.sliding = false
-        this.$element.trigger('slid')
+        this.$element.triggerHandler('slid')
       }
 
       isCycling && this.cycle()
@@ -542,10 +542,10 @@
         , complete = function () {
             if (startEvent.type == 'show') that.reset()
             that.transitioning = 0
-            that.$element.trigger(completeEvent)
+            that.$element.triggerHandler(completeEvent)
           }
 
-      this.$element.trigger(startEvent)
+      this.$element.triggerHandler(startEvent)
 
       if (startEvent.isDefaultPrevented()) return
 
@@ -816,7 +816,7 @@
         var that = this
           , e = $.Event('show')
 
-        this.$element.trigger(e)
+        this.$element.triggerHandler(e)
 
         if (this.isShown || e.isDefaultPrevented()) return
 
@@ -845,8 +845,8 @@
           that.enforceFocus()
 
           transition ?
-            that.$element.one($.support.transition.end, function () { that.$element.focus().trigger('shown') }) :
-            that.$element.focus().trigger('shown')
+            that.$element.one($.support.transition.end, function () { that.$element.focus().triggerHandler('shown') }) :
+            that.$element.focus().triggerHandler('shown')
 
         })
       }
@@ -858,7 +858,7 @@
 
         e = $.Event('hide')
 
-        this.$element.trigger(e)
+        this.$element.triggerHandler(e)
 
         if (!this.isShown || e.isDefaultPrevented()) return
 
@@ -913,7 +913,7 @@
     , hideModal: function (that) {
         this.$element
           .hide()
-          .trigger('hidden')
+          .triggerHandler('hidden')
 
         this.backdrop()
       }
@@ -1527,7 +1527,7 @@
           active = active.closest('li.dropdown').addClass('active')
         }
 
-        active.trigger('activate')
+        active.triggerHandler('activate')
       }
 
   }
@@ -1631,7 +1631,7 @@
         relatedTarget: previous
       })
 
-      $this.trigger(e)
+      $this.triggerHandler(e)
 
       if (e.isDefaultPrevented()) return
 
@@ -1639,7 +1639,7 @@
 
       this.activate($this.parent('li'), $ul)
       this.activate($target, $target.parent(), function () {
-        $this.trigger({
+        $this.triggerHandler({
           type: 'shown'
         , relatedTarget: previous
         })
