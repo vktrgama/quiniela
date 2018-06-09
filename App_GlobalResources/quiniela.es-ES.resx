@@ -617,4 +617,10 @@
   <data name="RegisterNow" xml:space="preserve">
     <value>Ve y registrate Ya!</value>
   </data>
+  <data name="TitlePreviousWC" xml:space="preserve">
+    <value>Copa Mundial 2014</value>
+  </data>
+  <data name="MsgPreviousWC" xml:space="preserve">
+    <value>Ve tus resultados de la Copa Mundial 2014.</value>
+  </data>
 </root>

@@ -620,4 +620,10 @@
   <data name="RegisterNow" xml:space="preserve">
     <value>Go and register Now!</value>
   </data>
+  <data name="TitlePreviousWC" xml:space="preserve">
+    <value>World Cup 2014</value>
+  </data>
+  <data name="MsgPreviousWC" xml:space="preserve">
+    <value>See your results from 2014 World Cup.</value>
+  </data>
 </root>

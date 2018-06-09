@@ -65,5 +65,7 @@ namespace quiniela.Models
 
         public string FinalScoresMsg { get; set; }
         public string RegisterNow { get; set; }
+        public string TitlePreviousWC { get; set; }
+        public string MsgPreviousWC { get; set; }
     }
 }

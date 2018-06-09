@@ -44,7 +44,7 @@ namespace quiniela.Helpers
                 UserId = user.Email,
                 UserState = user.State,
                 UserName = user.Name,
-                WelcomeUser = string.Format( Localizer.Get("WelcomeUser"), string.Empty),
+                WelcomeUser = string.Format(Localizer.Get("WelcomeUser"), string.Empty),
                 DomainPath = ConfigurationManager.AppSettings["DomainPath"],
                 BgImage = ConfigurationManager.AppSettings["BgImage"],
                 SiteSubtitle = Localizer.Get("SiteSubtitle"),
@@ -91,7 +91,9 @@ namespace quiniela.Helpers
                 SendMessage = Localizer.Get("SendMessage"),
                 FieldMessage = Localizer.Get("FieldMessage"),
                 FinalScoresMsg = Localizer.Get("FinalScoresMsg"),
-                RegisterNow = Localizer.Get("RegisterNow")
+                RegisterNow = Localizer.Get("RegisterNow"),
+                TitlePreviousWC = Localizer.Get("TitlePreviousWC"),
+                MsgPreviousWC = Localizer.Get("MsgPreviousWC")
             };
 
             if (Localizer.Get("CurrenctExchange") != "")

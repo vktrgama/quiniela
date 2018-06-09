@@ -529,6 +529,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See your results from 2014 World Cup..
+        /// </summary>
+        internal static string MsgPreviousWC {
+            get {
+                return ResourceManager.GetString("MsgPreviousWC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         internal static string NewUserTitle {
@@ -1119,6 +1128,15 @@ namespace Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World Cup 2014.
+        /// </summary>
+        internal static string TitlePreviousWC {
+            get {
+                return ResourceManager.GetString("TitlePreviousWC", resourceCulture);
             }
         }
         
