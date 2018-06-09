@@ -367,7 +367,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2014 FIFA World Cup.
+        ///   Looks up a localized string similar to FIFA World Cup.
         /// </summary>
         internal static string Link1Text {
             get {

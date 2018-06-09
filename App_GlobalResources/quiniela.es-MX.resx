@@ -227,7 +227,7 @@
   </data>
   <data name="Link1Text" xml:space="preserve">
     <value>Copa Mundial de la FIFA</value>
-    <comment>2014 FIFA World Cup</comment>
+    <comment>FIFA World Cup</comment>
   </data>
   <data name="Link1Url" xml:space="preserve">
     <value>http://es.fifa.com/index.html</value>
