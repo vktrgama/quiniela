@@ -265,6 +265,7 @@
     <None Include="Views\Shared\matches_en.cshtml" />
     <Content Include="Views\Shared\payment.cshtml" />
     <Content Include="Views\Shared\match_en.cshtml" />
+    <Content Include="Views\Shared\match_es.cshtml" />
     <None Include="Views\Shared\registration.cshtml" />
     <None Include="Views\Shared\rules.cshtml" />
     <None Include="Views\Shared\chat.cshtml" />

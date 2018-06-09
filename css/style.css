@@ -154,7 +154,7 @@ h1 {
 
 header .navbar {
     margin: 35px 0 0 0;
-    background: #22578F; /* #24282c; */
+    background: #0F3F79; /* fifa2014 #22578F; */ /* original #24282c; */
     width: 100%;
     border-radius: 5px;
 }
@@ -568,6 +568,7 @@ p {
     line-height: 50px;
     font-weight: 100;
     float: left;
+    color: #fff;
 }
 /*-------------------------- LISTS ------------------ */
 ._list1 {
@@ -1008,7 +1009,7 @@ footer {
     z-index: 5;
     bottom: 80px;
     height: 100px;
-    background: #22578F; /* #181a1d; */
+    background: #0F3F79; /* fifa2014 #22578F; */ /* #181a1d; */
     overflow: visible !important;
 }
 
@@ -1051,204 +1052,4 @@ footer {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-/* OVERRIDES and new styles */
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #C5DDCE;
-}
-
-#alertBox {
-    position: fixed;
-    top: 50%;
-    left: 40%;
-    margin: -5px 0 0 -5px;
-    z-index: 1000;
-    display: block;
-}
-
-.fixed-navigation {
-    position: fixed;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    display: block;
-    filter: alpha(opacity=80);
-    z-index: 10;
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
-#fixed-savescores {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: block;
-    filter: alpha(opacity=80);
-    width: 135px;
-    z-index: 999;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    }
-
-#formMatchScores {
-    width: 86%;
-    margin-left: 50px;
-}
-
-.emailLink {
-    padding-left: 0;
-    margin-top: 0;
-}
-
-.modal-body, .modal-body h3, .modal-header h3 {
-    color: #3e454c;
-}
-
-.bs-docs-example {
-    color: #000;
-    position: relative;
-    margin: 15px 0;
-    padding: 20px 21px 0px;
-    background-color: #E9F3E8;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    opacity: 0.85;
-}
-
-.frameBorder {
-    border: #fff solid 5px;
-}
-
-.whiteText {
-    color: #fff;
-    display: inline-block;
-}
-
-#editUsers input {
-    width: 70px;
-    font-size: x-small;
-}
-
-#editUsers .table td {
-    padding: 0px;
-}
-
-#particpants .table td {
-    line-height: 10px;
-}
-
-#payPalMessage {
-    display: none;
-}
-
-#welcomeUser {
-    display: none;
-    float: right;
-}
-
-#myChat{
-    height: 400px;
-    overflow: auto;
-    position: relative;
-}
-
-#myChat .popover {
-    background-color: #E9F3E8;
-    display: block;
-    margin-bottom: 5px;
-    opacity: 0.85;
-}
-#myChat .popover.left {
-    left: 20px;
-}
-
-#myChat .popover.right {
-    left: 200px;
-    right: 20px;
-}
-
-#myChat .popover {
-    position: relative;
-}
-
-    #myChat .popover.left .arrow, #myChat .popover.right .arrow {
-        margin-left: auto;
-    }
-
-#myChat .popover-title, #formMatchScores .popover-title {
-    padding: 0 10px;
-    font-size: x-small;
-    background-color: #CCDBD0;
-     color: #000;
-}
-
-#myChat .popover-title span {
-    color:#22578F;
-}
-
-#myChat .popover-content {
-    padding: 5px 10px;
-}
-
-    #myChat .popover-title, #myChat .popover-content p {
-        color: #000;
-    }
-
-#homePop {
-    left: 136px;
-    top: 109px;
-}
-
-    #homePop .popover-content {
-        background-color: #57760F;
-        margin: 1px;
-        text-align: center;
-    }
-
-    #homePop .popover-title {
-        color: #000;
-    }
-
-#formMatchScores .popover-content
-{
-   text-align: center;
-   background-color: #57760F;
-   margin: 1px;
-}
-
-#chatSubtitle
-{
-    display:none;
-}
-
-#chatEn h5 {
-    display: inline-block;
-    font-size: 12px;
-    width: 90px;
-    height: 18px;
-    color: #322f31;
-    position: absolute;
-    top: 5px;
-    left: 0;
-    z-index: 1;
-}
-#chatEntry h5 a {
-    background: url(https://www.firebase.com//resources/images/website/sprites/website-sprite.png) -200px 0 no-repeat;
-    display: block;
-    width: 90px;
-    height: 18px;
-    text-indent: -3000px;
-    overflow: hidden;
-    text-decoration: none;
-}
-#regHome{
-    margin-top: -90px;
-}
-
-.accordion-toggle {
-    background-color: #fff;
-    opacity: .6;
 }
