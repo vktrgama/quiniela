@@ -191,6 +191,7 @@
     <Content Include="css\ie.css" />
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\preview.css" />
+    <Content Include="css\style2014.css" />
     <Content Include="css\style.css" />
     <Content Include="css\variables.css" />
     <Content Include="img\404_img.png" />
