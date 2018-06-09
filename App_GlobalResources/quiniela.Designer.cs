@@ -781,7 +781,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IMPORTANT! Only individuals who submit their scores before June 11th will participate in the pool..
+        ///   Looks up a localized string similar to IMPORTANT! Only individuals who submit their scores before June 14th will participate in the pool..
         /// </summary>
         internal static string Rules10 {
             get {
@@ -934,7 +934,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to First round, Group eliminations  - &lt;i&gt;Right now and until June 11th&lt;/i&gt;.
+        ///   Looks up a localized string similar to First round, Group eliminations  - &lt;i&gt;Right now and until June 14th&lt;/i&gt;.
         /// </summary>
         internal static string Rules6 {
             get {
@@ -943,7 +943,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 26th)&lt;/i&gt;.
+        ///   Looks up a localized string similar to Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 30th)&lt;/i&gt;.
         /// </summary>
         internal static string Rules7 {
             get {
@@ -1231,7 +1231,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accumulated Prize.
+        ///   Looks up a localized string similar to Accumulated Prize (estimated).
         /// </summary>
         internal static string WinnerPrize {
             get {

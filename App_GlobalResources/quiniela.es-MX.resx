@@ -366,7 +366,7 @@
     <comment>Every participant should &lt;a class='{0}' href='{1}'&gt;register&lt;/a&gt; using an invitation code, that will be send to him.</comment>
   </data>
   <data name="Rules10" xml:space="preserve">
-    <value>¡IMPORTANTE! Sólo las personas que envien sus pronósticos antes del 11 de Junio podran participar en la quiniela.</value>
+    <value>¡IMPORTANTE! Sólo las personas que envien sus pronósticos antes del 14 de Junio podran participar en la quiniela.</value>
     <comment>IMPORTANT! Only individuals who submit their scores before June 11th will participate in the pool.</comment>
   </data>
   <data name="Rules11" xml:space="preserve">
@@ -434,12 +434,12 @@
     <comment>Scores are submitted to the pool in two occasions:</comment>
   </data>
   <data name="Rules6" xml:space="preserve">
-    <value>Primera ronda, eliminaciones de Grupo - &lt;i&gt; a partir de ahora y hasta el 11 de junio &lt;/i&gt;</value>
+    <value>Primera ronda, eliminaciones de Grupo - &lt;i&gt; a partir de ahora y hasta el 14 de Junio &lt;/i&gt;</value>
     <comment>First round, Group eliminations  - &lt;i&gt;Right now and until June 11th&lt;/i&gt;</comment>
   </data>
   <data name="Rules7" xml:space="preserve">
-    <value>Segunda ronda, eliminaciones finales - &lt;i&gt; cuando los partidos estén determinados (después de 26 de junio) &lt;/i&gt;</value>
-    <comment>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 26th)&lt;/i&gt;</comment>
+    <value>Segunda ronda, eliminaciones finales - &lt;i&gt; cuando los partidos estén determinados (después de 30 de Junio) &lt;/i&gt;</value>
+    <comment>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 30th)&lt;/i&gt;</comment>
   </data>
   <data name="Rules8" xml:space="preserve">
     <value>Una vez enviados los pronósticos, NO podrán ser cambiarlos más.</value>
@@ -558,7 +558,7 @@
     <comment>Winner</comment>
   </data>
   <data name="WinnerPrize" xml:space="preserve">
-    <value>Premio acumulado</value>
+    <value>Premio acumulado (estimado)</value>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">
     <value>Comentarios</value>

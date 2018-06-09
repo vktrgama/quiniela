@@ -338,8 +338,8 @@
     <comment>Cada participante deberá &lt;a class='{0}' href='{1}'&gt;registrarse&lt;/a&gt; usando un código de inviación, que sera enviado a el previamente.</comment>
   </data>
   <data name="Rules10" xml:space="preserve">
-    <value>IMPORTANT! Only individuals who submit their scores before June 11th will participate in the pool.</value>
-    <comment>¡IMPORTANTE! Sólo las personas que presenten sus pronósticos antes del 11 de Junio participarán en la quiniela.</comment>
+    <value>IMPORTANT! Only individuals who submit their scores before June 14th will participate in the pool.</value>
+    <comment>¡IMPORTANTE! Sólo las personas que presenten sus pronósticos antes del 14 de Junio participarán en la quiniela.</comment>
   </data>
   <data name="Rules11" xml:space="preserve">
     <value>The official score for each match will be the one at the end of the match, including extra time, and/or series of penalties.</value>
@@ -406,11 +406,11 @@
     <comment>Los pronósticos seran enviados en dos ocasiones:</comment>
   </data>
   <data name="Rules6" xml:space="preserve">
-    <value>First round, Group eliminations  - &lt;i&gt;Right now and until June 11th&lt;/i&gt;</value>
-    <comment>Primera ronda, eliminaciones de Grupo - &lt;i&gt; a partir de ahora y hasta el 11 de junio &lt;/ i&gt;</comment>
+    <value>First round, Group eliminations  - &lt;i&gt;Right now and until June 14th&lt;/i&gt;</value>
+    <comment>Primera ronda, eliminaciones de Grupo - &lt;i&gt; a partir de ahora y hasta el 14 de junio &lt;/ i&gt;</comment>
   </data>
   <data name="Rules7" xml:space="preserve">
-    <value>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 26th)&lt;/i&gt;</value>
+    <value>Second round, Final eliminations - &lt;i&gt;when matches are determined (after June 30th)&lt;/i&gt;</value>
     <comment>Segunda ronda, eliminaciones finales - &lt;i&gt; cuando los partidos estén determinados (después de 26 de junio) &lt;/ i&gt;</comment>
   </data>
   <data name="Rules8" xml:space="preserve">
@@ -558,7 +558,7 @@
     <comment>Bienvenido {0}</comment>
   </data>
   <data name="WinnerPrize" xml:space="preserve">
-    <value>Accumulated Prize</value>
+    <value>Accumulated Prize (estimated)</value>
     <comment>Premio del ganador</comment>
   </data>
   <data name="FeedbackTitle" xml:space="preserve">

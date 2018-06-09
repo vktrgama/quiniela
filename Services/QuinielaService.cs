@@ -117,7 +117,9 @@ namespace quiniela.Services
 
                 if (submitted)
                 {
-                    command.CommandText = string.Format("update dbo.Users set state = '{0}' where Email = '{1}'", QuinielaState.Submitted.ToString(), userId);
+                    command.CommandText = string.Format("update dbo.Users set state = '{0}' where Email = '{1}' and Year = {2}", 
+                        QuinielaState.Submitted.ToString(), userId,
+                        ConfigurationManager.AppSettings["WorldCupYear"]);
                     command.ExecuteNonQuery();
                 }
 

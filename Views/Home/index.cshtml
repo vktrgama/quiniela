@@ -57,7 +57,7 @@
 
     <div id="wrapper">
         <div id="bgStretch"><img src="/img/@Model.BgImage" alt=""></div>
-        <h2 id="payPalMessage">Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. You may log into your account at www.paypal.com/us to view details of this transaction.</h2>
+        <h2 id="payPalMessage">Thank you for your payment. Your transaction has been completed.</h2>
 
         <div class="extraBg1"></div>
         <!--header-->
@@ -126,7 +126,9 @@
                                         <a href="#" class="_link2" rel="tooltip" data-placement="right" data-original-title="@Model.CurrencyExchange">@Model.CurrenctExchangeTitle</a>
                                         <p>@Model.TopWinPrizeDesc</p>
                                     </div>
-                                    <a class="btn btn-primary" href="@Model.DomainPath/Home/Registration">@Model.RegisterNow</a>
+                                    <!-- NO NEED FOR THIS
+    <a class="btn btn-primary" href="@Model.DomainPath/Home/Registration">@Model.RegisterNow</a>
+        -->
                                 </div>
                             </div>
                             <script id="popLeft" type="text/html">
