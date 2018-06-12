@@ -4,8 +4,8 @@
 
 /.vs
 *.dll
-/bin
+/bin/**
 /UpgradeLog.htm
-/obj
-/packages
+/obj/**
+/packages/**
 /quiniela.csproj.user

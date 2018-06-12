@@ -191,19 +191,20 @@ namespace quiniela.Controllers
         {
             // var subject = Localizer.Get("ReminderEmailSubjectCatchup");
             var subject = Localizer.Get("ReminderEmailSubject");
-            var message = string.Format(Localizer.Get("ReminderEmailBody"), ConfigurationManager.AppSettings["SiteDomain"]);
+            var message = string.Format(Localizer.Get("ReminderEmailBody")
+                , ConfigurationManager.AppSettings["SiteDomain"]);
 
             try
             {
                 ParticipantList participants = _quinielaService.GetAllUsers();
                 foreach (Paticipant user in participants.UserList)
                 {
-                    if (!string.IsNullOrEmpty(user.Name))
+                    if (!string.IsNullOrEmpty(user.Email))
                     {
                         // Smtp requires authorization fro Gmail before sending any email
                         new Smtp().SendEmail(user.Email.Trim(),
                             string.Format(subject, user.Name),
-                            string.Format(message, user.Email, user.AccessCode));
+                            string.Format(message + "&lt;br/&gt;&lt;br/&gt;Email: {0}, Your/Tu Code/Codigo is/es: {1}&lt;br/&gt;&lt;br/&gt;", user.Email, user.InviteCode));
                     }
                 }
                 return Json(new { err = 0 }, JsonRequestBehavior.AllowGet);

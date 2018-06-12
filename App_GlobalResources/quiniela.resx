@@ -609,10 +609,10 @@
     <value>OffLine</value>
   </data>
   <data name="ReminderEmailBody" xml:space="preserve">
-    <value>&lt;br/&gt;&lt;br/&gt;You can enter your scores now, go to &lt;b&gt;&lt;a href='{0}' &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!</value>
+    <value>&lt;br/&gt;&lt;br/&gt;Make sure to enter your scores now, go to &lt;b&gt;&lt;a href='{0}' &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores, scores entry will be locked as soon as the first gamae starts. &lt;br/&gt;&lt;br/&gt;If you are not registered yet, don't wait, it just takes 2 minutes, do it and Good Luck!&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href='{0}'&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego. &lt;br/&gt;&lt;br/&gt;Si no te haz registrado aun no esperes mas, solo te toma 2 minutos, hazlo y Buena Suerte!&lt;br/&gt;&lt;br/&gt;</value>
   </data>
   <data name="ReminderEmailSubject" xml:space="preserve">
-    <value>FIFA WorldCup - Don't forget to enter your scores.</value>
+    <value>FIFA WorldCup - Don't forget to enter your scores. [No olvides ingresar tus resultados]</value>
   </data>
   <data name="ReminderEmailSubjectCatchup" xml:space="preserve">
     <value>Esta es la oportunidad de recuperarte</value>

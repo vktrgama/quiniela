@@ -606,7 +606,7 @@
     <value>Fuera de Linea</value>
   </data>
   <data name="ReminderEmailBody" xml:space="preserve">
-    <value>&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href='{0}'&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos, esta es la oportunidad para recuperarte, y posiblemente ganar, ya que podras ingresar nuevos resultados en cada fase de eliminación. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego en esta fase de eliminación. Suerte!</value>
+    <value>&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href='{0}'&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego. &lt;br/&gt;&lt;br/&gt;Si no te haz registrado aun no esperes mas, solo te toma 2 minutos, hazlo y Buena Suerte!</value>
   </data>
   <data name="ReminderEmailSubject" xml:space="preserve">
     <value>FIFA Copa Mundial - No olvides ingresar tus resultados</value>

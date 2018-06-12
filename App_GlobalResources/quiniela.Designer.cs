@@ -745,7 +745,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;br/&gt;&lt;br/&gt;You can enter your scores now, go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores for this round, this is your chance to catch up and possibly win, since you can enter scores for each of the elimination rounds as they appear, Scores entry will be locked as soon as the first game on this elimation starts, Good Luck!.
+        ///   Looks up a localized string similar to &lt;br/&gt;&lt;br/&gt;Make sure to enter your scores now, go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores, scores entry will be locked as soon as the first gamae starts. &lt;br/&gt;&lt;br/&gt;If you are not registered yet, don&apos;t wait, it just takes 2 minutes, do it and Good Luck!&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href=&apos;{0}&apos;&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego. &lt;br/&gt;&lt;br/&gt;Si no te haz registrado [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReminderEmailBody {
             get {
@@ -754,7 +754,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FIFA WorldCup - Don&apos;t forget to enter your scores..
+        ///   Looks up a localized string similar to FIFA WorldCup - Don&apos;t forget to enter your scores. [No olvides ingresar tus resultados].
         /// </summary>
         internal static string ReminderEmailSubject {
             get {
