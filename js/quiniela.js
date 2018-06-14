@@ -208,29 +208,24 @@ populateResults = function () {
                     // title - hold the real result, value - the users result (2 times one both home and one away)
                     if (inputs[0].title != "" && inputs[1].title != "" && inputs[0].value != "" && inputs[1].value != "") {
                         // Match exact scores
-                        if ($(inputs[0]).title == inputs[0].value) {
-                            $(inputs[0]).attr('class', 'goodScore');
+                        if ($("input[name=" + score.name + "]").val() == score.value) {
+                            $("input[name=" + score.name + "]").css("background-color", "#06FA2D");
                         } else {
-                            $(inputs[0]).attr('class', 'badScore');
-                        }
-                        if ($(inputs[1]).title == inputs[1].value) {
-                            $(inputs[1]).attr('class', 'goodScore');
-                        } else {
-                            $(inputs[1]).attr('class', 'badScore');
+                            $("input[name=" + score.name + "]").css("background-color", "#B43659").css("color", "#fff");
                         }
 
                         if (inputs[0].title - inputs[1].title == 0 && inputs[0].value - inputs[1].value == 0) {
                             // draw
-                            $(inputs[0]).attr('class', 'goodScore');
-                            $(inputs[1]).attr('class', 'goodScore');
+                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
+                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
                         }
                         if (inputs[0].title - inputs[1].title > 0 && inputs[0].value - inputs[1].value > 0) {
                             // home winner
-                            $(inputs[0]).attr('class', 'goodScore');
+                            $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
                         } 
                         if (inputs[0].title - inputs[1].title < 0 && inputs[0].value - inputs[1].value < 0) {
                             // away winner
-                            $(inputs[1]).attr('class', 'goodScore');
+                            $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
                         }
                     }
                 });
