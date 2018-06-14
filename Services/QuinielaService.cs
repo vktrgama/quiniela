@@ -654,11 +654,13 @@ namespace quiniela.Services
                         var score = div.Find(".fi-s__scoreText").Html();
                         if (score.Contains('-'))
                         {
+                            var score1 = score.Split('-')[0].Replace("\n","").Trim();
+                            var score2 = score.Split('-')[1].Replace("\n", "").Trim();
                             OpenDatabase();
                             SqlCommand command = new SqlCommand();
                             command.Connection = conn;
-                            command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}', Year = {3}",
-                                score.Split('-')[0], score.Split('-')[1], id, ConfigurationManager.AppSettings["WorldCupYear"]);
+                            command.CommandText = string.Format("update dbo.FinalScores set ScoreHome = {0}, ScoreAway = {1}, MatchPlayed = 1 where MatchId = '{2}' and Year = {3}",
+                                score1, score2, id, ConfigurationManager.AppSettings["WorldCupYear"]);
                             command.ExecuteNonQuery();
                             CloseDatabase();
                         }
