@@ -222,11 +222,16 @@ populateResults = function () {
                         if (inputs[0].title - inputs[1].title > 0 && inputs[0].value - inputs[1].value > 0) {
                             // home winner
                             $(inputs[0]).css("background-color", "#06FA2D").css("color", "#000");
-                        } 
+                        }
                         if (inputs[0].title - inputs[1].title < 0 && inputs[0].value - inputs[1].value < 0) {
                             // away winner
                             $(inputs[1]).css("background-color", "#06FA2D").css("color", "#000");
                         }
+
+                        // replace match time with real result
+                        var scoreTxt = $("div[data-id=" + matchId + "]").find(".fi-s__scoreText")[0];
+                        scoreTxt.innerHTML = $("input[name=" + inputs[0].name + "]").attr("title") + "-" + $("input[name=" + inputs[1].name + "]").attr("title");
+                        $(scoreTxt).css('font-weight','bold');
                     }
                 });
             }
