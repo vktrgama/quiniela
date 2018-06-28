@@ -88,7 +88,7 @@ prepareScoreForm = function (userId, userState, collapseGroup) {
     switch (state) {
         case "Active":
             $(".score input").attr('disabled', 'disabled');
-            // enable only editable group (e.g. collapseOne, collapseTwo, collapseThree, collapseFour ...)
+            // enable only editable group (e.g. firstRound, quaterfinals, etc ...)
             $(collapseGroup + " .score input").removeAttr("disabled")
             $("#submitScoresContainer").show();
             break;
@@ -133,12 +133,12 @@ maxLengthCheck = function (object) {
     }
 }
 
-saveMatchScores = function (bSubmitted, form) {
+saveMatchScores = function (bSubmitted, form, tabToSave) {
     var btn = event.target;
     var btnCaption = $(btn).text();
     $(event.target).text($(btn).attr("data-title"));
 
-    var inputs = JSON.stringify($(form).serializeArray());
+    var inputs = JSON.stringify($(form + ' ' + tabToSave).serializeArray());
     $.ajax({
         url: _domainPath + "/wapi/SubmitMatchScores",
         type: 'POST',
