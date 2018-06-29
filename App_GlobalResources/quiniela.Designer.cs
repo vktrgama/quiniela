@@ -745,7 +745,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;br/&gt;&lt;br/&gt;Make sure to enter your scores now, go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores, scores entry will be locked as soon as the first gamae starts. &lt;br/&gt;&lt;br/&gt;If you are not registered yet, don&apos;t wait, it just takes 2 minutes, do it and Good Luck!&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href=&apos;{0}&apos;&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego. &lt;br/&gt;&lt;br/&gt;Si no te haz registrado [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;br/&gt;&lt;br/&gt;Make sure to enter your scores now, go to &lt;b&gt;&lt;a href=&apos;{0}&apos; &gt;FIFA WorlCup Pool&lt;/a&gt;&lt;/b&gt; and enter your scores, scores entry will be locked as soon as the first game starts. &lt;br/&gt;&lt;br/&gt;Good Luck!&lt;br/&gt;&lt;br/&gt;Ya estan abiertos los pronósticos, ve a &lt;b&gt;&lt;a href=&apos;{0}&apos;&gt;La Quiniela&lt;/a&gt;&lt;/b&gt; e ingresa tus pronósticos. El ingreso de los marcadores se bloquera automáticamente al inicio del primer juego. &lt;br/&gt;&lt;br/&gt;Buena Suerte!&lt;br/&gt;&lt;br/&gt;.
         /// </summary>
         internal static string ReminderEmailBody {
             get {
@@ -763,7 +763,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Esta es la oportunidad de recuperarte.
+        ///   Looks up a localized string similar to This is your chance to catch-up, enter your scores! [Esta es la oportunidad de recuperarte, ingresa tus marcadores!] .
         /// </summary>
         internal static string ReminderEmailSubjectCatchup {
             get {

@@ -138,7 +138,7 @@ saveMatchScores = function (bSubmitted, form, tabToSave) {
     var btnCaption = $(btn).text();
     $(event.target).text($(btn).attr("data-title"));
 
-    var inputs = JSON.stringify($(form + ' ' + tabToSave).serializeArray());
+    var inputs = JSON.stringify($(tabToSave + ' input:enabled').serializeArray());
     $.ajax({
         url: _domainPath + "/wapi/SubmitMatchScores",
         type: 'POST',
