@@ -7,6 +7,11 @@ namespace quiniela.Entities
 {
     public class ExchangeRate
     {
+        public CurrenctResults results { get; set; }
+    }
+
+    public class CurrenctResults
+    {
         public CurrencyValue USD_MXN { get; set; }
     }
 

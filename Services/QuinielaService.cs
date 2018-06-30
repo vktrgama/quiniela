@@ -530,7 +530,7 @@ namespace quiniela.Services
         {
             try
             {
-                WebRequest request = WebRequest.Create("http://free.currencyconverterapi.com/api/v5/convert?q=USD_MXN&compact=y");
+                WebRequest request = WebRequest.Create(ConfigurationManager.AppSettings["CurrencyExchUrl"]);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -539,9 +539,9 @@ namespace quiniela.Services
                 var json = new JavaScriptSerializer();
                 var result = json.Deserialize<ExchangeRate>(responseFromServer);
 
-                if (result != null && result.USD_MXN.val > 0)
+                if (result != null && result.results.USD_MXN.val > 0)
                 {
-                   return result.USD_MXN.val;
+                   return result.results.USD_MXN.val;
                 }
             }
             catch (Exception ex)
@@ -562,7 +562,7 @@ namespace quiniela.Services
             var finalScore = new List<MatchScore>();
             try
             {
-                WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+                WebRequest request = WebRequest.Create(ConfigurationManager.AppSettings["FifaMatchesUrl"]);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -591,7 +591,7 @@ namespace quiniela.Services
         {
             try
             {
-                WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+                WebRequest request = WebRequest.Create(ConfigurationManager.AppSettings["FifaMatchesUrl"]);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -633,7 +633,7 @@ namespace quiniela.Services
         /// </summary>
         public void UpdateTodayScores()
         {
-            WebRequest request = WebRequest.Create("http://www.fifa.com/worldcup/matches/index.html");
+            WebRequest request = WebRequest.Create(ConfigurationManager.AppSettings["FifaMatchesUrl"]);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream dataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(dataStream);
@@ -745,7 +745,8 @@ namespace quiniela.Services
             OpenDatabase();
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
-            command.CommandText = string.Format("select MatchId, TeamHome, TeamAway from dbo.FinalScores where Year = {0}", ConfigurationManager.AppSettings["WorldCupYear"]);
+            command.CommandText = string.Format("select MatchId, TeamHome, TeamAway from dbo.FinalScores where Year = {0} and MatchPlayed = 0", 
+                            ConfigurationManager.AppSettings["WorldCupYear"]);
             var reader = command.ExecuteReader();
 
             var matchList = new List<Match>();
